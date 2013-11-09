@@ -5,6 +5,9 @@ Tips:
 	- Crashes can sometimes be solved by pulling the chord on the sensor.
 	- Crashes can always be solved by pulling the battery on the EV3 Brick.
 	
+	Setting up XML:
+		- You have two blocks.xml files: one is in the root, one is under strings.  
+	
 	You can't initiate an array except with a constant.  Arrays cant be resized.
 	An example of sending multi-dimension arrays: dLight.
 	An example of reading multi-dimension arrays: dGPS.

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <EditorStrings>
   <PolyGroups ModuleName="Dexter">
-    <PolyGroup Name="Test" DisplayName="Thermometer" DisplayNamePrefix="Test">
+    <PolyGroup Name="dPressure" DisplayName="dPressure" DisplayNamePrefix="dPressure">
       <Parameter Name="Direction" DisplayName="Direction">
         <Description><![CDATA[<p>Context help for Direction</p>]]></Description>
       </Parameter>
@@ -20,19 +20,22 @@
       <Parameter Name="Raw" DisplayName="Raw Value">
         <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
       </Parameter>
-      <Parameter Name="F" DisplayName="Farenheight">
+      <Parameter Name="kPa" DisplayName="kPa">
         <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
       </Parameter>
-      <Parameter Name="C" DisplayName="Celsius">
+      <Parameter Name="PSI" DisplayName="PSI">
         <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
       </Parameter>
-      <Parameter Name="K" DisplayName="Kelvin">
+      <!--<Parameter Name="K" DisplayName="Kelvin">
         <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
       </Parameter>	  
       <Parameter Name="Result" DisplayName="Compare Result">
         <Description><![CDATA[<p>Context help for Compare Result</p>]]></Description>
-      </Parameter>
-      <Block Mode="SampleReadValue" DisplayName="Sensor Value">
+      </Parameter> -->
+      <Block Mode="dPressure250" DisplayName="dPressure 250">
+        <Description><![CDATA[<p>Context help for Measure Sensor Value</p>]]></Description>
+      </Block>
+	  <Block Mode="dPressure500" DisplayName="dPressure 500">
         <Description><![CDATA[<p>Context help for Measure Sensor Value</p>]]></Description>
       </Block>
       <Block Mode="SampleCompareValue" DisplayName="Sensor Value">
