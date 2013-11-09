@@ -149,13 +149,13 @@
       <Parameter Name="Port" CompilerDirectives="OneInputPort" Direction="Input" DefaultValue="1.3" />
       <Parameter Name="Amount" Identification="builtin://Identification_Numeric.png" DataType="Single" Direction="Input" DefaultValue="10" />
       <Parameter Name="i" CompilerDirectives="WaitForIteration" DataType="Int32" Direction="Input" DefaultValue="0" />
-      <Parameter Name="LightNum" Identification="builtin://Identification_Numeric.png" DataType="Int32" Direction="Input" DefaultValue="0" MinValue="0" MaxValue="5"/>	  
-      <Parameter Name="Power" Identification="builtin://Identification_Numeric.png" DataType="Int32" Direction="Input" DefaultValue="1" MinValue="0" MaxValue="1"/>	  
-	  <Parameter Name="R" Identification="builtin://Identification_Numeric.png" DataType="Int32" Direction="Input" DefaultValue="255" MinValue="0" MaxValue="255"/>	  
-      <Parameter Name="G" Identification="builtin://Identification_Numeric.png" DataType="Int32" Direction="Input" DefaultValue="255" MinValue="0" MaxValue="255"/>	  
-      <Parameter Name="B" Identification="builtin://Identification_Numeric.png" DataType="Int32" Direction="Input" DefaultValue="255" MinValue="0" MaxValue="255"/>	  
-      <Parameter Name="Blink" Identification="builtin://Identification_Numeric.png" DataType="Int32" Direction="Input" DefaultValue="0" MinValue="0" MaxValue="1"/>	  
-      <Parameter Name="Freq" Identification="builtin://Identification_Numeric.png" DataType="Int32" Direction="Input" DefaultValue="0" MinValue="0" MaxValue="100"/>	  
+      <Parameter Name="LightNum" Identification="dLight-Number.png" DataType="Int32" Direction="Input" DefaultValue="0" MinValue="0" MaxValue="5"/>	  
+      <Parameter Name="Power" Identification="dLight-power.png" DataType="Int32" Direction="Input" DefaultValue="1" MinValue="0" MaxValue="1"/>	  
+	  <Parameter Name="R" Identification="dLight-red.png" DataType="Int32" Direction="Input" DefaultValue="255" MinValue="0" MaxValue="255"/>	  
+      <Parameter Name="G" Identification="dLight-green.png" DataType="Int32" Direction="Input" DefaultValue="255" MinValue="0" MaxValue="255"/>	  
+      <Parameter Name="B" Identification="dLight-blue.png" DataType="Int32" Direction="Input" DefaultValue="255" MinValue="0" MaxValue="255"/>	  
+      <Parameter Name="Blink" Identification="dLight-blink.png" DataType="Int32" Direction="Input" DefaultValue="0" MinValue="0" MaxValue="1"/>	  
+      <Parameter Name="Freq" Identification="dLight-frequency.png" DataType="Int32" Direction="Input" DefaultValue="0" MinValue="0" MaxValue="100"/>	  
       <Hardware>
         <NXTPlotColor>#ffff3132</NXTPlotColor>
         <EV3PlotColor>#ff785028</EV3PlotColor>

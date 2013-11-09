@@ -19,9 +19,6 @@
                 <DataAccessor DataItem="LightNum" Id="n64" Bounds="511 238 84 14">
                     <Terminal Id="Value" Direction="Output" Wire="w27" Hotspot="1 0.5" Bounds="0 0 84 14" />
                 </DataAccessor>
-                <DataAccessor DataItem="Freq" Id="n69" Bounds="525 462 70 14">
-                    <Terminal Id="Value" Direction="Output" Hotspot="1 0.5" Bounds="0 0 70 14" />
-                </DataAccessor>
                 <DataAccessor DataItem="Port" Id="n93" Bounds="868 14 70 14">
                     <Terminal Id="Value" Direction="Output" Wire="w46" Hotspot="1 0.5" Bounds="0 0 70 14" />
                 </DataAccessor>
@@ -184,7 +181,7 @@
                         <Wire Id="w58" Joints="N(n57:Out) h(7) v(-7) N(n35:y)" />
                     </FlatSequence.Frame>
                     <FlatSequence.Frame Id="D23" Bounds="1227 7 791 798">
-                        <CaseStructure Id="n0" Bounds="224 49 525 511" DataType="Int32" UserSelectorBounds="203.997 0 117.007 14" Selected="D25" Default="D25">
+                        <CaseStructure Id="n0" Bounds="224 49 525 511" DataType="Int32" UserSelectorBounds="203.997 0 117.007 14" Selected="d1" Default="D25">
                             <CaseStructure.Case Id="d0" Bounds="7 7 511 497" Pattern="2">
                                 <FlatSequence Id="n26" Bounds="21 105 476 259">
                                     <FlatSequence.Frame Id="D27" Bounds="7 7 217 245">
@@ -265,10 +262,10 @@
                                     <Content>Blink!</Content>
                                 </Comment>
                                 <Wire Id="w7" Joints="N(b15:d1) v(24) h(28) N(b14:n26) B(2) h(161) N(b19:n26)" />
-                                <Wire Id="w9" Joints="N(b17:d1) v(49) h(196) N(b20:n26) B(1) h(-70) N(b16:n26)" />
-                                <FlatSequence Id="n26" Bounds="49 112 413 203">
-                                    <FlatSequence.Frame Id="D27" Bounds="7 7 203 189">
-                                        <MethodCall Id="n17" Bounds="154 7 28 98" Target="X3\.Lib:PBrickInputSetupI2C">
+                                <Wire Id="w9" Joints="N(b17:d1) v(49) h(196) N(b20:n26) B(1) h(-105) N(b16:n26)" />
+                                <FlatSequence Id="n26" Bounds="14 112 448 203">
+                                    <FlatSequence.Frame Id="D27" Bounds="7 7 238 189">
+                                        <MethodCall Id="n17" Bounds="189 7 28 98" Target="X3\.Lib:PBrickInputSetupI2C">
                                             <Terminal Id="layer" Direction="Input" Wire="w7" DataType="Byte" Hotspot="0 0.5" Bounds="0 0 14 14" />
                                             <Terminal Id="port" Direction="Input" Wire="w9" DataType="Byte" Hotspot="0 0.5" Bounds="0 14 14 14" />
                                             <Terminal Id="repeat" Direction="Input" Wire="w12" DataType="Byte" Hotspot="0 0.5" Bounds="0 28 14 14" />
@@ -278,25 +275,30 @@
                                             <Terminal Id="readLength" Direction="Input" Wire="w19" DataType="Byte" Hotspot="0 0.5" Bounds="0 84 14 14" />
                                             <Terminal Id="readData" Direction="Output" DataType="Byte[]" Hotspot="1 0.5" Bounds="14 0 14 14" />
                                         </MethodCall>
-                                        <Literal Id="n11" Terminals="Out=w12" Bounds="112 35 28 14" Interpretation="Exact" DataType="Byte">2</Literal>
-                                        <Literal Id="n12" Terminals="Out=w13" Bounds="105 49 35 14" Interpretation="Exact" DataType="Byte">100</Literal>
-                                        <Literal Id="n14" Terminals="Out=w15" Bounds="112 63 28 14" Interpretation="Exact" DataType="Byte">4</Literal>
-                                        <Literal Id="n18" Terminals="Out=w19" Bounds="112 91 28 14" Interpretation="Exact" DataType="Byte">1</Literal>
+                                        <Literal Id="n11" Terminals="Out=w12" Bounds="147 35 28 14" Interpretation="Exact" DataType="Byte">2</Literal>
+                                        <Literal Id="n12" Terminals="Out=w13" Bounds="140 49 35 14" Interpretation="Exact" DataType="Byte">100</Literal>
+                                        <Literal Id="n14" Terminals="Out=w15" Bounds="147 63 28 14" Interpretation="Exact" DataType="Byte">4</Literal>
+                                        <Literal Id="n18" Terminals="Out=w19" Bounds="147 91 28 14" Interpretation="Exact" DataType="Byte">1</Literal>
                                         <Wire Id="w7" Joints="N(b14:D27) v(7) N(n17:layer)" />
                                         <Wire Id="w9" Joints="N(b16:D27) v(21) N(n17:port)" />
                                         <Wire Id="w12" Joints="N(n11:Out) N(n17:repeat)" />
                                         <Wire Id="w13" Joints="N(n12:Out) N(n17:time)" />
                                         <Wire Id="w15" Joints="N(n14:Out) N(n17:writeLength)" />
                                         <Wire Id="w19" Joints="N(n18:Out) N(n17:readLength)" />
-                                        <Literal Facade="ArrayConstantFacade" Id="n72" Terminals="Out=w46" Bounds="7 70 35 56" Interpretation="Exact" DataType="Byte[]">[112,134,25,23]</Literal>
+                                        <Literal Facade="ArrayConstantFacade" Id="n72" Terminals="Out=w26" Bounds="0 42 35 56" Interpretation="Exact" DataType="Byte[]">[112,134,122,3]</Literal>
                                         <Wire Id="w18" Joints="N(n44:outArray) N(n17:writeData)" />
                                         <Wire Id="w43" Joints="N(b23:D27) v(-70) N(n44:c0t1v)" />
                                         <Wire Id="w44" Joints="N(n24:Out) N(n44:c0t0v)" />
-                                        <Wire Id="w46" Joints="N(n72:Out) h(7) v(7) N(n44:inArray)" />
-                                        <ReplaceArraySubset Rank="1" VerticalChunkCount="1" Id="n44" Terminals="inArray=w46, outArray=w18, c0t0v=w44, c0t1v=w43" Bounds="77 77 28 42" />
-                                        <Literal Id="n24" Terminals="Out=w44" Bounds="42 91 28 14" Interpretation="Exact" DataType="Int32">0</Literal>
+                                        <ReplaceArraySubset Rank="1" VerticalChunkCount="1" Id="n44" Terminals="inArray=w25, outArray=w18, c0t0v=w44, c0t1v=w43" Bounds="112 77 28 42" />
+                                        <Literal Id="n24" Terminals="Out=w44" Bounds="84 91 28 14" Interpretation="Exact" DataType="Int32">0</Literal>
+                                        <Wire Id="w25" Joints="N(n25:outArray) N(n44:inArray)" />
+                                        <ReplaceArraySubset Rank="1" VerticalChunkCount="1" Id="n25" Terminals="inArray=w26, outArray=w25, c0t0v=w28, c0t1v=w29" Bounds="49 77 28 42" />
+                                        <Wire Id="w26" Joints="N(n72:Out) h(7) v(35) N(n25:inArray)" />
+                                        <Literal Id="n27" Terminals="Out=w28" Bounds="7 105 28 14" Interpretation="Exact" DataType="Int32">3</Literal>
+                                        <Wire Id="w28" Joints="N(n27:Out) v(-14) N(n25:c0t0v)" />
+                                        <Wire Id="w29" Joints="N(b29:D27) h(35) v(-63) N(n25:c0t1v)" />
                                     </FlatSequence.Frame>
-                                    <FlatSequence.Frame Id="D14" Bounds="217 7 189 189">
+                                    <FlatSequence.Frame Id="D14" Bounds="252 7 189 189">
                                         <Wire Id="w7" Joints="N(b19:D14) v(7) N(n17:layer)" />
                                         <Wire Id="w9" Joints="N(b20:D14) v(21) N(n17:port)" />
                                         <Wire Id="w12" Joints="N(n11:Out) N(n17:repeat)" />
@@ -325,19 +327,22 @@
                                         <Literal Id="n24" Terminals="Out=w44" Bounds="7 126 28 14" Interpretation="Exact" DataType="Int32">0</Literal>
                                         <Wire Id="w22" Joints="N(n44:outArray) N(n17:writeData)" />
                                     </FlatSequence.Frame>
-                                    <FlatSequence.Tunnel Id="b14" Terminals="n26=w7, D27=w7" TopLeft="133 0" />
+                                    <FlatSequence.Tunnel Id="b14" Terminals="n26=w7, D27=w7" TopLeft="168 0" />
                                     <FlatSequence.Tunnel Id="b16" Terminals="n26=w9, D27=w9" TopLeft="7 0" />
-                                    <FlatSequence.Tunnel Id="b19" Terminals="n26=w7, D14=w7" TopLeft="294 0" />
-                                    <FlatSequence.Tunnel Id="b20" Terminals="n26=w9, D14=w9" TopLeft="273 0" />
-                                    <FlatSequence.Tunnel Id="b22" Terminals="n26=w14, D14=w43" TopLeft="266 189" />
-                                    <FlatSequence.Tunnel Id="b23" Terminals="n26=w14, D27=w43" TopLeft="56 189" />
+                                    <FlatSequence.Tunnel Id="b19" Terminals="n26=w7, D14=w7" TopLeft="329 0" />
+                                    <FlatSequence.Tunnel Id="b20" Terminals="n26=w9, D14=w9" TopLeft="308 0" />
+                                    <FlatSequence.Tunnel Id="b22" Terminals="n26=w14, D14=w43" TopLeft="301 189" />
+                                    <FlatSequence.Tunnel Id="b23" Terminals="n26=w14, D27=w43" TopLeft="91 189" />
+                                    <FlatSequence.Tunnel Id="b29" Terminals="n26=w18, D27=w29" TopLeft="0 175" />
                                 </FlatSequence>
                                 <Wire Id="w14" Joints="N(b27:d1) h(105) h(210) N(b22:n26) B(1) N(b23:n26)" />
+                                <Wire Id="w18" Joints="N(b30:d1) N(b29:n26)" />
                             </CaseStructure.Case>
                             <CaseStructure.Selector Id="b10" Terminals="n0=w20, d0, d1, D25" TopLeft="0 175" />
                             <CaseStructure.Tunnel Id="b15" Terminals="n0=w16, d0=w16, d1=w7, D25" TopLeft="161 0" />
                             <CaseStructure.Tunnel Id="b17" Terminals="n0=w17, d0=w15, d1=w9, D25" TopLeft="133 0" />
                             <CaseStructure.Tunnel Id="b27" Terminals="n0=w27, d0=w14, d1=w14, D25" TopLeft="0 420" />
+                            <CaseStructure.Tunnel Id="b30" Terminals="n0=w28, d0, D25, d1=w18" TopLeft="0 294" />
                         </CaseStructure>
                         <Wire Id="w16" Joints="N(b23:D23) v(7) h(252) N(b15:n0)" />
                         <Wire Id="w17" Joints="N(b24:D23) v(28) h(252) N(b17:n0)" />
@@ -346,6 +351,10 @@
                             <Terminal Id="Value" Direction="Output" Wire="w20" Hotspot="1 0.5" Bounds="0 0 70 14" />
                         </DataAccessor>
                         <Wire Id="w27" Joints="N(b47:D23) h(7) v(7) N(b27:n0)" />
+                        <DataAccessor DataItem="Freq" Id="n69" Bounds="105 343 70 14">
+                            <Terminal Id="Value" Direction="Output" Wire="w28" Hotspot="1 0.5" Bounds="0 0 70 14" />
+                        </DataAccessor>
+                        <Wire Id="w28" Joints="N(n69:Value) N(b30:n0)" />
                     </FlatSequence.Frame>
                     <FlatSequence.Tunnel Id="b25" Terminals="n29=w20, D30=w7" TopLeft="112 0" />
                     <FlatSequence.Tunnel Id="b26" Terminals="n29=w17, D30=w9" TopLeft="7 0" />
