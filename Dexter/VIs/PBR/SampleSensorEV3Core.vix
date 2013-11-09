@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SourceFile Version="1.0.2.10" xmlns="http://www.ni.com/SourceModel.xsd">
+    <Namespace Name="Project">
+        <VirtualInstrument IsTopLevel="false" IsReentrant="false" Version="1.0.2.0" xmlns="http://www.ni.com/VirtualInstrument.xsd">
+            <DataItem Name="Value" DataType="Single" DefaultTerminalDirection="Input" CallUsage="None" CallDirection="Output" CallIndex="0" DefaultValue="0" />
+            <DataItem Name="Port" DataType="Single" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="0" DefaultValue="0" />
+            <FrontPanel>
+                <fpruntime:FrontPanelCanvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:fpruntime="clr-namespace:NationalInstruments.LabVIEW.FrontPanelRuntime;assembly=NationalInstruments.LabVIEW.FrontPanelRuntime" xmlns:Model="clr-namespace:NationalInstruments.SourceModel.Designer;assembly=NationalInstruments.SourceModel" x:Name="FrontPanel" Model:DesignerSurfaceProperties.CanSnapToObjects="True" Model:DesignerSurfaceProperties.SnapToObjects="True" Model:DesignerSurfaceProperties.ShowSnaplines="True" Model:DesignerSurfaceProperties.ShowControlAdorners="True" Width="640" Height="480" />
+            </FrontPanel>
+            <BlockDiagram Name="__RootDiagram__">
+                <DataAccessor DataItem="Value" Id="n14" Bounds="497 105 70 14">
+                    <Terminal Id="Value" Direction="Input" Wire="w8" Hotspot="0 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <DataAccessor DataItem="Port" Id="n19" Bounds="210 98 70 14">
+                    <Terminal Id="Value" Direction="Output" Hotspot="1 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <Wire Id="w8" Joints="N(n5:value) N(n14:Value)" />
+                <MethodCall Id="n5" Bounds="406 105 28 28" Target="X3\.Lib:PBrickRandom">
+                    <Terminal Id="min" Direction="Input" Wire="w6" DataType="UInt16" Hotspot="0 0.5" Bounds="0 0 14 14" />
+                    <Terminal Id="max" Direction="Input" Wire="w9" DataType="UInt16" Hotspot="0 0.5" Bounds="0 14 14 14" />
+                    <Terminal Id="value" Direction="Output" Wire="w8" DataType="UInt16" Hotspot="1 0.5" Bounds="14 0 14 14" />
+                </MethodCall>
+                <Literal Id="n6" Terminals="Out=w6" Bounds="357 105 28 14" Interpretation="Exact" DataType="UInt16">0</Literal>
+                <Wire Id="w6" Joints="N(n6:Out) N(n5:min)" />
+                <Literal Id="n7" Terminals="Out=w9" Bounds="350 119 35 14" Interpretation="Exact" DataType="UInt16">100</Literal>
+                <Wire Id="w9" Joints="N(n7:Out) N(n5:max)" />
+            </BlockDiagram>
+        </VirtualInstrument>
+    </Namespace>
+</SourceFile>

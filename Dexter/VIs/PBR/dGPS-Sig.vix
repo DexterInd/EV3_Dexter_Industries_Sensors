@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SourceFile Version="1.0.2.10" xmlns="http://www.ni.com/SourceModel.xsd">
+    <Namespace Name="Project">
+        <VirtualInstrument IsTopLevel="false" IsReentrant="false" Version="1.0.2.0" xmlns="http://www.ni.com/VirtualInstrument.xsd">
+            <DataItem Name="SequenceIn" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="6" />
+            <DataItem Name="SequenceOut" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" DefaultTerminalDirection="Input" CallUsage="None" CallDirection="Output" CallIndex="6" />
+            <DataItem Name="Port" DataType="Single" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="0" DefaultValue="0" />
+            <DataItem Name="Sig" DataType="Int32" DefaultTerminalDirection="Input" CallUsage="None" CallDirection="Output" CallIndex="3" DefaultValue="0" />
+            <FrontPanel>
+                <fpruntime:FrontPanelCanvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:fpruntime="clr-namespace:NationalInstruments.LabVIEW.FrontPanelRuntime;assembly=NationalInstruments.LabVIEW.FrontPanelRuntime" xmlns:Model0="clr-namespace:NationalInstruments.SourceModel.Designer;assembly=NationalInstruments.SourceModel" x:Name="FrontPanel" Model0:DesignerSurfaceProperties.CanSnapToObjects="True" Model0:DesignerSurfaceProperties.SnapToObjects="True" Model0:DesignerSurfaceProperties.ShowSnaplines="True" Model0:DesignerSurfaceProperties.ShowControlAdorners="True" Width="640" Height="480" />
+            </FrontPanel>
+            <BlockDiagram Name="__RootDiagram__">
+                <DataAccessor DataItem="Port" Id="n19" Bounds="630 210 70 14">
+                    <Terminal Id="Value" Direction="Output" Wire="w16" Hotspot="1 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <DataAccessor DataItem="Sig" Id="n8" Bounds="1113 224 70 14">
+                    <Terminal Id="Value" Direction="Input" Wire="w67" Hotspot="0 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <Wire Id="w16" Joints="N(n19:Value) N(n10:port)" />
+                <Wire Id="w8" Joints="N(n10:layer) N(n17:layer)" />
+                <Wire Id="w9" Joints="N(n10:portOut) N(n17:port)" />
+                <Wire Id="w11" Joints="N(n11:Out) N(n17:repeat)" />
+                <Wire Id="w13" Joints="N(n12:Out) N(n17:time)" />
+                <Wire Id="w15" Joints="N(n20:Out) N(n17:writeLength)" />
+                <Wire Id="w19" Joints="N(n18:Out) N(n17:readLength)" />
+                <Wire Id="w22" Joints="N(n21:Out) N(n17:writeData)" />
+                <MethodCall Id="n10" Bounds="812 210 28 28" Target="X3\.Lib:PBrickPortConvertInput">
+                    <Terminal Id="port" Direction="Input" Wire="w16" DataType="Int32" Hotspot="0 0.5" Bounds="0 0 14 14" />
+                    <Terminal Id="layer" Direction="Output" Wire="w8" DataType="SByte" Hotspot="1 0.5" Bounds="14 0 14 14" />
+                    <Terminal Id="portOut" Direction="Output" Wire="w9" DataType="SByte" Hotspot="1 0.5" Bounds="14 14 14 14" />
+                </MethodCall>
+                <MethodCall Id="n17" Bounds="882 210 28 98" Target="X3\.Lib:PBrickInputSetupI2C">
+                    <Terminal Id="layer" Direction="Input" Wire="w8" DataType="Byte" Hotspot="0 0.5" Bounds="0 0 14 14" />
+                    <Terminal Id="port" Direction="Input" Wire="w9" DataType="Byte" Hotspot="0 0.5" Bounds="0 14 14 14" />
+                    <Terminal Id="repeat" Direction="Input" Wire="w11" DataType="Byte" Hotspot="0 0.5" Bounds="0 28 14 14" />
+                    <Terminal Id="time" Direction="Input" Wire="w13" DataType="Byte" Hotspot="0 0.5" Bounds="0 42 14 14" />
+                    <Terminal Id="writeLength" Direction="Input" Wire="w15" DataType="Byte" Hotspot="0 0.5" Bounds="0 56 14 14" />
+                    <Terminal Id="writeData" Direction="Input" Wire="w22" DataType="Byte[]" Hotspot="0 0.5" Bounds="0 70 14 14" />
+                    <Terminal Id="readLength" Direction="Input" Wire="w19" DataType="Byte" Hotspot="0 0.5" Bounds="0 84 14 14" />
+                    <Terminal Id="readData" Direction="Output" Wire="w26" DataType="Byte[]" Hotspot="1 0.5" Bounds="14 0 14 14" />
+                </MethodCall>
+                <Literal Id="n11" Terminals="Out=w11" Bounds="847 238 28 14" Interpretation="Exact" DataType="Byte">1</Literal>
+                <Literal Id="n12" Terminals="Out=w13" Bounds="847 252 28 14" Interpretation="Exact" DataType="Byte">0</Literal>
+                <Literal Id="n20" Terminals="Out=w15" Bounds="847 266 28 14" Interpretation="Exact" DataType="Byte">2</Literal>
+                <Literal Id="n18" Terminals="Out=w19" Bounds="847 294 28 14" Interpretation="Exact" DataType="Byte">1</Literal>
+                <Literal Facade="ArrayConstantFacade" Id="n21" Terminals="Out=w22" Bounds="763 280 28 28" Interpretation="Exact" DataType="Byte[]">[3,1]</Literal>
+                <Wire Id="w35" Joints="N(n37:Out) N(n36:c0t0v)" />
+                <ArrayIndex Rank="1" VerticalChunkCount="1" Id="n36" Terminals="array=w26, c0t0v=w35, c0t1v=w70" Bounds="973 210 28 28" />
+                <Literal Id="n37" Terminals="Out=w35" Bounds="931 224 28 14" Interpretation="Exact" DataType="Int32">0</Literal>
+                <MethodCall Id="n52" Bounds="1029 210 56 98" Target="\8bitunsigned\.vix">
+                    <Terminal Id="SignedIN" Direction="Input" Wire="w70" DataType="Int32" Hotspot="0 0.5" Bounds="0 14 14 14" />
+                    <Terminal Id="SequenceIn" Direction="Input" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" Hotspot="0 0.5" Bounds="0 28 14 14" />
+                    <Terminal Id="Unsigned" Direction="Output" Wire="w67" DataType="Int32" Hotspot="1 0.5" Bounds="42 14 14 14" />
+                    <Terminal Id="SequenceOut" Direction="Output" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" Hotspot="1 0.5" Bounds="42 28 14 14" />
+                </MethodCall>
+                <Wire Id="w70" Joints="N(n36:c0t1v) N(n52:SignedIN)" />
+                <Wire Id="w67" Joints="N(n52:Unsigned) N(n8:Value)" />
+                <Wire Id="w26" Joints="N(n17:readData) N(n36:array)" />
+            </BlockDiagram>
+        </VirtualInstrument>
+    </Namespace>
+</SourceFile>

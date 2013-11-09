@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SourceFile Version="1.0.2.10" xmlns="http://www.ni.com/SourceModel.xsd">
+    <Namespace Name="Project">
+        <VirtualInstrument IsTopLevel="false" IsReentrant="false" Version="1.0.2.0" xmlns="http://www.ni.com/VirtualInstrument.xsd">
+            <DataItem Name="SequenceIn" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="6" />
+            <DataItem Name="SequenceOut" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" DefaultTerminalDirection="Input" CallUsage="None" CallDirection="Output" CallIndex="6" />
+            <DataItem Name="LightNum" DataType="Int32" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="1" DefaultValue="0" />
+            <DataItem Name="R" DataType="Int32" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="2" DefaultValue="0" />
+            <DataItem Name="G" DataType="Int32" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="4" DefaultValue="0" />
+            <DataItem Name="B" DataType="Int32" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="3" DefaultValue="0" />
+            <DataItem Name="Blink" DataType="Int32" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="7" DefaultValue="0" />
+            <DataItem Name="Freq" DataType="Int32" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="5" DefaultValue="0" />
+            <DataItem Name="Power" DataType="Int32" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="8" DefaultValue="0" />
+            <DataItem Name="Port2" DataType="Single" DefaultTerminalDirection="Output" DefaultValue="0" />
+            <FrontPanel>
+                <fpruntime:FrontPanelCanvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:fpruntime="clr-namespace:NationalInstruments.LabVIEW.FrontPanelRuntime;assembly=NationalInstruments.LabVIEW.FrontPanelRuntime" xmlns:Model="clr-namespace:NationalInstruments.SourceModel.Designer;assembly=NationalInstruments.SourceModel" x:Name="FrontPanel" Model:DesignerSurfaceProperties.CanSnapToObjects="True" Model:DesignerSurfaceProperties.SnapToObjects="True" Model:DesignerSurfaceProperties.ShowSnaplines="True" Model:DesignerSurfaceProperties.ShowControlAdorners="True" Width="640" Height="480" />
+            </FrontPanel>
+            <BlockDiagram Name="__RootDiagram__">
+                <DataAccessor DataItem="LightNum" Id="n64" Bounds="532 133 84 14">
+                    <Terminal Id="Value" Direction="Output" Wire="w51" Hotspot="1 0.5" Bounds="0 0 84 14" />
+                </DataAccessor>
+                <DataAccessor DataItem="R" Id="n65" Bounds="532 378 70 14">
+                    <Terminal Id="Value" Direction="Output" Hotspot="1 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <DataAccessor DataItem="G" Id="n66" Bounds="532 364 70 14">
+                    <Terminal Id="Value" Direction="Output" Hotspot="1 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <DataAccessor DataItem="B" Id="n67" Bounds="532 350 70 14">
+                    <Terminal Id="Value" Direction="Output" Hotspot="1 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <DataAccessor DataItem="Blink" Id="n68" Bounds="532 490 70 14">
+                    <Terminal Id="Value" Direction="Output" Wire="w72" Hotspot="1 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <DataAccessor DataItem="Freq" Id="n69" Bounds="532 322 70 14">
+                    <Terminal Id="Value" Direction="Output" Hotspot="1 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <DataAccessor DataItem="Power" Id="n70" Bounds="532 448 70 14">
+                    <Terminal Id="Value" Direction="Output" Wire="w70" Hotspot="1 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <IsEqual Id="n71" Terminals="y=w73, x=w72" TopLeft="658 504" />
+                <IsEqual Id="n72" Terminals="y=w71, x=w70" TopLeft="658 455" />
+                <Wire Id="w70" Joints="N(n70:Value) h(49) v(7) N(n72:x)" />
+                <Literal Id="n73" Terminals="Out=w71" Bounds="623 469 28 14" Interpretation="Exact" DataType="Int32">1</Literal>
+                <Wire Id="w71" Joints="N(n73:Out) N(n72:y)" />
+                <Wire Id="w72" Joints="N(n68:Value) h(49) v(14) N(n71:x)" />
+                <Literal Id="n74" Terminals="Out=w73" Bounds="623 518 28 14" Interpretation="Exact" DataType="Int32">1</Literal>
+                <Wire Id="w73" Joints="N(n74:Out) N(n71:y)" />
+                <DataAccessor DataItem="Port2" Id="n93" Bounds="560 77 56 14">
+                    <Terminal Id="Value" Direction="Output" Wire="w86" Hotspot="1 0.5" Bounds="0 0 56 14" />
+                </DataAccessor>
+                <Wire Id="w51" Joints="N(n64:Value) N(b74:n0)" />
+                <CaseStructure Id="n0" Bounds="693 91 140 140" DataType="Int32" UserSelectorBounds="11.497 0 117.007 14" Selected="d0" Default="d0">
+                    <CaseStructure.Case Id="d0" Bounds="7 7 126 126" Pattern="0, Default">
+                        <Literal Id="n83" Terminals="Out=w3" Bounds="42 49 35 14" Interpretation="Exact" DataType="Byte">224</Literal>
+                        <Wire Id="w3" Joints="N(n83:Out) N(b82:d0)" />
+                    </CaseStructure.Case>
+                    <CaseStructure.Case Id="D78" Bounds="7 7 126 126" Pattern="1">
+                        <Literal Id="n83" Terminals="Out=w4" Bounds="56 49 28 14" Interpretation="Exact" DataType="Byte">4</Literal>
+                        <Wire Id="w4" Joints="N(n83:Out) N(b82:D78)" />
+                    </CaseStructure.Case>
+                    <CaseStructure.Case Id="D80" Bounds="7 7 126 126" Pattern="2">
+                        <Literal Id="n83" Terminals="Out=w4" Bounds="70 49 28 14" Interpretation="Exact" DataType="Byte">20</Literal>
+                        <Wire Id="w4" Joints="N(n83:Out) N(b82:D80)" />
+                    </CaseStructure.Case>
+                    <CaseStructure.Case Id="D81" Bounds="7 7 126 126" Pattern="3">
+                        <Literal Id="n83" Terminals="Out=w4" Bounds="35 49 28 14" Interpretation="Exact" DataType="Byte">52</Literal>
+                        <Wire Id="w4" Joints="N(n83:Out) N(b82:D81)" />
+                    </CaseStructure.Case>
+                    <CaseStructure.Case Id="D82" Bounds="7 7 126 126" Pattern="4">
+                        <Literal Id="n83" Terminals="Out=w4" Bounds="49 49 28 14" Interpretation="Exact" DataType="Byte">52</Literal>
+                        <Wire Id="w4" Joints="N(n83:Out) N(b82:D82)" />
+                    </CaseStructure.Case>
+                    <CaseStructure.Selector Id="b74" Terminals="n0=w51, d0, D78, D80, D81, D82" TopLeft="0 42" />
+                    <CaseStructure.Tunnel Id="b82" Terminals="n0=w52, d0=w3, D78=w4, D80=w4, D81=w4, D82=w4" TopLeft="126 56" />
+                </CaseStructure>
+                <Wire Id="w86" Joints="N(n93:Value) h(296) N(n94:port) B(1) v(-35) h(355) v(28) N(b56:n52)" />
+                <Wire Id="w87" Joints="N(n94:layer) N(n95:layer)" />
+                <Wire Id="w88" Joints="N(n94:portOut) N(n95:port)" />
+                <Wire Id="w89" Joints="N(n96:Out) N(n95:repeat)" />
+                <Wire Id="w90" Joints="N(n97:Out) N(n95:time)" />
+                <Wire Id="w91" Joints="N(n98:Out) N(n95:writeLength)" />
+                <Wire Id="w92" Joints="N(n99:Out) N(n95:readLength)" />
+                <Wire Id="w93" Joints="N(n100:outArray) N(n95:writeData)" />
+                <Wire Id="w101" Joints="N(n83:Out) N(n100:c1t0v)" />
+                <Wire Id="w103" Joints="N(n95:readData) N(n103:array)" />
+                <Wire Id="w105" Joints="N(n104:Out) N(n103:c0t0v)" />
+                <Wire Id="w107" Joints="N(n103:c0t1v) N(n106:y)" />
+                <Wire Id="w109" Joints="N(n108:Out) N(n106:x)" />
+                <MethodCall Id="n94" Bounds="931 77 28 28" Target="X3\.Lib:PBrickPortConvertInput">
+                    <Terminal Id="port" Direction="Input" Wire="w86" DataType="Int32" Hotspot="0 0.5" Bounds="0 0 14 14" />
+                    <Terminal Id="layer" Direction="Output" Wire="w87" DataType="SByte" Hotspot="1 0.5" Bounds="14 0 14 14" />
+                    <Terminal Id="portOut" Direction="Output" Wire="w88" DataType="SByte" Hotspot="1 0.5" Bounds="14 14 14 14" />
+                </MethodCall>
+                <MethodCall Id="n95" Bounds="1001 77 28 98" Target="X3\.Lib:PBrickInputSetupI2C">
+                    <Terminal Id="layer" Direction="Input" Wire="w87" DataType="Byte" Hotspot="0 0.5" Bounds="0 0 14 14" />
+                    <Terminal Id="port" Direction="Input" Wire="w88" DataType="Byte" Hotspot="0 0.5" Bounds="0 14 14 14" />
+                    <Terminal Id="repeat" Direction="Input" Wire="w89" DataType="Byte" Hotspot="0 0.5" Bounds="0 28 14 14" />
+                    <Terminal Id="time" Direction="Input" Wire="w90" DataType="Byte" Hotspot="0 0.5" Bounds="0 42 14 14" />
+                    <Terminal Id="writeLength" Direction="Input" Wire="w91" DataType="Byte" Hotspot="0 0.5" Bounds="0 56 14 14" />
+                    <Terminal Id="writeData" Direction="Input" Wire="w93" DataType="Byte[]" Hotspot="0 0.5" Bounds="0 70 14 14" />
+                    <Terminal Id="readLength" Direction="Input" Wire="w92" DataType="Byte" Hotspot="0 0.5" Bounds="0 84 14 14" />
+                    <Terminal Id="readData" Direction="Output" Wire="w103" DataType="Byte[]" Hotspot="1 0.5" Bounds="14 0 14 14" />
+                </MethodCall>
+                <Literal Id="n96" Terminals="Out=w89" Bounds="966 105 28 14" Interpretation="Exact" DataType="Byte">1</Literal>
+                <Literal Id="n97" Terminals="Out=w90" Bounds="966 119 28 14" Interpretation="Exact" DataType="Byte">0</Literal>
+                <Literal Id="n98" Terminals="Out=w91" Bounds="966 133 28 14" Interpretation="Exact" DataType="Byte">2</Literal>
+                <Literal Id="n99" Terminals="Out=w92" Bounds="966 161 28 14" Interpretation="Exact" DataType="Byte">2</Literal>
+                <BuildArray Id="n100" Terminals="outArray=w93, c0t0v=w52, c1t0v=w101" Bounds="917 147 28 28" VerticalChunkCount="2" ConcatenateInputs="false" />
+                <Literal Id="n83" Terminals="Out=w101" Bounds="868 161 35 14" Interpretation="Exact" DataType="Byte">128</Literal>
+                <ArrayIndex Rank="1" VerticalChunkCount="1" Id="n103" Terminals="array=w103, c0t0v=w105, c0t1v=w107" Bounds="1085 77 28 28" />
+                <Literal Id="n104" Terminals="Out=w105" Bounds="1043 91 28 14" Interpretation="Exact" DataType="Int32">0</Literal>
+                <IsEqual Id="n106" Terminals="x\ \=\ y\?=w56, y=w107, x=w109" TopLeft="1183 77" />
+                <Literal Id="n108" Terminals="Out=w109" Bounds="1127 77 35 14" Interpretation="Exact" DataType="Byte">145</Literal>
+                <Wire Id="w52" Joints="N(b82:n0) h(17) N(n100:c0t0v) B(1) v(35) h(438) v(-28) N(b57:n52)" />
+                <CaseStructure Id="n52" Bounds="1302 63 602 252" DataType="Boolean" UserSelectorBounds="255.998 0 90.003 14" Selected="D54" Default="D54">
+                    <CaseStructure.Case Id="D54" Bounds="7 7 588 238" Pattern="False">
+                        <Wire Id="w26" Joints="N(b56:D54) h(84) v(42) h(43) v(-14) h(269) v(21) N(n38:port) B(3) N(n94:port)" />
+                        <Wire Id="w0" Joints="N(b57:D54) h(7) v(91) h(84) h(245) v(-56) N(n44:c0t0v) B(3) v(-63) N(n100:c0t0v)" />
+                        <Wire Id="w87" Joints="N(n94:layer) N(n95:layer)" />
+                        <Wire Id="w88" Joints="N(n94:portOut) N(n95:port)" />
+                        <Wire Id="w89" Joints="N(n96:Out) N(n95:repeat)" />
+                        <Wire Id="w90" Joints="N(n97:Out) N(n95:time)" />
+                        <Wire Id="w91" Joints="N(n98:Out) N(n95:writeLength)" />
+                        <Wire Id="w92" Joints="N(n99:Out) N(n95:readLength)" />
+                        <Wire Id="w93" Joints="N(n100:outArray) N(n95:writeData)" />
+                        <Wire Id="w101" Joints="N(n83:Out) N(n100:c1t0v)" />
+                        <Wire Id="w23" Joints="N(n22:Out) N(n100:c2t0v)" />
+                        <Wire Id="w25" Joints="N(n24:Out) N(n100:c3t0v)" />
+                        <Wire Id="w27" Joints="N(n38:layer) N(n39:layer)" />
+                        <Wire Id="w28" Joints="N(n38:portOut) N(n39:port)" />
+                        <Wire Id="w29" Joints="N(n40:Out) N(n39:repeat)" />
+                        <Wire Id="w30" Joints="N(n41:Out) N(n39:time)" />
+                        <Wire Id="w31" Joints="N(n42:Out) N(n39:writeLength)" />
+                        <Wire Id="w32" Joints="N(n43:Out) N(n39:readLength)" />
+                        <Wire Id="w33" Joints="N(n44:outArray) N(n39:writeData)" />
+                        <Wire Id="w34" Joints="N(n45:Out) N(n44:c1t0v)" />
+                        <Wire Id="w36" Joints="N(n46:Out) N(n44:c2t0v)" />
+                        <MethodCall Id="n94" Bounds="175 42 28 28" Target="X3\.Lib:PBrickPortConvertInput">
+                            <Terminal Id="port" Direction="Input" Wire="w26" DataType="Int32" Hotspot="0 0.5" Bounds="0 0 14 14" />
+                            <Terminal Id="layer" Direction="Output" Wire="w87" DataType="SByte" Hotspot="1 0.5" Bounds="14 0 14 14" />
+                            <Terminal Id="portOut" Direction="Output" Wire="w88" DataType="SByte" Hotspot="1 0.5" Bounds="14 14 14 14" />
+                        </MethodCall>
+                        <MethodCall Id="n95" Bounds="245 42 28 98" Target="X3\.Lib:PBrickInputSetupI2C">
+                            <Terminal Id="layer" Direction="Input" Wire="w87" DataType="Byte" Hotspot="0 0.5" Bounds="0 0 14 14" />
+                            <Terminal Id="port" Direction="Input" Wire="w88" DataType="Byte" Hotspot="0 0.5" Bounds="0 14 14 14" />
+                            <Terminal Id="repeat" Direction="Input" Wire="w89" DataType="Byte" Hotspot="0 0.5" Bounds="0 28 14 14" />
+                            <Terminal Id="time" Direction="Input" Wire="w90" DataType="Byte" Hotspot="0 0.5" Bounds="0 42 14 14" />
+                            <Terminal Id="writeLength" Direction="Input" Wire="w91" DataType="Byte" Hotspot="0 0.5" Bounds="0 56 14 14" />
+                            <Terminal Id="writeData" Direction="Input" Wire="w93" DataType="Byte[]" Hotspot="0 0.5" Bounds="0 70 14 14" />
+                            <Terminal Id="readLength" Direction="Input" Wire="w92" DataType="Byte" Hotspot="0 0.5" Bounds="0 84 14 14" />
+                            <Terminal Id="readData" Direction="Output" DataType="Byte[]" Hotspot="1 0.5" Bounds="14 0 14 14" />
+                        </MethodCall>
+                        <Literal Id="n96" Terminals="Out=w89" Bounds="210 70 28 14" Interpretation="Exact" DataType="Byte">1</Literal>
+                        <Literal Id="n97" Terminals="Out=w90" Bounds="210 84 28 14" Interpretation="Exact" DataType="Byte">0</Literal>
+                        <Literal Id="n98" Terminals="Out=w91" Bounds="210 98 28 14" Interpretation="Exact" DataType="Byte">4</Literal>
+                        <Literal Id="n99" Terminals="Out=w92" Bounds="210 126 28 14" Interpretation="Exact" DataType="Byte">0</Literal>
+                        <BuildArray Id="n100" Terminals="outArray=w93, c0t0v=w0, c1t0v=w101, c2t0v=w23, c3t0v=w25" Bounds="161 112 28 56" VerticalChunkCount="4" ConcatenateInputs="false" />
+                        <Literal Id="n83" Terminals="Out=w101" Bounds="112 126 35 14" Interpretation="Exact" DataType="Byte">128</Literal>
+                        <Literal Id="n22" Terminals="Out=w23" Bounds="119 140 28 14" Interpretation="Exact" DataType="Byte">1</Literal>
+                        <Literal Id="n24" Terminals="Out=w25" Bounds="119 154 28 14" Interpretation="Exact" DataType="Byte">37</Literal>
+                        <MethodCall Id="n38" Bounds="420 49 28 28" Target="X3\.Lib:PBrickPortConvertInput">
+                            <Terminal Id="port" Direction="Input" Wire="w26" DataType="Int32" Hotspot="0 0.5" Bounds="0 0 14 14" />
+                            <Terminal Id="layer" Direction="Output" Wire="w27" DataType="SByte" Hotspot="1 0.5" Bounds="14 0 14 14" />
+                            <Terminal Id="portOut" Direction="Output" Wire="w28" DataType="SByte" Hotspot="1 0.5" Bounds="14 14 14 14" />
+                        </MethodCall>
+                        <MethodCall Id="n39" Bounds="490 49 28 98" Target="X3\.Lib:PBrickInputSetupI2C">
+                            <Terminal Id="layer" Direction="Input" Wire="w27" DataType="Byte" Hotspot="0 0.5" Bounds="0 0 14 14" />
+                            <Terminal Id="port" Direction="Input" Wire="w28" DataType="Byte" Hotspot="0 0.5" Bounds="0 14 14 14" />
+                            <Terminal Id="repeat" Direction="Input" Wire="w29" DataType="Byte" Hotspot="0 0.5" Bounds="0 28 14 14" />
+                            <Terminal Id="time" Direction="Input" Wire="w30" DataType="Byte" Hotspot="0 0.5" Bounds="0 42 14 14" />
+                            <Terminal Id="writeLength" Direction="Input" Wire="w31" DataType="Byte" Hotspot="0 0.5" Bounds="0 56 14 14" />
+                            <Terminal Id="writeData" Direction="Input" Wire="w33" DataType="Byte[]" Hotspot="0 0.5" Bounds="0 70 14 14" />
+                            <Terminal Id="readLength" Direction="Input" Wire="w32" DataType="Byte" Hotspot="0 0.5" Bounds="0 84 14 14" />
+                            <Terminal Id="readData" Direction="Output" DataType="Byte[]" Hotspot="1 0.5" Bounds="14 0 14 14" />
+                        </MethodCall>
+                        <Literal Id="n40" Terminals="Out=w29" Bounds="455 77 28 14" Interpretation="Exact" DataType="Byte">1</Literal>
+                        <Literal Id="n41" Terminals="Out=w30" Bounds="455 91 28 14" Interpretation="Exact" DataType="Byte">0</Literal>
+                        <Literal Id="n42" Terminals="Out=w31" Bounds="455 105 28 14" Interpretation="Exact" DataType="Byte">2</Literal>
+                        <Literal Id="n43" Terminals="Out=w32" Bounds="455 133 28 14" Interpretation="Exact" DataType="Byte">2</Literal>
+                        <BuildArray Id="n44" Terminals="outArray=w33, c0t0v=w0, c1t0v=w34, c2t0v=w36" Bounds="406 119 28 42" VerticalChunkCount="3" ConcatenateInputs="false" />
+                        <Literal Id="n45" Terminals="Out=w34" Bounds="357 133 35 14" Interpretation="Exact" DataType="Byte">136</Literal>
+                        <Literal Id="n46" Terminals="Out=w36" Bounds="357 147 35 14" Interpretation="Exact" DataType="Byte">170</Literal>
+                    </CaseStructure.Case>
+                    <CaseStructure.Case Id="d1" Bounds="7 7 588 238" Pattern="True">
+                        <Wire Id="w87" Joints="N(n94:layer) N(n95:layer)" />
+                        <Wire Id="w88" Joints="N(n94:portOut) N(n95:port)" />
+                        <Wire Id="w89" Joints="N(n96:Out) N(n95:repeat)" />
+                        <Wire Id="w90" Joints="N(n97:Out) N(n95:time)" />
+                        <Wire Id="w91" Joints="N(n98:Out) N(n95:writeLength)" />
+                        <Wire Id="w92" Joints="N(n99:Out) N(n95:readLength)" />
+                        <Wire Id="w93" Joints="N(n100:outArray) N(n95:writeData)" />
+                        <Wire Id="w101" Joints="N(n83:Out) N(n100:c1t0v)" />
+                        <MethodCall Id="n94" Bounds="119 14 28 28" Target="X3\.Lib:PBrickPortConvertInput">
+                            <Terminal Id="port" Direction="Input" Wire="w26" DataType="Int32" Hotspot="0 0.5" Bounds="0 0 14 14" />
+                            <Terminal Id="layer" Direction="Output" Wire="w87" DataType="SByte" Hotspot="1 0.5" Bounds="14 0 14 14" />
+                            <Terminal Id="portOut" Direction="Output" Wire="w88" DataType="SByte" Hotspot="1 0.5" Bounds="14 14 14 14" />
+                        </MethodCall>
+                        <MethodCall Id="n95" Bounds="189 14 28 98" Target="X3\.Lib:PBrickInputSetupI2C">
+                            <Terminal Id="layer" Direction="Input" Wire="w87" DataType="Byte" Hotspot="0 0.5" Bounds="0 0 14 14" />
+                            <Terminal Id="port" Direction="Input" Wire="w88" DataType="Byte" Hotspot="0 0.5" Bounds="0 14 14 14" />
+                            <Terminal Id="repeat" Direction="Input" Wire="w89" DataType="Byte" Hotspot="0 0.5" Bounds="0 28 14 14" />
+                            <Terminal Id="time" Direction="Input" Wire="w90" DataType="Byte" Hotspot="0 0.5" Bounds="0 42 14 14" />
+                            <Terminal Id="writeLength" Direction="Input" Wire="w91" DataType="Byte" Hotspot="0 0.5" Bounds="0 56 14 14" />
+                            <Terminal Id="writeData" Direction="Input" Wire="w93" DataType="Byte[]" Hotspot="0 0.5" Bounds="0 70 14 14" />
+                            <Terminal Id="readLength" Direction="Input" Wire="w92" DataType="Byte" Hotspot="0 0.5" Bounds="0 84 14 14" />
+                            <Terminal Id="readData" Direction="Output" DataType="Byte[]" Hotspot="1 0.5" Bounds="14 0 14 14" />
+                        </MethodCall>
+                        <Literal Id="n96" Terminals="Out=w89" Bounds="154 42 28 14" Interpretation="Exact" DataType="Byte">1</Literal>
+                        <Literal Id="n97" Terminals="Out=w90" Bounds="154 56 28 14" Interpretation="Exact" DataType="Byte">0</Literal>
+                        <Literal Id="n98" Terminals="Out=w91" Bounds="154 70 28 14" Interpretation="Exact" DataType="Byte">4</Literal>
+                        <Literal Id="n99" Terminals="Out=w92" Bounds="154 98 28 14" Interpretation="Exact" DataType="Byte">0</Literal>
+                        <BuildArray Id="n100" Terminals="outArray=w93, c0t0v=w35, c1t0v=w101, c2t0v=w23, c3t0v=w25" Bounds="105 84 28 56" VerticalChunkCount="4" ConcatenateInputs="false" />
+                        <Literal Id="n83" Terminals="Out=w101" Bounds="56 98 35 14" Interpretation="Exact" DataType="Byte">128</Literal>
+                        <Literal Id="n22" Terminals="Out=w23" Bounds="63 112 28 14" Interpretation="Exact" DataType="Byte">1</Literal>
+                        <Wire Id="w23" Joints="N(n22:Out) N(n100:c2t0v)" />
+                        <Literal Id="n24" Terminals="Out=w25" Bounds="63 126 28 14" Interpretation="Exact" DataType="Byte">37</Literal>
+                        <Wire Id="w25" Joints="N(n24:Out) N(n100:c3t0v)" />
+                        <Wire Id="w26" Joints="N(b56:d1) h(28) v(14) h(43) N(n94:port) B(3) v(-14) h(269) v(21) N(n38:port)" />
+                        <Wire Id="w27" Joints="N(n38:layer) N(n39:layer)" />
+                        <Wire Id="w28" Joints="N(n38:portOut) N(n39:port)" />
+                        <Wire Id="w29" Joints="N(n40:Out) N(n39:repeat)" />
+                        <Wire Id="w30" Joints="N(n41:Out) N(n39:time)" />
+                        <Wire Id="w31" Joints="N(n42:Out) N(n39:writeLength)" />
+                        <Wire Id="w32" Joints="N(n43:Out) N(n39:readLength)" />
+                        <Wire Id="w33" Joints="N(n44:outArray) N(n39:writeData)" />
+                        <Wire Id="w34" Joints="N(n45:Out) N(n44:c1t0v)" />
+                        <Wire Id="w35" Joints="N(b57:d1) h(24) N(n100:c0t0v) B(1) v(56) h(221) v(-49) N(n44:c0t0v)" />
+                        <Wire Id="w36" Joints="N(n46:Out) N(n44:c2t0v)" />
+                        <MethodCall Id="n38" Bounds="364 21 28 28" Target="X3\.Lib:PBrickPortConvertInput">
+                            <Terminal Id="port" Direction="Input" Wire="w26" DataType="Int32" Hotspot="0 0.5" Bounds="0 0 14 14" />
+                            <Terminal Id="layer" Direction="Output" Wire="w27" DataType="SByte" Hotspot="1 0.5" Bounds="14 0 14 14" />
+                            <Terminal Id="portOut" Direction="Output" Wire="w28" DataType="SByte" Hotspot="1 0.5" Bounds="14 14 14 14" />
+                        </MethodCall>
+                        <MethodCall Id="n39" Bounds="434 21 28 98" Target="X3\.Lib:PBrickInputSetupI2C">
+                            <Terminal Id="layer" Direction="Input" Wire="w27" DataType="Byte" Hotspot="0 0.5" Bounds="0 0 14 14" />
+                            <Terminal Id="port" Direction="Input" Wire="w28" DataType="Byte" Hotspot="0 0.5" Bounds="0 14 14 14" />
+                            <Terminal Id="repeat" Direction="Input" Wire="w29" DataType="Byte" Hotspot="0 0.5" Bounds="0 28 14 14" />
+                            <Terminal Id="time" Direction="Input" Wire="w30" DataType="Byte" Hotspot="0 0.5" Bounds="0 42 14 14" />
+                            <Terminal Id="writeLength" Direction="Input" Wire="w31" DataType="Byte" Hotspot="0 0.5" Bounds="0 56 14 14" />
+                            <Terminal Id="writeData" Direction="Input" Wire="w33" DataType="Byte[]" Hotspot="0 0.5" Bounds="0 70 14 14" />
+                            <Terminal Id="readLength" Direction="Input" Wire="w32" DataType="Byte" Hotspot="0 0.5" Bounds="0 84 14 14" />
+                            <Terminal Id="readData" Direction="Output" DataType="Byte[]" Hotspot="1 0.5" Bounds="14 0 14 14" />
+                        </MethodCall>
+                        <Literal Id="n40" Terminals="Out=w29" Bounds="399 49 28 14" Interpretation="Exact" DataType="Byte">1</Literal>
+                        <Literal Id="n41" Terminals="Out=w30" Bounds="399 63 28 14" Interpretation="Exact" DataType="Byte">0</Literal>
+                        <Literal Id="n42" Terminals="Out=w31" Bounds="399 77 28 14" Interpretation="Exact" DataType="Byte">2</Literal>
+                        <Literal Id="n43" Terminals="Out=w32" Bounds="399 105 28 14" Interpretation="Exact" DataType="Byte">2</Literal>
+                        <BuildArray Id="n44" Terminals="outArray=w33, c0t0v=w35, c1t0v=w34, c2t0v=w36" Bounds="350 91 28 42" VerticalChunkCount="3" ConcatenateInputs="false" />
+                        <Literal Id="n45" Terminals="Out=w34" Bounds="301 105 35 14" Interpretation="Exact" DataType="Byte">136</Literal>
+                        <Literal Id="n46" Terminals="Out=w36" Bounds="301 119 35 14" Interpretation="Exact" DataType="Byte">170</Literal>
+                    </CaseStructure.Case>
+                    <CaseStructure.Selector Id="b52" Terminals="n52=w56, D54, d1" TopLeft="0 42" />
+                    <CaseStructure.Tunnel Id="b56" Terminals="n52=w86, D54=w26, d1=w26" TopLeft="0 7" />
+                    <CaseStructure.Tunnel Id="b57" Terminals="n52=w52, D54=w0, d1=w35" TopLeft="0 91" />
+                </CaseStructure>
+                <Wire Id="w56" Joints="N(n106:x\ \=\ y\?) h(84) v(21) N(b52:n52)" />
+            </BlockDiagram>
+            <Icon>
+                <Model0:IconPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Model0="clr-namespace:NationalInstruments.LabVIEW.VI.Design;assembly=NationalInstruments.LabVIEW.VI.SourceModel" xmlns:fpruntime="clr-namespace:NationalInstruments.LabVIEW.FrontPanelRuntime;assembly=NationalInstruments.LabVIEW.FrontPanelRuntime" xmlns:ation="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Height="126" Width="56">
+                    <fpruntime:AnimationProperties.Animations>
+                        <fpruntime:AnimationsContainer />
+                    </fpruntime:AnimationProperties.Animations>
+                    <fpruntime:EventProperties.Events>
+                        <fpruntime:EventContainer />
+                    </fpruntime:EventProperties.Events>
+                    <Model0:IconPanel.Background>
+                        <ation:LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
+                            <ation:LinearGradientBrush.Transform>
+                                <ation:MatrixTransform />
+                            </ation:LinearGradientBrush.Transform>
+                            <ation:LinearGradientBrush.RelativeTransform>
+                                <ation:MatrixTransform />
+                            </ation:LinearGradientBrush.RelativeTransform>
+                            <ation:GradientStop Color="#FFF6F5C6" />
+                            <ation:GradientStop Color="#FFFFFFFE" Offset="0.25" />
+                            <ation:GradientStop Color="#FFF6F5C6" Offset="1" />
+                        </ation:LinearGradientBrush>
+                    </Model0:IconPanel.Background>
+                    <ation:Rectangle x:Name="Template" Width="NaN" Height="NaN" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0, 13, 0, 0" ation:Grid.Row="0" ation:Grid.Column="0" ation:Grid.RowSpan="1" ation:Grid.ColumnSpan="1" Fill="#00FFFFFF" Stroke="#FF000000" StrokeThickness="1" RadiusX="0" RadiusY="0">
+                        <fpruntime:AnimationProperties.Animations>
+                            <fpruntime:AnimationsContainer />
+                        </fpruntime:AnimationProperties.Animations>
+                        <fpruntime:EventProperties.Events>
+                            <fpruntime:EventContainer />
+                        </fpruntime:EventProperties.Events>
+                    </ation:Rectangle>
+                    <ation:Rectangle x:Name="Template2" Width="NaN" Height="14" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0" ation:Grid.Row="0" ation:Grid.Column="0" ation:Grid.RowSpan="1" ation:Grid.ColumnSpan="1" Stroke="#FF000000" StrokeThickness="1" RadiusX="0" RadiusY="0">
+                        <fpruntime:AnimationProperties.Animations>
+                            <fpruntime:AnimationsContainer />
+                        </fpruntime:AnimationProperties.Animations>
+                        <fpruntime:EventProperties.Events>
+                            <fpruntime:EventContainer />
+                        </fpruntime:EventProperties.Events>
+                        <ation:Rectangle.Fill>
+                            <ation:LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
+                                <ation:LinearGradientBrush.Transform>
+                                    <ation:MatrixTransform />
+                                </ation:LinearGradientBrush.Transform>
+                                <ation:LinearGradientBrush.RelativeTransform>
+                                    <ation:MatrixTransform />
+                                </ation:LinearGradientBrush.RelativeTransform>
+                                <ation:GradientStop Color="#FFFFFFFF" />
+                                <ation:GradientStop Color="#FFD5EAEA" Offset="1" />
+                            </ation:LinearGradientBrush>
+                        </ation:Rectangle.Fill>
+                    </ation:Rectangle>
+                    <ation:TextBlock x:Name="Template3" Width="NaN" Height="NaN" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, -0.100000001490116, 0, 0" ation:Grid.Row="0" ation:Grid.Column="0" ation:Grid.RowSpan="1" ation:Grid.ColumnSpan="1" Text="SubVI" FontFamily="Portable User Interface" FontSize="10" FontWeight="Normal" Foreground="#FF000000">
+                        <fpruntime:AnimationProperties.Animations>
+                            <fpruntime:AnimationsContainer />
+                        </fpruntime:AnimationProperties.Animations>
+                        <fpruntime:EventProperties.Events>
+                            <fpruntime:EventContainer />
+                        </fpruntime:EventProperties.Events>
+                    </ation:TextBlock>
+                </Model0:IconPanel>
+            </Icon>
+        </VirtualInstrument>
+    </Namespace>
+</SourceFile>

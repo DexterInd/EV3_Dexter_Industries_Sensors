@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SourceFile Version="1.0.2.10" xmlns="http://www.ni.com/SourceModel.xsd">
+    <Namespace Name="Project">
+        <VirtualInstrument IsTopLevel="false" IsReentrant="false" Version="1.0.2.0" xmlns="http://www.ni.com/VirtualInstrument.xsd">
+            <DataItem Name="Port" DataType="Single" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="0" DefaultValue="0" />
+            <DataItem Name="Value" DataType="Single" DefaultTerminalDirection="Input" DefaultValue="0" />
+            <FrontPanel>
+                <fpruntime:FrontPanelCanvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:fpruntime="clr-namespace:NationalInstruments.LabVIEW.FrontPanelRuntime;assembly=NationalInstruments.LabVIEW.FrontPanelRuntime" xmlns:Model="clr-namespace:NationalInstruments.SourceModel.Designer;assembly=NationalInstruments.SourceModel" x:Name="FrontPanel" Model:DesignerSurfaceProperties.CanSnapToObjects="True" Model:DesignerSurfaceProperties.SnapToObjects="True" Model:DesignerSurfaceProperties.ShowSnaplines="True" Model:DesignerSurfaceProperties.ShowControlAdorners="True" Width="640" Height="480" />
+            </FrontPanel>
+            <BlockDiagram Name="__RootDiagram__">
+                <DataAccessor DataItem="Port" Id="n19" Bounds="168 189 70 14">
+                    <Terminal Id="Value" Direction="Output" Wire="w20" Hotspot="1 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <Wire Id="w24" Joints="N(n25:Out) N(n13:type)" />
+                <Wire Id="w18" Joints="N(n18:Out) N(n13:Mode)" />
+                <Wire Id="w20" Joints="N(n19:Value) h(35) v(21) N(n10:port)" />
+                <Wire Id="w11" Joints="N(n10:layer) N(n13:layer)" />
+                <Wire Id="w13" Joints="N(n10:portOut) N(n13:port)" />
+                <Wire Id="w14" Joints="N(n22:Out) N(n13:ValueCount)" />
+                <Literal Id="n25" Terminals="Out=w24" Bounds="378 238 28 14" Interpretation="Exact" DataType="Byte">3</Literal>
+                <Literal Id="n18" Terminals="Out=w18" Bounds="378 252 28 14" Interpretation="Exact" DataType="Byte">0</Literal>
+                <MethodCall Id="n10" Bounds="280 210 28 28" Target="X3\.Lib:PBrickPortConvertInput">
+                    <Terminal Id="port" Direction="Input" Wire="w20" DataType="Int32" Hotspot="0 0.5" Bounds="0 0 14 14" />
+                    <Terminal Id="layer" Direction="Output" Wire="w11" DataType="SByte" Hotspot="1 0.5" Bounds="14 0 14 14" />
+                    <Terminal Id="portOut" Direction="Output" Wire="w13" DataType="SByte" Hotspot="1 0.5" Bounds="14 14 14 14" />
+                </MethodCall>
+                <MethodCall Id="n13" Bounds="462 210 28 70" Target="X3\.Lib:PBrickInputReadySI">
+                    <Terminal Id="layer" Direction="Input" Wire="w11" DataType="SByte" Hotspot="0 0.5" Bounds="0 0 14 14" />
+                    <Terminal Id="port" Direction="Input" Wire="w13" DataType="SByte" Hotspot="0 0.5" Bounds="0 14 14 14" />
+                    <Terminal Id="type" Direction="Input" Wire="w24" DataType="SByte" Hotspot="0 0.5" Bounds="0 28 14 14" />
+                    <Terminal Id="Mode" Direction="Input" Wire="w18" DataType="SByte" Hotspot="0 0.5" Bounds="0 42 14 14" />
+                    <Terminal Id="ValueCount" Direction="Input" Wire="w14" DataType="SByte" Hotspot="0 0.5" Bounds="0 56 14 14" />
+                    <Terminal Id="Value" Direction="Output" Wire="w21" DataType="Single" Hotspot="1 0.5" Bounds="14 0 14 14" />
+                </MethodCall>
+                <Literal Id="n22" Terminals="Out=w14" Bounds="378 266 28 14" Interpretation="Exact" DataType="SByte">1</Literal>
+                <DataAccessor DataItem="Value" Id="n14" Bounds="581 203 56 14">
+                    <Terminal Id="Value" Direction="Input" Wire="w21" Hotspot="0 0.5" Bounds="0 0 56 14" />
+                </DataAccessor>
+                <Wire Id="w21" Joints="N(n13:Value) h(84) v(-7) N(n14:Value)" />
+            </BlockDiagram>
+        </VirtualInstrument>
+    </Namespace>
+</SourceFile>
