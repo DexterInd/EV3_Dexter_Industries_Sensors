@@ -1,0 +1,48 @@
+Initialize:
+
+0xE0	224		70	112
+0x80	128
+0x01	1
+0x25	37
+
+0xE0 	224		70	112	(need to shift in by 1 position)
+0x88	136
+0xAA	170
+
+E0
+82		130
+FF
+FF
+FF
+
+
+//Blink//
+E0
+86				134// Blinking duty cycle.
+19				25 // Duty Cycle
+17				23 // Blink Rate
+
+E0
+88				136
+FF				255 // Enable Blink
+
+//Blink Off//
+
+E0
+88				136
+AA				170 // Disable Blink
+
+E0
+88				136
+00				0  // LED Off
+
+
+
+Sequence number	Dip switch	I2C address
+0 (All Leds)	N/A		0xE0	->	x70	->	112
+1(Adapter)	0,0			0X04	->	x02 ->  2
+2	0,1					0X14	->	x0A	->	10
+3	1,0					0X24	->	x0C ->	12
+4	1,1					0X34	->	x1A	->	26
+
+
