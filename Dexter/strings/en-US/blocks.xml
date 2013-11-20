@@ -194,12 +194,24 @@
       <Parameter Name="Acclz" DisplayName="Accel z">
         <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
       </Parameter>
+	  <Parameter Name="Gyrox" DisplayName="Gyro x">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Gyroy" DisplayName="Gyro y">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>	  
+      <Parameter Name="Gyroz" DisplayName="Gyro z">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>
       <Block Mode="ReadAccl4G" DisplayName="Read 4g">
         <Description><![CDATA[<p>Context help for Measure Sensor Value</p>]]></Description>
       </Block>   	  
       <Block Mode="ReadAccl8G" DisplayName="Read 8g">
         <Description><![CDATA[<p>Context help for Measure Sensor Value</p>]]></Description>
-      </Block>   	  	  
+      </Block>  
+	  <Block Mode="ReadGyro" DisplayName="Read Gyro">
+        <Description><![CDATA[<p>Context help for Measure Sensor Value</p>]]></Description>
+      </Block>   
       <Block Mode="WaitSampleSensorSampleCompareValue" DisplayName="" >
         <Description><![CDATA[<p>Context help for Wait - Sample Sensor - Compare - Sensor Value</p>]]></Description>
       </Block>

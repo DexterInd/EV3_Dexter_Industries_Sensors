@@ -184,9 +184,12 @@
       <Parameter Name="Port" CompilerDirectives="OneInputPort" Direction="Input" DefaultValue="1.3"/>
       <Parameter Name="Amount" Identification="builtin://Identification_Numeric.png" DataType="Single" Direction="Input" DefaultValue="10"/>
       <Parameter Name="i" CompilerDirectives="WaitForIteration" DataType="Int32" Direction="Input" DefaultValue="0"/>
-      <Parameter Name="Acclx" Identification="builtin://Identification_Numeric.png" DataType="Single" Direction="Ouput"/>	  
-	  <Parameter Name="Accly" Identification="builtin://Identification_Numeric.png" DataType="Single" Direction="Ouput"/>	  
-	  <Parameter Name="Acclz" Identification="builtin://Identification_Numeric.png" DataType="Single" Direction="Ouput"/>
+      <Parameter Name="Acclx" Identification="Accl-x.png" DataType="Single" Direction="Output"/>	  
+	  <Parameter Name="Accly" Identification="Accl-y.png" DataType="Single" Direction="Output"/>	  
+	  <Parameter Name="Acclz" Identification="Accl-z.png" DataType="Single" Direction="Output"/>
+	  <Parameter Name="Gyrox" Identification="Gyro-x.png" DataType="Int32" Direction="Output"/>	  
+	  <Parameter Name="Gyroy" Identification="Gyro-y.png" DataType="Int32" Direction="Output"/>	  
+	  <Parameter Name="Gyroz" Identification="Gyro-z.png" DataType="Int32" Direction="Output"/>
 	  
       <Hardware>
         <NXTPlotColor>#ffff3132</NXTPlotColor>
@@ -218,7 +221,19 @@
         <!-- <PaletteInfo Weight="0.5" /> -->
         <BlockInterface>ReadAccl8G</BlockInterface>
         <Flags></Flags>
-      </Block>	  
+      </Block>
+	  <Block>
+		<Mode>ReadGyro</Mode>
+        <Reference Type="VILib" Name="gyro.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Gyrox" />
+        <ParameterReference Name="Gyroy" /> 
+		<ParameterReference Name="Gyroz" /> 	
+        <!-- <PaletteInfo Weight="0.5" /> -->
+        <BlockInterface>ReadGyro</BlockInterface>
+        <Flags></Flags>
+      </Block>
+	  
     </PolyGroup>
 	
   </PolyGroups>
