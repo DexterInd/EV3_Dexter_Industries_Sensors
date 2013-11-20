@@ -187,9 +187,9 @@
       <Parameter Name="Acclx" Identification="Accl-x.png" DataType="Single" Direction="Output"/>	  
 	  <Parameter Name="Accly" Identification="Accl-y.png" DataType="Single" Direction="Output"/>	  
 	  <Parameter Name="Acclz" Identification="Accl-z.png" DataType="Single" Direction="Output"/>
-	  <Parameter Name="Gyrox" Identification="builtin://Identification_Numeric.png" DataType="Single" Direction="Output"/>	  
-	  <Parameter Name="Gyroy" Identification="builtin://Identification_Numeric.png" DataType="Single" Direction="Output"/>	  
-	  <Parameter Name="Gyroz" Identification="builtin://Identification_Numeric.png" DataType="Single" Direction="Output"/>
+	  <Parameter Name="Gyrox" Identification="Gyro-x.png" DataType="Int32" Direction="Output"/>	  
+	  <Parameter Name="Gyroy" Identification="Gyro-y.png" DataType="Int32" Direction="Output"/>	  
+	  <Parameter Name="Gyroz" Identification="Gyro-z.png" DataType="Int32" Direction="Output"/>
 	  
       <Hardware>
         <NXTPlotColor>#ffff3132</NXTPlotColor>
