@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SourceFile Version="1.0.2.10" xmlns="http://www.ni.com/SourceModel.xsd">
+    <Namespace Name="Project">
+        <VirtualInstrument IsTopLevel="false" IsReentrant="false" Version="1.0.2.0" xmlns="http://www.ni.com/VirtualInstrument.xsd">
+            <DataItem Name="SequenceIn" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="6" />
+            <DataItem Name="SequenceOut" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" DefaultTerminalDirection="Input" CallUsage="None" CallDirection="Output" CallIndex="6" />
+            <DataItem Name="Port" DataType="Single" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="0" DefaultValue="0" />
+            <DataItem Name="X" DataType="Single" DefaultTerminalDirection="Input" CallUsage="None" CallDirection="Output" CallIndex="0" DefaultValue="0" />
+            <DataItem Name="Z" DataType="Single" DefaultTerminalDirection="Input" CallUsage="None" CallDirection="Output" CallIndex="1" DefaultValue="0" />
+            <DataItem Name="Y" DataType="Single" DefaultTerminalDirection="Input" CallUsage="None" CallDirection="Output" CallIndex="2" DefaultValue="0" />
+            <FrontPanel>
+                <fpruntime:FrontPanelCanvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:fpruntime="clr-namespace:NationalInstruments.LabVIEW.FrontPanelRuntime;assembly=NationalInstruments.LabVIEW.FrontPanelRuntime" xmlns:Model0="clr-namespace:NationalInstruments.SourceModel.Designer;assembly=NationalInstruments.SourceModel" x:Name="FrontPanel" Model0:DesignerSurfaceProperties.CanSnapToObjects="True" Model0:DesignerSurfaceProperties.SnapToObjects="True" Model0:DesignerSurfaceProperties.ShowSnaplines="True" Model0:DesignerSurfaceProperties.ShowControlAdorners="True" Width="640" Height="480" />
+            </FrontPanel>
+            <BlockDiagram Name="__RootDiagram__">
+                <DataAccessor DataItem="Port" Id="n19" Bounds="-819 252 70 14">
+                    <Terminal Id="Value" Direction="Output" Wire="w16" Hotspot="1 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <Wire Id="w16" Joints="N(n19:Value) N(n18:LayeredSinglePortNumber)" />
+                <CaseStructure Id="n0" Bounds="-546 315 3850 826" DataType="Boolean" UserSelectorBounds="1879.998 0 90.003 14" Selected="d1" Default="d0">
+                    <CaseStructure.Case Id="d0" Bounds="7 7 3836 812" Pattern="False" />
+                    <CaseStructure.Case Id="d1" Bounds="7 7 3836 812" Pattern="True">
+                        <Wire Id="w6" Joints="N(n5:Out) N(n110:SensorType)" />
+                        <Literal Id="n15" Terminals="Out=w113" Bounds="42 105 28 14" Interpretation="Exact" DataType="Byte">0</Literal>
+                        <Literal Id="n5" Terminals="Out=w6" Bounds="42 91 28 14" Interpretation="Exact" DataType="Byte">11</Literal>
+                        <Wire Id="w9" Joints="N(b32:d1) v(77) N(n110:Port)" />
+                        <MethodCall Id="n110" Bounds="112 77 56 56" Target="SetTypeAndMode\.vix">
+                            <Terminal Id="Port" Direction="Input" Wire="w9" DataType="Byte" Hotspot="0 0.5" Bounds="0 0 14 14" />
+                            <Terminal Id="SensorType" Direction="Input" Wire="w6" DataType="Byte" Hotspot="0 0.5" Bounds="0 14 14 14" />
+                            <Terminal Id="SensorMode" Direction="Input" Wire="w113" DataType="Byte" Hotspot="0 0.5" Bounds="0 28 14 14" />
+                            <Terminal Id="Port\ Out" Direction="Output" Wire="w97" DataType="Byte" Hotspot="1 0.5" Bounds="42 0 14 14" />
+                            <Terminal Id="Changed\?" Direction="Output" DataType="Boolean" Hotspot="1 0.5" Bounds="42 14 14 14" />
+                        </MethodCall>
+                        <Wire Id="w113" Joints="N(n15:Out) N(n110:SensorMode)" />
+                        <FlatSequence Id="n112" Bounds="14 175 2807 623">
+                            <FlatSequence.Frame Id="D111" Bounds="7 7 343 609">
+                                <Wire Id="w19" Joints="N(n34:Out) N(n36:c0t0v)" />
+                                <Wire Id="w5" Joints="N(b97:D111) v(49) N(n10:Port)" />
+                                <Wire Id="w7" Joints="N(n36:outArray) N(n10:bytes\ to\ write)" />
+                                <Wire Id="w9" Joints="N(n8:Out) N(n10:return\ length)" />
+                                <Wire Id="w11" Joints="N(n11:Out) N(n10:wait\ \(ms\))" />
+                                <Wire Id="w21" Joints="N(n38:Out) N(n36:c1t0v)" />
+                                <Wire Id="w23" Joints="N(n33:Out) N(n36:c2t0v)" />
+                                <MethodCall Id="n10" Bounds="252 49 56 56" Target="I2C_core\.vix">
+                                    <Terminal Id="Port" Direction="Input" Wire="w5" DataType="Byte" Hotspot="0 0.5" Bounds="0 0 14 14" />
+                                    <Terminal Id="bytes\ to\ write" Direction="Input" Wire="w7" DataType="Byte[]" Hotspot="0 0.5" Bounds="0 14 14 14" />
+                                    <Terminal Id="return\ length" Direction="Input" Wire="w9" DataType="Byte" Hotspot="0 0.5" Bounds="0 28 14 14" />
+                                    <Terminal Id="wait\ \(ms\)" Direction="Input" Wire="w11" DataType="Int32" Hotspot="0 0.5" Bounds="0 42 14 14" />
+                                    <Terminal Id="Port\ out" Direction="Output" Wire="w18" DataType="Byte" Hotspot="1 0.5" Bounds="42 0 14 14" />
+                                    <Terminal Id="bytes\ read" Direction="Output" DataType="Byte[]" Hotspot="1 0.5" Bounds="42 14 14 14" />
+                                    <Terminal Id="success\?" Direction="Output" DataType="Boolean" Hotspot="1 0.5" Bounds="42 28 14 14" />
+                                </MethodCall>
+                                <Literal Id="n8" Terminals="Out=w9" Bounds="161 77 28 14" Interpretation="Exact" DataType="Byte">0</Literal>
+                                <Literal Id="n11" Terminals="Out=w11" Bounds="161 91 28 14" Interpretation="Exact" DataType="Int32">1</Literal>
+                                <BuildArray Id="n36" Terminals="outArray=w7, c0t0v=w19, c1t0v=w21, c2t0v=w23" Bounds="91 63 28 42" VerticalChunkCount="3" ConcatenateInputs="false" />
+                                <Literal Id="n38" Terminals="Out=w21" Bounds="35 77 28 14" Interpretation="Exact" DataType="Byte">0</Literal>
+                                <Literal Id="n33" Terminals="Out=w23" Bounds="28 91 35 14" Interpretation="Exact" DataType="Byte">112</Literal>
+                                <Literal Id="n34" Terminals="Out=w19" Bounds="35 63 28 14" Interpretation="Exact" DataType="Byte">60</Literal>
+                                <Wire Id="w18" Joints="N(n10:Port\ out) N(b34:D111)" />
+                            </FlatSequence.Frame>
+                            <FlatSequence.Frame Id="D19" Bounds="357 7 420 609">
+                                <Wire Id="w19" Joints="N(n34:Out) N(n36:c0t0v)" />
+                                <Wire Id="w7" Joints="N(n36:outArray) N(n10:bytes\ to\ write)" />
+                                <Wire Id="w9" Joints="N(n8:Out) N(n10:return\ length)" />
+                                <Wire Id="w11" Joints="N(n11:Out) N(n10:wait\ \(ms\))" />
+                                <Wire Id="w21" Joints="N(n38:Out) N(n36:c1t0v)" />
+                                <Wire Id="w23" Joints="N(n33:Out) N(n36:c2t0v)" />
+                                <MethodCall Id="n10" Bounds="294 49 56 56" Target="I2C_core\.vix">
+                                    <Terminal Id="Port" Direction="Input" Wire="w18" DataType="Byte" Hotspot="0 0.5" Bounds="0 0 14 14" />
+                                    <Terminal Id="bytes\ to\ write" Direction="Input" Wire="w7" DataType="Byte[]" Hotspot="0 0.5" Bounds="0 14 14 14" />
+                                    <Terminal Id="return\ length" Direction="Input" Wire="w9" DataType="Byte" Hotspot="0 0.5" Bounds="0 28 14 14" />
+                                    <Terminal Id="wait\ \(ms\)" Direction="Input" Wire="w11" DataType="Int32" Hotspot="0 0.5" Bounds="0 42 14 14" />
+                                    <Terminal Id="Port\ out" Direction="Output" Wire="w20" DataType="Byte" Hotspot="1 0.5" Bounds="42 0 14 14" />
+                                    <Terminal Id="bytes\ read" Direction="Output" DataType="Byte[]" Hotspot="1 0.5" Bounds="42 14 14 14" />
+                                    <Terminal Id="success\?" Direction="Output" DataType="Boolean" Hotspot="1 0.5" Bounds="42 28 14 14" />
+                                </MethodCall>
+                                <Literal Id="n8" Terminals="Out=w9" Bounds="196 77 28 14" Interpretation="Exact" DataType="Byte">0</Literal>
+                                <Literal Id="n11" Terminals="Out=w11" Bounds="196 91 28 14" Interpretation="Exact" DataType="Int32">1</Literal>
+                                <BuildArray Id="n36" Terminals="outArray=w7, c0t0v=w19, c1t0v=w21, c2t0v=w23" Bounds="126 63 28 42" VerticalChunkCount="3" ConcatenateInputs="false" />
+                                <Literal Id="n38" Terminals="Out=w21" Bounds="70 77 28 14" Interpretation="Exact" DataType="Byte">1</Literal>
+                                <Literal Id="n33" Terminals="Out=w23" Bounds="70 91 28 14" Interpretation="Exact" DataType="Byte">32</Literal>
+                                <Literal Id="n34" Terminals="Out=w19" Bounds="70 63 28 14" Interpretation="Exact" DataType="Byte">60</Literal>
+                                <Wire Id="w18" Joints="N(b34:D19) N(n10:Port)" />
+                                <Wire Id="w20" Joints="N(n10:Port\ out) N(b35:D19)" />
+                            </FlatSequence.Frame>
+                            <FlatSequence.Frame Id="D21" Bounds="784 7 378 609">
+                                <Wire Id="w20" Joints="N(n10:Port\ out) N(b102:D21)" />
+                                <Wire Id="w19" Joints="N(n34:Out) N(n36:c0t0v)" />
+                                <Wire Id="w7" Joints="N(n36:outArray) N(n10:bytes\ to\ write)" />
+                                <Wire Id="w9" Joints="N(n8:Out) N(n10:return\ length)" />
+                                <Wire Id="w11" Joints="N(n11:Out) N(n10:wait\ \(ms\))" />
+                                <Wire Id="w21" Joints="N(n38:Out) N(n36:c1t0v)" />
+                                <Wire Id="w23" Joints="N(n33:Out) N(n36:c2t0v)" />
+                                <Wire Id="w18" Joints="N(b35:D21) N(n10:Port)" />
+                                <MethodCall Id="n10" Bounds="287 49 56 56" Target="I2C_core\.vix">
+                                    <Terminal Id="Port" Direction="Input" Wire="w18" DataType="Byte" Hotspot="0 0.5" Bounds="0 0 14 14" />
+                                    <Terminal Id="bytes\ to\ write" Direction="Input" Wire="w7" DataType="Byte[]" Hotspot="0 0.5" Bounds="0 14 14 14" />
+                                    <Terminal Id="return\ length" Direction="Input" Wire="w9" DataType="Byte" Hotspot="0 0.5" Bounds="0 28 14 14" />
+                                    <Terminal Id="wait\ \(ms\)" Direction="Input" Wire="w11" DataType="Int32" Hotspot="0 0.5" Bounds="0 42 14 14" />
+                                    <Terminal Id="Port\ out" Direction="Output" Wire="w20" DataType="Byte" Hotspot="1 0.5" Bounds="42 0 14 14" />
+                                    <Terminal Id="bytes\ read" Direction="Output" DataType="Byte[]" Hotspot="1 0.5" Bounds="42 14 14 14" />
+                                    <Terminal Id="success\?" Direction="Output" DataType="Boolean" Hotspot="1 0.5" Bounds="42 28 14 14" />
+                                </MethodCall>
+                                <Literal Id="n8" Terminals="Out=w9" Bounds="189 77 28 14" Interpretation="Exact" DataType="Byte">0</Literal>
+                                <Literal Id="n11" Terminals="Out=w11" Bounds="189 91 28 14" Interpretation="Exact" DataType="Int32">1</Literal>
+                                <BuildArray Id="n36" Terminals="outArray=w7, c0t0v=w19, c1t0v=w21, c2t0v=w23" Bounds="119 63 28 42" VerticalChunkCount="3" ConcatenateInputs="false" />
+                                <Literal Id="n38" Terminals="Out=w21" Bounds="63 77 28 14" Interpretation="Exact" DataType="Byte">2</Literal>
+                                <Literal Id="n33" Terminals="Out=w23" Bounds="63 91 28 14" Interpretation="Exact" DataType="Byte">0</Literal>
+                                <Literal Id="n34" Terminals="Out=w19" Bounds="63 63 28 14" Interpretation="Exact" DataType="Byte">60</Literal>
+                            </FlatSequence.Frame>
+                            <FlatSequence.Frame Id="D99" Bounds="1169 7 1631 609">
+                                <MethodCall Id="n35" Bounds="203 49 56 56" Target="I2C_core\.vix">
+                                    <Terminal Id="Port" Direction="Input" Wire="w104" DataType="Byte" Hotspot="0 0.5" Bounds="0 0 14 14" />
+                                    <Terminal Id="bytes\ to\ write" Direction="Input" Wire="w4" DataType="Byte[]" Hotspot="0 0.5" Bounds="0 14 14 14" />
+                                    <Terminal Id="return\ length" Direction="Input" Wire="w6" DataType="Byte" Hotspot="0 0.5" Bounds="0 28 14 14" />
+                                    <Terminal Id="wait\ \(ms\)" Direction="Input" Wire="w8" DataType="Int32" Hotspot="0 0.5" Bounds="0 42 14 14" />
+                                    <Terminal Id="Port\ out" Direction="Output" DataType="Byte" Hotspot="1 0.5" Bounds="42 0 14 14" />
+                                    <Terminal Id="bytes\ read" Direction="Output" Wire="w129" DataType="Byte[]" Hotspot="1 0.5" Bounds="42 14 14 14" />
+                                    <Terminal Id="success\?" Direction="Output" DataType="Boolean" Hotspot="1 0.5" Bounds="42 28 14 14" />
+                                </MethodCall>
+                                <Wire Id="w4" Joints="N(n30:outArray) N(n35:bytes\ to\ write)" />
+                                <Wire Id="w6" Joints="N(n36:Out) N(n35:return\ length)" />
+                                <Wire Id="w8" Joints="N(n34:Out) N(n35:wait\ \(ms\))" />
+                                <BuildArray Id="n30" Terminals="outArray=w4, c0t0v=w12, c1t0v=w14" Bounds="126 63 28 28" VerticalChunkCount="2" ConcatenateInputs="false" />
+                                <Wire Id="w12" Joints="N(n33:Out) N(n30:c0t0v)" />
+                                <Wire Id="w14" Joints="N(n31:Out) N(n30:c1t0v)" />
+                                <Literal Id="n31" Terminals="Out=w14" Bounds="56 77 28 14" Interpretation="Exact" DataType="Int32">3</Literal>
+                                <Literal Id="n33" Terminals="Out=w12" Bounds="56 63 28 14" Interpretation="Exact" DataType="Int32">60</Literal>
+                                <Literal Id="n34" Terminals="Out=w8" Bounds="161 91 28 14" Interpretation="Exact" DataType="Int32">1</Literal>
+                                <Literal Id="n36" Terminals="Out=w6" Bounds="161 77 28 14" Interpretation="Exact" DataType="Byte">6</Literal>
+                                <DataAccessor DataItem="X" Id="n8" Bounds="357 476 70 14">
+                                    <Terminal Id="Value" Direction="Input" Wire="w122" Hotspot="0 0.5" Bounds="0 0 70 14" />
+                                </DataAccessor>
+                                <Wire Id="w123" Joints="N(n58:x\+y) h(8) v(175) h(-365) v(42) v(70) N(n101:x) B(5) v(70) h(217) v(-49) N(n98:f) B(4) N(n105:y)" />
+                                <Wire Id="w24" Joints="N(n23:Out) N(n46:c0t0v)" />
+                                <Wire Id="w45" Joints="N(n48:Out) N(n47:c0t0v)" />
+                                <Wire Id="w55" Joints="N(n54:Out) N(n53:x)" />
+                                <Wire Id="w117" Joints="N(n53:x\*y) h(35) v(-35) N(n58:y)" />
+                                <Wire Id="w112" Joints="N(n46:c0t1v) h(231) v(14) N(n58:x)" />
+                                <Wire Id="w23" Joints="N(n47:c0t1v) h(154) v(-42) N(n53:y)" />
+                                <ArrayIndex Rank="1" VerticalChunkCount="1" Id="n46" Terminals="array=w129, c0t0v=w24, c0t1v=w112" Bounds="119 147 28 28" />
+                                <Literal Id="n23" Terminals="Out=w24" Bounds="77 161 28 14" Interpretation="Exact" DataType="Byte">0</Literal>
+                                <ArrayIndex Rank="1" VerticalChunkCount="1" Id="n47" Terminals="array=w129, c0t0v=w45, c0t1v=w23" Bounds="126 259 28 28" />
+                                <Literal Id="n48" Terminals="Out=w45" Bounds="77 273 28 14" Interpretation="Exact" DataType="Byte">1</Literal>
+                                <Multiply Id="n53" Terminals="x\*y=w117, y=w23, x=w55" TopLeft="315 217" />
+                                <Literal Id="n54" Terminals="Out=w55" Bounds="252 217 35 14" Interpretation="Exact" DataType="Int32">256</Literal>
+                                <Add Id="n58" Terminals="x\+y=w123, y=w117, x=w112" TopLeft="385 175" />
+                                <Wire Id="w114" Joints="N(n104:Out) N(n101:y)" />
+                                <Wire Id="w115" Joints="N(n101:x\ \&gt;\ y\?) N(n98:s)" />
+                                <Wire Id="w116" Joints="N(n107:Out) N(n105:x)" />
+                                <Wire Id="w118" Joints="N(n105:x\-y) h(42) v(28) N(n106:x)" />
+                                <Wire Id="w119" Joints="N(n110:Out) N(n106:y)" />
+                                <Wire Id="w120" Joints="N(n106:x\*y) h(14) v(35) N(n98:t)" />
+                                <Select Id="n98" Terminals="s\?\ t\:f=w122, f=w123, s=w115, t=w120" TopLeft="280 462" />
+                                <IsGreater Id="n101" Terminals="x\ \&gt;\ y\?=w115, y=w114, x=w123" TopLeft="203 469" />
+                                <Literal Id="n104" Terminals="Out=w114" Bounds="112 483 49 14" Interpretation="Exact" DataType="Int32">32767</Literal>
+                                <Subtract Id="n105" Terminals="x\-y=w118, y=w123, x=w116" TopLeft="154 385" />
+                                <Multiply Id="n106" Terminals="x\*y=w120, y=w119, x=w118" TopLeft="231 420" />
+                                <Literal Id="n107" Terminals="Out=w116" Bounds="70 385 49 14" Interpretation="Exact" DataType="Int32">65536</Literal>
+                                <Literal Id="n110" Terminals="Out=w119" Bounds="161 434 28 14" Interpretation="Exact" DataType="Int32">-1</Literal>
+                                <DataAccessor DataItem="Z" Id="n41" Bounds="896 469 70 14">
+                                    <Terminal Id="Value" Direction="Input" Wire="w124" Hotspot="0 0.5" Bounds="0 0 70 14" />
+                                </DataAccessor>
+                                <DataAccessor DataItem="Y" Id="n111" Bounds="1344 455 70 14">
+                                    <Terminal Id="Value" Direction="Input" Wire="w121" Hotspot="0 0.5" Bounds="0 0 70 14" />
+                                </DataAccessor>
+                                <Wire Id="w56" Joints="N(n76:x\+y) h(8) v(175) h(-365) v(42) N(n82:y) B(4) v(70) v(70) h(217) v(-49) N(n77:f) B(6) N(n78:x)" />
+                                <Wire Id="w57" Joints="N(n71:Out) N(n70:c0t0v)" />
+                                <Wire Id="w58" Joints="N(n73:Out) N(n72:c0t0v)" />
+                                <Wire Id="w59" Joints="N(n75:Out) N(n74:x)" />
+                                <Wire Id="w60" Joints="N(n74:x\*y) h(35) v(-35) N(n76:y)" />
+                                <Wire Id="w61" Joints="N(n70:c0t1v) h(231) v(14) N(n76:x)" />
+                                <Wire Id="w62" Joints="N(n72:c0t1v) h(154) v(-42) N(n74:y)" />
+                                <Wire Id="w64" Joints="N(n81:Out) N(n78:y)" />
+                                <Wire Id="w65" Joints="N(n78:x\ \&gt;\ y\?) N(n77:s)" />
+                                <Wire Id="w66" Joints="N(n84:Out) N(n82:x)" />
+                                <Wire Id="w67" Joints="N(n82:x\-y) h(42) v(28) N(n83:x)" />
+                                <Wire Id="w68" Joints="N(n85:Out) N(n83:y)" />
+                                <Wire Id="w69" Joints="N(n83:x\*y) h(14) v(35) N(n77:t)" />
+                                <ArrayIndex Rank="1" VerticalChunkCount="1" Id="n70" Terminals="array=w129, c0t0v=w57, c0t1v=w61" Bounds="630 140 28 28" />
+                                <Literal Id="n71" Terminals="Out=w57" Bounds="588 154 28 14" Interpretation="Exact" DataType="Byte">2</Literal>
+                                <ArrayIndex Rank="1" VerticalChunkCount="1" Id="n72" Terminals="array=w129, c0t0v=w58, c0t1v=w62" Bounds="637 252 28 28" />
+                                <Literal Id="n73" Terminals="Out=w58" Bounds="588 266 28 14" Interpretation="Exact" DataType="Byte">3</Literal>
+                                <Multiply Id="n74" Terminals="x\*y=w60, y=w62, x=w59" TopLeft="826 210" />
+                                <Literal Id="n75" Terminals="Out=w59" Bounds="763 210 35 14" Interpretation="Exact" DataType="Int32">256</Literal>
+                                <Add Id="n76" Terminals="x\+y=w56, y=w60, x=w61" TopLeft="896 168" />
+                                <Select Id="n77" Terminals="s\?\ t\:f=w124, f=w56, s=w65, t=w69" TopLeft="791 455" />
+                                <IsGreater Id="n78" Terminals="x\ \&gt;\ y\?=w65, y=w64, x=w56" TopLeft="714 462" />
+                                <Literal Id="n81" Terminals="Out=w64" Bounds="623 476 49 14" Interpretation="Exact" DataType="Int32">32767</Literal>
+                                <Subtract Id="n82" Terminals="x\-y=w67, y=w56, x=w66" TopLeft="665 378" />
+                                <Multiply Id="n83" Terminals="x\*y=w69, y=w68, x=w67" TopLeft="742 413" />
+                                <Literal Id="n84" Terminals="Out=w66" Bounds="581 378 49 14" Interpretation="Exact" DataType="Int32">65536</Literal>
+                                <Literal Id="n85" Terminals="Out=w68" Bounds="672 427 28 14" Interpretation="Exact" DataType="Int32">-1</Literal>
+                                <Wire Id="w87" Joints="N(n115:x\+y) h(8) v(175) h(-365) v(42) N(n122:y) B(4) v(70) v(70) h(217) v(-49) N(n116:f) B(6) N(n117:x)" />
+                                <Wire Id="w88" Joints="N(n103:Out) N(n102:c0t0v)" />
+                                <Wire Id="w89" Joints="N(n109:Out) N(n108:c0t0v)" />
+                                <Wire Id="w90" Joints="N(n113:Out) N(n112:x)" />
+                                <Wire Id="w91" Joints="N(n112:x\*y) h(35) v(-35) N(n115:y)" />
+                                <Wire Id="w92" Joints="N(n102:c0t1v) h(224) v(14) N(n115:x)" />
+                                <Wire Id="w93" Joints="N(n108:c0t1v) h(154) v(-42) N(n112:y)" />
+                                <Wire Id="w95" Joints="N(n120:Out) N(n117:y)" />
+                                <Wire Id="w96" Joints="N(n117:x\ \&gt;\ y\?) N(n116:s)" />
+                                <Wire Id="w97" Joints="N(n124:Out) N(n122:x)" />
+                                <Wire Id="w98" Joints="N(n122:x\-y) h(42) v(28) N(n123:x)" />
+                                <Wire Id="w99" Joints="N(n125:Out) N(n123:y)" />
+                                <Wire Id="w100" Joints="N(n123:x\*y) h(14) v(35) N(n116:t)" />
+                                <ArrayIndex Rank="1" VerticalChunkCount="1" Id="n102" Terminals="array=w129, c0t0v=w88, c0t1v=w92" Bounds="1099 126 28 28" />
+                                <Literal Id="n103" Terminals="Out=w88" Bounds="1050 140 28 14" Interpretation="Exact" DataType="Byte">4</Literal>
+                                <ArrayIndex Rank="1" VerticalChunkCount="1" Id="n108" Terminals="array=w129, c0t0v=w89, c0t1v=w93" Bounds="1099 238 28 28" />
+                                <Literal Id="n109" Terminals="Out=w89" Bounds="1050 252 28 14" Interpretation="Exact" DataType="Byte">5</Literal>
+                                <Multiply Id="n112" Terminals="x\*y=w91, y=w93, x=w90" TopLeft="1288 196" />
+                                <Literal Id="n113" Terminals="Out=w90" Bounds="1225 196 35 14" Interpretation="Exact" DataType="Int32">256</Literal>
+                                <Add Id="n115" Terminals="x\+y=w87, y=w91, x=w92" TopLeft="1358 154" />
+                                <Select Id="n116" Terminals="s\?\ t\:f=w121, f=w87, s=w96, t=w100" TopLeft="1253 441" />
+                                <IsGreater Id="n117" Terminals="x\ \&gt;\ y\?=w96, y=w95, x=w87" TopLeft="1176 448" />
+                                <Literal Id="n120" Terminals="Out=w95" Bounds="1085 462 49 14" Interpretation="Exact" DataType="Int32">32767</Literal>
+                                <Subtract Id="n122" Terminals="x\-y=w98, y=w87, x=w97" TopLeft="1127 364" />
+                                <Multiply Id="n123" Terminals="x\*y=w100, y=w99, x=w98" TopLeft="1204 399" />
+                                <Literal Id="n124" Terminals="Out=w97" Bounds="1043 364 49 14" Interpretation="Exact" DataType="Int32">65536</Literal>
+                                <Literal Id="n125" Terminals="Out=w99" Bounds="1134 413 28 14" Interpretation="Exact" DataType="Int32">-1</Literal>
+                                <Wire Id="w121" Joints="N(n116:s\?\ t\:f) N(n111:Value)" />
+                                <Wire Id="w124" Joints="N(n77:s\?\ t\:f) N(n41:Value)" />
+                                <Wire Id="w129" Joints="N(n35:bytes\ read) h(34.198) v(62.882) h(-27.198) v(0.118) h(-154) v(21) N(n46:array) B(5) h(-70) v(133) N(n47:array) B(2) h(209.583) h(120.219) v(0.118) v(14) N(n70:array) B(13) h(356.737) N(n102:array) B(16) v(112) N(n108:array) B(11) v(126.118) N(n72:array)" />
+                                <Wire Id="w122" Joints="N(n98:s\?\ t\:f) N(n8:Value)" />
+                                <Wire Id="w104" Joints="N(b102:D99) N(n35:Port)" />
+                            </FlatSequence.Frame>
+                            <FlatSequence.Tunnel Id="b97" Terminals="n112=w97, D111=w5" TopLeft="154 0" />
+                            <FlatSequence.Tunnel Id="b34" Terminals="D111=w18, D19=w18" TopLeft="346.5 56" />
+                            <FlatSequence.Tunnel Id="b35" Terminals="D19=w20, D21=w18" TopLeft="773.5 56" />
+                            <FlatSequence.Tunnel Id="b102" Terminals="D21=w20, D99=w104" TopLeft="1158.5 56" />
+                        </FlatSequence>
+                        <Wire Id="w97" Joints="N(n110:Port\ Out) h(7) N(b97:n112)" />
+                    </CaseStructure.Case>
+                    <CaseStructure.Selector Id="b19" Terminals="n0=w24, d0, d1" TopLeft="0 42" />
+                    <CaseStructure.Tunnel Id="b32" Terminals="n0=w26, d0, d1=w9" TopLeft="42 0" />
+                </CaseStructure>
+                <MethodCall Id="n18" Bounds="-728 252 56 56" Target="ConvertEV3SensorPortNumberToNXTPort\.vix">
+                    <Terminal Id="LayeredSinglePortNumber" Direction="Input" Wire="w16" DataType="Double" Hotspot="0 0.5" Bounds="0 0 14 14" />
+                    <Terminal Id="NXTPort" Direction="Output" Wire="w26" DataType="Byte" Hotspot="1 0.5" Bounds="42 0 14 14" />
+                    <Terminal Id="valid\?" Direction="Output" Wire="w24" DataType="Boolean" Hotspot="1 0.5" Bounds="42 14 14 14" />
+                </MethodCall>
+                <Wire Id="w24" Joints="N(n18:valid\?) h(35) v(91) N(b19:n0)" />
+                <Comment Bounds="-605 287 59 31" SizeMode="User" AttachStyle="Free">
+                    <Content>Initialize</Content>
+                </Comment>
+                <Wire Id="w26" Joints="N(n18:NXTPort) h(175) N(b32:n0)" />
+            </BlockDiagram>
+        </VirtualInstrument>
+    </Namespace>
+</SourceFile>
