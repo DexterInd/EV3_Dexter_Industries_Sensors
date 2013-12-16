@@ -312,5 +312,46 @@
        <Description><![CDATA[<p>Context help for Switch - Sample Sensor - Compare - Sensor Value</p>]]></Description>
       </Block>	  
     </PolyGroup>
+	<PolyGroup Name="dFlex" DisplayName="dFlex" DisplayNamePrefix="dFlex">
+      <Parameter Name="Direction" DisplayName="Direction">
+        <Description><![CDATA[<p>Context help for Direction</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Port" DisplayName="Port" >
+        <Description><![CDATA[<p>Context help for Port</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Raw" DisplayName="Raw">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>
+	  <Parameter Name="Volt" DisplayName="Volt">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>
+      <Block Mode="FlexRead" DisplayName="FlexRead">
+        <Description><![CDATA[<p>Context help for Measure Sensor Value</p>]]></Description>
+      </Block>   	  
+      <Block Mode="WaitSampleSensorSampleCompareValue" DisplayName="" >
+        <Description><![CDATA[<p>Context help for Wait - Sample Sensor - Compare - Sensor Value</p>]]></Description>
+      </Block>
+      <Block Mode="WaitSampleSensorSampleChangeValue" DisplayName="" >
+        <Description><![CDATA[<p>Context help for Wait - Sample Sensor - Change - Sensor Value</p>]]></Description>
+      </Block>
+      <Block Mode="LoopSampleSensorSampleCompareValue" DisplayName="" >
+        <Description><![CDATA[<p>Context help for Loop - Sample Sensor - Compare - Sensor Value</p>]]></Description>
+      </Block>  	  
+      <Block Mode="SwitchSampleSensorSampleCompareValue" DisplayName="" >
+       <Description><![CDATA[<p>Context help for Switch - Sample Sensor - Compare - Sensor Value</p>]]></Description>
+      </Block>	  
+    </PolyGroup>
+	<PolyGroup Name="dSwitch" DisplayName="dSwitch">
+      <Description><![CDATA[<p>Context help for PolyGroup <b>dSwitch</b></p>]]></Description>
+      <Parameter Name="MotorPort" DisplayName="MotorPort">
+        <Description><![CDATA[<p>Context help for Parameter <b>Port</b></p>]]></Description>
+      </Parameter>
+	  <Parameter Name="On" DisplayName="On">
+        <Description><![CDATA[<p>Context help for Parameter <b>I2CAddr</b></p>]]></Description>
+      </Parameter>
+      <Block Mode="useSwitch" DisplayName="useSwitch">
+        <Description><![CDATA[<p>Context help for Block <b>Move</b></p>]]></Description>
+      </Block>
+    </PolyGroup>
   </PolyGroups>
 </EditorStrings>
