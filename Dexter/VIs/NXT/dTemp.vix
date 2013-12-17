@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SourceFile Version="1.0.2.10" xmlns="http://www.ni.com/SourceModel.xsd">
+    <Namespace Name="Project">
+        <VirtualInstrument IsTopLevel="false" IsReentrant="false" Version="1.0.2.0" xmlns="http://www.ni.com/VirtualInstrument.xsd">
+            <DataItem Name="SequenceIn" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="6" />
+            <DataItem Name="SequenceOut" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" DefaultTerminalDirection="Input" CallUsage="None" CallDirection="Output" CallIndex="6" />
+            <DataItem Name="Port" DataType="Single" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="0" DefaultValue="0" />
+            <DataItem Name="Temp" DataType="Single" DefaultTerminalDirection="Input" CallUsage="None" CallDirection="Output" CallIndex="0" DefaultValue="0" />
+            <FrontPanel>
+                <fpruntime:FrontPanelCanvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:fpruntime="clr-namespace:NationalInstruments.LabVIEW.FrontPanelRuntime;assembly=NationalInstruments.LabVIEW.FrontPanelRuntime" xmlns:Model="clr-namespace:NationalInstruments.SourceModel.Designer;assembly=NationalInstruments.SourceModel" x:Name="FrontPanel" Model:DesignerSurfaceProperties.CanSnapToObjects="True" Model:DesignerSurfaceProperties.SnapToObjects="True" Model:DesignerSurfaceProperties.ShowSnaplines="True" Model:DesignerSurfaceProperties.ShowControlAdorners="True" Width="640" Height="480" />
+            </FrontPanel>
+            <BlockDiagram Name="__RootDiagram__">
+                <DataAccessor DataItem="Port" Id="n19" Bounds="861 322 70 14">
+                    <Terminal Id="Value" Direction="Output" Wire="w43" Hotspot="1 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <Wire Id="w43" Joints="N(n19:Value) N(n12:Port)" />
+                <Wire Id="w6" Joints="N(n5:Out) N(n12:SensorType)" />
+                <Wire Id="w8" Joints="N(n44:Out) N(n12:SensorMode)" />
+                <MethodCall Id="n12" Bounds="1071 322 56 56" Target="NXTAnalogSensorSub\.vix">
+                    <Terminal Id="Port" Direction="Input" Wire="w43" DataType="Byte" Hotspot="0 0.5" Bounds="0 0 14 14" />
+                    <Terminal Id="SensorType" Direction="Input" Wire="w6" DataType="Byte" Hotspot="0 0.5" Bounds="0 14 14 14" />
+                    <Terminal Id="SensorMode" Direction="Input" Wire="w8" DataType="Byte" Hotspot="0 0.5" Bounds="0 28 14 14" />
+                    <Terminal Id="raw" Direction="Output" Wire="w84" DataType="UInt16" Hotspot="1 0.5" Bounds="42 0 14 14" />
+                    <Terminal Id="scaled" Direction="Output" DataType="UInt16" Hotspot="1 0.5" Bounds="42 14 14 14" />
+                </MethodCall>
+                <Literal Id="n5" Terminals="Out=w6" Bounds="1022 336 28 14" Interpretation="Exact" DataType="Byte">9</Literal>
+                <Literal Id="n44" Terminals="Out=w8" Bounds="1015 350 35 14" Interpretation="Exact" DataType="Byte">128</Literal>
+                <Wire Id="w20" Joints="N(n21:Out) N(n16:x)" />
+                <Wire Id="w21" Joints="N(n16:x\-y) N(n15:y)" />
+                <Wire Id="w123" Joints="N(n34:s\?\ t\:f) h(7) v(-49) N(n98:f)" />
+                <Wire Id="w120" Joints="N(n30:Out) N(n98:t)" />
+                <Wire Id="w114" Joints="N(n104:Out) N(n101:y)" />
+                <Wire Id="w115" Joints="N(n101:x\ \&gt;\ y\?) N(n98:s)" />
+                <Wire Id="w33" Joints="N(n32:Out) N(n31:y)" />
+                <Wire Id="w36" Joints="N(n31:x\ \&gt;\ y\?) N(n34:s)" />
+                <Wire Id="w37" Joints="N(n35:Out) N(n34:t)" />
+                <Wire Id="w39" Joints="N(n41:Out) N(n40:y)" />
+                <Wire Id="w18" Joints="N(n43:Out) N(n42:t)" />
+                <Wire Id="w44" Joints="N(n40:x\ \&gt;\ y\?) N(n42:s)" />
+                <Wire Id="w46" Joints="N(n45:Out) N(n42:f)" />
+                <Wire Id="w47" Joints="N(n42:s\?\ t\:f) h(14) v(-35) N(n34:f)" />
+                <Wire Id="w4" Joints="N(n48:Out) h(21) v(49) N(n53:array)" />
+                <Wire Id="w53" Joints="N(n52:Out) h(21) v(49) N(n54:array)" />
+                <Wire Id="w54" Joints="N(n98:s\?\ t\:f) h(46) v(70) N(n53:c0t0v) B(2) v(126) N(n54:c0t0v) B(4) v(140) N(n57:c0t0v) B(6) v(126) N(n61:c0t0v)" />
+                <Wire Id="w55" Joints="N(n56:Out) h(21) v(49) N(n57:array)" />
+                <Wire Id="w59" Joints="N(n60:Out) h(21) v(49) N(n61:array)" />
+                <Wire Id="w61" Joints="N(n59:ln\(x\)) h(23) v(8) h(5) v(300) h(567) v(-308) N(n69:x) B(5) h(63) N(n63:y) B(8) v(-14) N(n62:y) B(10) v(-14) N(n62:x)" />
+                <Wire Id="w63" Joints="N(n62:x\*y) h(14) h(21) v(7) N(n63:x) B(1) v(-147) N(n67:x)" />
+                <Wire Id="w65" Joints="N(n15:x\/y) h(12) h(25) v(70) h(41) v(63) N(n31:x) B(4) N(n101:x) B(3) v(112) N(n40:x) B(1) v(140) h(-47) v(119) N(n59:x)" />
+                <Wire Id="w66" Joints="N(n61:c0t1v) h(63) v(-35) N(n65:x)" />
+                <Wire Id="w67" Joints="N(n63:x\*y) h(14) v(-42) N(n65:y)" />
+                <Wire Id="w68" Joints="N(n57:c0t1v) N(n67:y)" />
+                <Wire Id="w70" Joints="N(n54:c0t1v) N(n69:y)" />
+                <Wire Id="w72" Joints="N(n53:c0t1v) N(n71:x)" />
+                <Wire Id="w73" Joints="N(n69:x\*y) h(98) v(-105) N(n71:y)" />
+                <Wire Id="w75" Joints="N(n71:x\+y) N(n74:x)" />
+                <Wire Id="w76" Joints="N(n67:x\*y) h(182) v(-238) N(n74:y)" />
+                <Wire Id="w78" Joints="N(n74:x\+y) N(n77:x)" />
+                <Wire Id="w79" Joints="N(n65:x\*y) h(259) v(-336) N(n77:y)" />
+                <Wire Id="w81" Joints="N(n77:x\+y) N(n80:y)" />
+                <Wire Id="w83" Joints="N(n82:Out) N(n80:x)" />
+                <Wire Id="w85" Joints="N(n80:x\/y) N(n84:x)" />
+                <Wire Id="w87" Joints="N(n86:Out) N(n84:y)" />
+                <DataAccessor DataItem="Temp" Id="n14" Bounds="2730 532 70 14">
+                    <Terminal Id="Value" Direction="Input" Wire="w99" Hotspot="0 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <Divide Id="n15" Terminals="x\/y=w65, y=w21, x=w84" TopLeft="1379 357" />
+                <Subtract Id="n16" Terminals="x\-y=w21, y=w84, x=w20" TopLeft="1330 364" />
+                <Literal Id="n21" Terminals="Out=w20" Bounds="1281 364 42 14" Interpretation="Exact" DataType="Single">1024</Literal>
+                <Select Id="n98" Terminals="s\?\ t\:f=w54, f=w123, s=w115, t=w120" TopLeft="1666 427" />
+                <IsGreater Id="n101" Terminals="x\ \&gt;\ y\?=w115, y=w114, x=w65" TopLeft="1589 434" />
+                <Literal Id="n104" Terminals="Out=w114" Bounds="1498 448 49 14" Interpretation="Exact" DataType="Single">3.277</Literal>
+                <Literal Id="n30" Terminals="Out=w120" Bounds="1631 427 28 14" Interpretation="Exact" DataType="SByte">0</Literal>
+                <IsGreater Id="n31" Terminals="x\ \&gt;\ y\?=w36, y=w33, x=w65" TopLeft="1554 497" />
+                <Literal Id="n32" Terminals="Out=w33" Bounds="1491 511 56 14" Interpretation="Exact" DataType="Single">0.3599</Literal>
+                <Select Id="n34" Terminals="s\?\ t\:f=w123, f=w47, s=w36, t=w37" TopLeft="1624 490" />
+                <Literal Id="n35" Terminals="Out=w37" Bounds="1596 490 28 14" Interpretation="Exact" DataType="SByte">1</Literal>
+                <IsGreater Id="n40" Terminals="x\ \&gt;\ y\?=w44, y=w39, x=w65" TopLeft="1456 546" />
+                <Literal Id="n41" Terminals="Out=w39" Bounds="1379 560 63 14" Interpretation="Exact" DataType="Single">0.06816</Literal>
+                <Select Id="n42" Terminals="s\?\ t\:f=w47, f=w46, s=w44, t=w18" TopLeft="1533 539" />
+                <Literal Id="n43" Terminals="Out=w18" Bounds="1484 539 28 14" Interpretation="Exact" DataType="SByte">2</Literal>
+                <Literal Id="n45" Terminals="Out=w46" Bounds="1484 567 28 14" Interpretation="Exact" DataType="SByte">3</Literal>
+                <Literal Facade="ArrayConstantFacade" Id="n48" Terminals="Out=w4" Bounds="1792 448 98 56" Interpretation="Exact" DataType="Single[]">[0.003357042,0.003354017,0.003353048,0.00335361669]</Literal>
+                <ArrayIndex Rank="1" VerticalChunkCount="1" Id="n53" Terminals="array=w4, c0t0v=w54, c0t1v=w72" Bounds="1918 497 28 28" />
+                <Comment Bounds="1792 406 84 28" SizeMode="User" AttachStyle="Free">
+                    <Content>a</Content>
+                </Comment>
+                <Literal Facade="ArrayConstantFacade" Id="n52" Terminals="Out=w53" Bounds="1778 574 112 56" Interpretation="Exact" DataType="Single[]">[0.0002521485,0.00025617244,0.0002542023,0.000253772]</Literal>
+                <ArrayIndex Rank="1" VerticalChunkCount="1" Id="n54" Terminals="array=w53, c0t0v=w54, c0t1v=w70" Bounds="1918 623 28 28" />
+                <Comment Bounds="1792 532 84 28" SizeMode="User" AttachStyle="Free">
+                    <Content>b</Content>
+                </Comment>
+                <Literal Facade="ArrayConstantFacade" Id="n56" Terminals="Out=w55" Bounds="1778 714 112 56" Interpretation="Exact" DataType="Single[]">[3.37432834E-06,2.14009424E-06,1.14311626E-06,8.543327E-07]</Literal>
+                <ArrayIndex Rank="1" VerticalChunkCount="1" Id="n57" Terminals="array=w55, c0t0v=w54, c0t1v=w68" Bounds="1918 763 28 28" />
+                <Comment Bounds="1792 672 84 28" SizeMode="User" AttachStyle="Free">
+                    <Content>c</Content>
+                </Comment>
+                <Literal Facade="ArrayConstantFacade" Id="n60" Terminals="Out=w59" Bounds="1778 840 112 56" Interpretation="Exact" DataType="Single[]">[-6.495731E-08,-7.240522E-08,-6.938356E-08,-8.791226E-08]</Literal>
+                <ArrayIndex Rank="1" VerticalChunkCount="1" Id="n61" Terminals="array=w59, c0t0v=w54, c0t1v=w66" Bounds="1918 889 28 28" />
+                <Comment Bounds="1792 798 84 28" SizeMode="User" AttachStyle="Free">
+                    <Content>d</Content>
+                </Comment>
+                <NaturalLogarithm Id="n59" Terminals="ln\(x\)=w61, x=w65" TopLeft="1379 623" />
+                <Multiply Id="n62" Terminals="x\*y=w63, y=w61, x=w61" TopLeft="2072 903" />
+                <Multiply Id="n63" Terminals="x\*y=w67, y=w61, x=w63" TopLeft="2156 917" />
+                <Multiply Id="n65" Terminals="x\*y=w79, y=w67, x=w66" TopLeft="2205 868" />
+                <Multiply Id="n67" Terminals="x\*y=w76, y=w68, x=w63" TopLeft="2205 763" />
+                <Multiply Id="n69" Terminals="x\*y=w73, y=w70, x=w61" TopLeft="2212 623" />
+                <Add Id="n71" Terminals="x\+y=w75, y=w73, x=w72" TopLeft="2345 511" />
+                <Add Id="n74" Terminals="x\+y=w78, y=w76, x=w75" TopLeft="2422 518" />
+                <Add Id="n77" Terminals="x\+y=w81, y=w79, x=w78" TopLeft="2499 525" />
+                <Divide Id="n80" Terminals="x\/y=w85, y=w81, x=w83" TopLeft="2569 518" />
+                <Literal Id="n82" Terminals="Out=w83" Bounds="2527 518 28 14" Interpretation="Exact" DataType="Single">1</Literal>
+                <Subtract Id="n84" Terminals="x\-y=w99, y=w87, x=w85" TopLeft="2639 525" />
+                <Literal Id="n86" Terminals="Out=w87" Bounds="2597 539 35 14" Interpretation="Exact" DataType="Single">273</Literal>
+                <Wire Id="w99" Joints="N(n84:x\-y) N(n14:Value)" />
+                <Wire Id="w84" Joints="N(n12:raw) h(125.684) v(28) v(28) N(n16:y) B(2) h(112.316) v(7) N(n15:x)" />
+            </BlockDiagram>
+        </VirtualInstrument>
+    </Namespace>
+</SourceFile>
