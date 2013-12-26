@@ -241,6 +241,9 @@
       <Parameter Name="Z" DisplayName="Z">
         <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
       </Parameter>
+	  <Parameter Name="Heading" DisplayName="Heading">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>
       <Block Mode="ReadCompass" DisplayName="ReadCompass">
         <Description><![CDATA[<p>Context help for Measure Sensor Value</p>]]></Description>
       </Block>   	  
@@ -352,6 +355,53 @@
       <Block Mode="useSwitch" DisplayName="useSwitch">
         <Description><![CDATA[<p>Context help for Block <b>Move</b></p>]]></Description>
       </Block>
+    </PolyGroup>
+	<PolyGroup Name="dSound" DisplayName="dSound" DisplayNamePrefix="dSound">
+      <Parameter Name="Direction" DisplayName="Direction">
+        <Description><![CDATA[<p>Context help for Direction</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Port" DisplayName="Port" >
+        <Description><![CDATA[<p>Context help for Port</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Comparison" DisplayName="Compare Type">
+        <Description><![CDATA[<p>Context help for Compare Type</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Threshold" DisplayName="Threshold Value">
+        <Description><![CDATA[<p>Context help for Threshold Value</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Amount" DisplayName="Amount" >
+        <Description><![CDATA[<p>Context help for Amount</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Pitch" DisplayName="Pitch">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Power" DisplayName="Power">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>
+	  <Parameter Name="Mode" DisplayName="Mode">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>
+      <Block Mode="SoundPower" DisplayName="SoundPower">
+        <Description><![CDATA[<p>Context help for Measure Sensor Value</p>]]></Description>
+      </Block>
+      <Block Mode="SoundPitch" DisplayName="SoundPitch">
+        <Description><![CDATA[<p>Context help for Compare Sensor Value</p>]]></Description>
+      </Block>
+      <Block Mode="SampleChangeValue" DisplayName="Sensor Value" >
+        <Description><![CDATA[<p>Context help for Sensor Value Change</p>]]></Description>
+      </Block>
+    <Block Mode="WaitSampleSensorSampleCompareValue" DisplayName="" >
+        <Description><![CDATA[<p>Context help for Wait - Sample Sensor - Compare - Sensor Value</p>]]></Description>
+      </Block>
+    <Block Mode="WaitSampleSensorSampleChangeValue" DisplayName="" >
+        <Description><![CDATA[<p>Context help for Wait - Sample Sensor - Change - Sensor Value</p>]]></Description>
+      </Block>
+    <Block Mode="LoopSampleSensorSampleCompareValue" DisplayName="" >
+        <Description><![CDATA[<p>Context help for Loop - Sample Sensor - Compare - Sensor Value</p>]]></Description>
+      </Block>  	  
+    <Block Mode="SwitchSampleSensorSampleCompareValue" DisplayName="" >
+       <Description><![CDATA[<p>Context help for Switch - Sample Sensor - Compare - Sensor Value</p>]]></Description>
+      </Block>	  
     </PolyGroup>
   </PolyGroups>
 </EditorStrings>

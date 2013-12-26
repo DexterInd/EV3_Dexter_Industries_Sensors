@@ -41,12 +41,10 @@
                 <Wire Id="w47" Joints="N(n42:s\?\ t\:f) h(14) v(-35) N(n34:f)" />
                 <Wire Id="w4" Joints="N(n48:Out) h(21) v(49) N(n53:array)" />
                 <Wire Id="w53" Joints="N(n52:Out) h(21) v(49) N(n54:array)" />
-                <Wire Id="w54" Joints="N(n98:s\?\ t\:f) h(46) v(70) N(n53:c0t0v) B(2) v(126) N(n54:c0t0v) B(4) v(140) N(n57:c0t0v) B(6) v(126) N(n61:c0t0v)" />
+                <Wire Id="w54" Joints="N(n98:s\?\ t\:f) h(46) v(70) v(126) v(140) v(126) N(n61:c0t0v) B(4) N(n57:c0t0v) B(3) N(n54:c0t0v) B(2) N(n53:c0t0v)" />
                 <Wire Id="w55" Joints="N(n56:Out) h(21) v(49) N(n57:array)" />
                 <Wire Id="w59" Joints="N(n60:Out) h(21) v(49) N(n61:array)" />
-                <Wire Id="w61" Joints="N(n59:ln\(x\)) h(23) v(8) h(5) v(300) h(567) v(-308) N(n69:x) B(5) h(63) N(n63:y) B(8) v(-14) N(n62:y) B(10) v(-14) N(n62:x)" />
-                <Wire Id="w63" Joints="N(n62:x\*y) h(14) h(21) v(7) N(n63:x) B(1) v(-147) N(n67:x)" />
-                <Wire Id="w65" Joints="N(n15:x\/y) h(12) h(25) v(70) h(41) v(63) N(n31:x) B(4) N(n101:x) B(3) v(112) N(n40:x) B(1) v(140) h(-47) v(119) N(n59:x)" />
+                <Wire Id="w63" Joints="N(n62:x\*y) h(14) v(-147) N(n67:x) B(1) h(21) v(7) N(n63:x)" />
                 <Wire Id="w66" Joints="N(n61:c0t1v) h(63) v(-35) N(n65:x)" />
                 <Wire Id="w67" Joints="N(n63:x\*y) h(14) v(-42) N(n65:y)" />
                 <Wire Id="w68" Joints="N(n57:c0t1v) N(n67:y)" />
@@ -64,18 +62,18 @@
                 <DataAccessor DataItem="Temp" Id="n14" Bounds="2730 532 70 14">
                     <Terminal Id="Value" Direction="Input" Wire="w99" Hotspot="0 0.5" Bounds="0 0 70 14" />
                 </DataAccessor>
-                <Divide Id="n15" Terminals="x\/y=w65, y=w21, x=w84" TopLeft="1379 357" />
+                <Divide Id="n15" Terminals="x\/y=w92, y=w21, x=w84" TopLeft="1379 357" />
                 <Subtract Id="n16" Terminals="x\-y=w21, y=w84, x=w20" TopLeft="1330 364" />
                 <Literal Id="n21" Terminals="Out=w20" Bounds="1281 364 42 14" Interpretation="Exact" DataType="Single">1024</Literal>
                 <Select Id="n98" Terminals="s\?\ t\:f=w54, f=w123, s=w115, t=w120" TopLeft="1666 427" />
-                <IsGreater Id="n101" Terminals="x\ \&gt;\ y\?=w115, y=w114, x=w65" TopLeft="1589 434" />
+                <IsGreater Id="n101" Terminals="x\ \&gt;\ y\?=w115, y=w114, x=w92" TopLeft="1589 434" />
                 <Literal Id="n104" Terminals="Out=w114" Bounds="1498 448 49 14" Interpretation="Exact" DataType="Single">3.277</Literal>
                 <Literal Id="n30" Terminals="Out=w120" Bounds="1631 427 28 14" Interpretation="Exact" DataType="SByte">0</Literal>
-                <IsGreater Id="n31" Terminals="x\ \&gt;\ y\?=w36, y=w33, x=w65" TopLeft="1554 497" />
+                <IsGreater Id="n31" Terminals="x\ \&gt;\ y\?=w36, y=w33, x=w92" TopLeft="1554 497" />
                 <Literal Id="n32" Terminals="Out=w33" Bounds="1491 511 56 14" Interpretation="Exact" DataType="Single">0.3599</Literal>
                 <Select Id="n34" Terminals="s\?\ t\:f=w123, f=w47, s=w36, t=w37" TopLeft="1624 490" />
                 <Literal Id="n35" Terminals="Out=w37" Bounds="1596 490 28 14" Interpretation="Exact" DataType="SByte">1</Literal>
-                <IsGreater Id="n40" Terminals="x\ \&gt;\ y\?=w44, y=w39, x=w65" TopLeft="1456 546" />
+                <IsGreater Id="n40" Terminals="x\ \&gt;\ y\?=w44, y=w39, x=w92" TopLeft="1456 546" />
                 <Literal Id="n41" Terminals="Out=w39" Bounds="1379 560 63 14" Interpretation="Exact" DataType="Single">0.06816</Literal>
                 <Select Id="n42" Terminals="s\?\ t\:f=w47, f=w46, s=w44, t=w18" TopLeft="1533 539" />
                 <Literal Id="n43" Terminals="Out=w18" Bounds="1484 539 28 14" Interpretation="Exact" DataType="SByte">2</Literal>
@@ -100,12 +98,11 @@
                 <Comment Bounds="1792 798 84 28" SizeMode="User" AttachStyle="Free">
                     <Content>d</Content>
                 </Comment>
-                <NaturalLogarithm Id="n59" Terminals="ln\(x\)=w61, x=w65" TopLeft="1379 623" />
-                <Multiply Id="n62" Terminals="x\*y=w63, y=w61, x=w61" TopLeft="2072 903" />
-                <Multiply Id="n63" Terminals="x\*y=w67, y=w61, x=w63" TopLeft="2156 917" />
+                <Multiply Id="n62" Terminals="x\*y=w63, y=w91, x=w91" TopLeft="2072 903" />
+                <Multiply Id="n63" Terminals="x\*y=w67, y=w91, x=w63" TopLeft="2156 917" />
                 <Multiply Id="n65" Terminals="x\*y=w79, y=w67, x=w66" TopLeft="2205 868" />
                 <Multiply Id="n67" Terminals="x\*y=w76, y=w68, x=w63" TopLeft="2205 763" />
-                <Multiply Id="n69" Terminals="x\*y=w73, y=w70, x=w61" TopLeft="2212 623" />
+                <Multiply Id="n69" Terminals="x\*y=w73, y=w70, x=w91" TopLeft="2212 623" />
                 <Add Id="n71" Terminals="x\+y=w75, y=w73, x=w72" TopLeft="2345 511" />
                 <Add Id="n74" Terminals="x\+y=w78, y=w76, x=w75" TopLeft="2422 518" />
                 <Add Id="n77" Terminals="x\+y=w81, y=w79, x=w78" TopLeft="2499 525" />
@@ -114,7 +111,80 @@
                 <Subtract Id="n84" Terminals="x\-y=w99, y=w87, x=w85" TopLeft="2639 525" />
                 <Literal Id="n86" Terminals="Out=w87" Bounds="2597 539 35 14" Interpretation="Exact" DataType="Single">273</Literal>
                 <Wire Id="w99" Joints="N(n84:x\-y) N(n14:Value)" />
-                <Wire Id="w84" Joints="N(n12:raw) h(125.684) v(28) v(28) N(n16:y) B(2) h(112.316) v(7) N(n15:x)" />
+                <Wire Id="w84" Joints="N(n12:raw) h(125.684) v(28) h(112.316) v(7) N(n15:x) B(2) v(28) N(n16:y)" />
+                <WhileLoop Id="n83" Bounds="868 665 497 395" DiagramId="d0">
+                    <WhileLoop.Iteration Id="n1" Terminals="Output=w11" TopLeft="35 301" />
+                    <WhileLoop.Condition Id="n2" Terminals="Input=w16" TopLeft="371 308" />
+                    <WhileLoop Id="n85" Bounds="28 28 245 210" DiagramId="D85">
+                        <WhileLoop.Iteration Id="n1" Terminals="Output=w16" TopLeft="91 133" />
+                        <WhileLoop.Condition Id="n2" Terminals="Input=w15" TopLeft="189 133" />
+                        <Wire Id="w6" Joints="N(b6:D85) N(n95:x)" />
+                        <Multiply Id="n95" Terminals="x\*y=w17, y=w7, x=w6" TopLeft="112 42" />
+                        <Wire Id="w7" Joints="N(b7:D85) N(n95:y)" />
+                        <Subtract Id="n89" Terminals="x\-y=w14, y=w12, x=w9" TopLeft="63 140" />
+                        <Wire Id="w9" Joints="N(b18:D85) v(-7) h(-84) v(-35) N(n89:x)" />
+                        <Literal Id="n82" Terminals="Out=w12" Bounds="0 154 28 14" Interpretation="Exact" DataType="Single">3</Literal>
+                        <Wire Id="w12" Joints="N(n82:Out) N(n89:y)" />
+                        <IsGreater Id="n91" Terminals="x\ \&gt;\ y\?=w15, y=w14, x=w16" TopLeft="126 133" />
+                        <Wire Id="w14" Joints="N(n89:x\-y) N(n91:y)" />
+                        <Wire Id="w15" Joints="N(n91:x\ \&gt;\ y\?) h(7) v(-7) N(n2:Input)" />
+                        <Wire Id="w16" Joints="N(n1:Output) N(n91:x)" />
+                        <Wire Id="w17" Joints="N(n95:x\*y) N(b22:D85)" />
+                        <WhileLoop.Tunnel AutoIndex="False" Id="b6" Terminals="n85=w6, D85=w6" TopLeft="0 49" />
+                        <WhileLoop.Tunnel AutoIndex="False" Id="b7" Terminals="n85=w6, D85=w7" TopLeft="0 63" />
+                        <WhileLoop.Tunnel AutoIndex="False" Id="b18" Terminals="n85=w20, D85=w9" TopLeft="126 196" />
+                        <WhileLoop.Tunnel AutoIndex="False" Id="b22" Terminals="n85=w24, D85=w17" TopLeft="231 56" />
+                    </WhileLoop>
+                    <Wire Id="w6" Joints="N(b95:d0) h(14) v(35) N(b6:n85) B(2) v(14) N(b7:n85)" />
+                    <Increment Id="n3" Terminals="x\+1=w14, x=w11" TopLeft="77 301" />
+                    <Literal Id="n82" Terminals="Out=w18" Bounds="70 266 28 14" Interpretation="Exact" DataType="Single">2</Literal>
+                    <Wire Id="w11" Joints="N(n1:Output) N(n3:x)" />
+                    <IsGreater Id="n91" Terminals="x\ \&gt;\ y\?=w16, y=w15, x=w14" TopLeft="196 301" />
+                    <Literal Id="n13" Terminals="Out=w15" Bounds="70 315 35 14" Interpretation="Exact" DataType="UInt16">125</Literal>
+                    <Wire Id="w14" Joints="N(n3:x\+1) h(9) v(-21) N(n95:y) B(1) N(n91:x)" />
+                    <Wire Id="w15" Joints="N(n13:Out) N(n91:y)" />
+                    <Wire Id="w16" Joints="N(n91:x\ \&gt;\ y\?) N(n2:Input)" />
+                    <Multiply Id="n95" Terminals="x\*y=w20, y=w14, x=w18" TopLeft="126 266" />
+                    <Wire Id="w18" Joints="N(n82:Out) N(n95:x)" />
+                    <Wire Id="w20" Joints="N(n95:x\*y) h(8) v(-2) h(160) v(-124) N(n92:y) B(2) v(-33) h(-1) N(b18:n85)" />
+                    <Multiply Id="n88" Terminals="x\*y=w31, y=w27, x=w24" TopLeft="378 98" />
+                    <Divide Id="n92" Terminals="x\/y=w27, y=w20, x=w26" TopLeft="329 133" />
+                    <Wire Id="w24" Joints="N(b22:n85) h(98) v(14) N(n88:x)" />
+                    <Literal Id="n25" Terminals="Out=w26" Bounds="287 119 28 14" Interpretation="Exact" DataType="Single">1</Literal>
+                    <Wire Id="w26" Joints="N(n25:Out) h(7) v(14) N(n92:x)" />
+                    <Wire Id="w27" Joints="N(n92:x\/y) h(14) v(-28) N(n88:y)" />
+                    <Add Id="n19" Terminals="x\+y=w32, y=w31, x=w30" TopLeft="420 14" />
+                    <Wire Id="w30" Joints="N(b94:d0) N(n19:x)" />
+                    <Wire Id="w31" Joints="N(n88:x\*y) h(7) v(-77) N(n19:y)" />
+                    <Wire Id="w32" Joints="N(n19:x\+y) N(b96:d0)" />
+                    <Comment Bounds="35 336 106 31" SizeMode="User" AttachStyle="Free">
+                        <Content>n(125) iterations</Content>
+                    </Comment>
+                    <Comment Bounds="371 238 106 31" SizeMode="User" AttachStyle="Free">
+                        <Content>1/(2n+1)</Content>
+                    </Comment>
+                    <Comment Bounds="273 49 134 31" SizeMode="User" AttachStyle="Free">
+                        <Content>*(x+1/x-1)^(2n+1)</Content>
+                    </Comment>
+                    <WhileLoop.Tunnel AutoIndex="False" Id="b95" Terminals="n83=w95, d0=w6" TopLeft="0 49" />
+                    <WhileLoop.Tunnel AutoIndex="False" Id="b94" Terminals="n83=w95, d0=w30" TopLeft="0 21" />
+                    <WhileLoop.Tunnel AutoIndex="False" Id="b96" Terminals="n83=w97, d0=w32" TopLeft="483 28" />
+                </WhileLoop>
+                <Increment Id="n3" Terminals="x\+1=w93, x=w92" TopLeft="763 707" />
+                <Decrement Id="n85" Terminals="x\-1=w94, x=w92" TopLeft="763 721" />
+                <Wire Id="w91" Joints="N(n95:x\*y) h(7) v(154) h(553) v(-308) N(n69:x) B(3) h(63) N(n63:y) B(6) v(-14) N(n62:y) B(8) v(-14) N(n62:x)" />
+                <Wire Id="w92" Joints="N(n15:x\/y) h(12) h(25) v(70) v(112) N(n40:x) B(3) h(41) N(n101:x) B(6) v(63) N(n31:x) B(1) v(147) h(-89) v(140) h(-574) v(56) v(14) N(n85:x) B(14) N(n3:x)" />
+                <Divide Id="n92" Terminals="x\/y=w95, y=w94, x=w93" TopLeft="798 707" />
+                <Wire Id="w93" Joints="N(n3:x\+1) N(n92:x)" />
+                <Wire Id="w94" Joints="N(n85:x\-1) N(n92:y)" />
+                <Wire Id="w95" Joints="N(n92:x\/y) h(12.561) v(-28) N(b94:n83) B(1) N(b95:n83)" />
+                <Multiply Id="n95" Terminals="x\*y=w91, y=w98, x=w97" TopLeft="1414 770" />
+                <Literal Id="n25" Terminals="Out=w98" Bounds="1379 784 28 14" Interpretation="Exact" DataType="Single">1</Literal>
+                <Wire Id="w98" Joints="N(n25:Out) N(n95:y)" />
+                <Wire Id="w97" Joints="N(b96:n83) h(41) v(77) N(n95:x)" />
+                <Comment Bounds="1078 616 49 31" SizeMode="User" AttachStyle="Free">
+                    <Content>ln()</Content>
+                </Comment>
             </BlockDiagram>
         </VirtualInstrument>
     </Namespace>
