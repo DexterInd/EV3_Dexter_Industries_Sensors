@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SourceFile Version="1.0.2.10" xmlns="http://www.ni.com/SourceModel.xsd">
+    <Namespace Name="Project">
+        <VirtualInstrument IsTopLevel="false" IsReentrant="false" Version="1.0.2.0" xmlns="http://www.ni.com/VirtualInstrument.xsd">
+            <DataItem Name="SequenceIn" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="6" />
+            <DataItem Name="SequenceOut" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" DefaultTerminalDirection="Input" CallUsage="None" CallDirection="Output" CallIndex="6" />
+            <DataItem Name="Raw" DataType="Single" DefaultTerminalDirection="Input" CallUsage="None" CallDirection="Output" CallIndex="0" DefaultValue="0" />
+            <DataItem Name="Port" DataType="Single" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="0" DefaultValue="0" />
+            <DataItem Name="kPa" DataType="Single" DefaultTerminalDirection="Input" CallUsage="None" CallDirection="Output" CallIndex="1" DefaultValue="0" />
+            <DataItem Name="PSI" DataType="Single" DefaultTerminalDirection="Input" CallUsage="None" CallDirection="Output" CallIndex="2" DefaultValue="0" />
+            <FrontPanel>
+                <fpruntime:FrontPanelCanvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:fpruntime="clr-namespace:NationalInstruments.LabVIEW.FrontPanelRuntime;assembly=NationalInstruments.LabVIEW.FrontPanelRuntime" xmlns:Model="clr-namespace:NationalInstruments.SourceModel.Designer;assembly=NationalInstruments.SourceModel" x:Name="FrontPanel" Model:DesignerSurfaceProperties.CanSnapToObjects="True" Model:DesignerSurfaceProperties.SnapToObjects="True" Model:DesignerSurfaceProperties.ShowSnaplines="True" Model:DesignerSurfaceProperties.ShowControlAdorners="True" Width="640" Height="480" />
+            </FrontPanel>
+            <BlockDiagram Name="__RootDiagram__">
+                <DataAccessor DataItem="Raw" Id="n14" Bounds="1778 315 70 14">
+                    <Terminal Id="Value" Direction="Input" Wire="w17" Hotspot="0 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <DataAccessor DataItem="Port" Id="n19" Bounds="567 315 70 14">
+                    <Terminal Id="Value" Direction="Output" Wire="w43" Hotspot="1 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <DataAccessor DataItem="kPa" Id="n6" Bounds="1778 329 70 14">
+                    <Terminal Id="Value" Direction="Input" Wire="w42" Hotspot="0 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <DataAccessor DataItem="PSI" Id="n7" Bounds="1778 343 70 14">
+                    <Terminal Id="Value" Direction="Input" Wire="w41" Hotspot="0 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <Wire Id="w17" Joints="N(n12:raw) h(63) v(49) N(n18:x) B(1) N(n14:Value)" />
+                <Multiply Id="n18" Terminals="x\*y=w21, y=w19, x=w17" TopLeft="931 364" />
+                <Literal Id="n20" Terminals="Out=w19" Bounds="875 385 28 14" Interpretation="Exact" DataType="Single">5</Literal>
+                <Wire Id="w19" Joints="N(n20:Out) h(7) v(-7) N(n18:y)" />
+                <Wire Id="w21" Joints="N(n18:x\*y) N(n39:x)" />
+                <Wire Id="w22" Joints="N(n23:Out) h(49) v(-28) N(n39:y)" />
+                <Literal Id="n23" Terminals="Out=w22" Bounds="875 413 42 14" Interpretation="Exact" DataType="Single">1023</Literal>
+                <Comment Bounds="882 462 179 44" SizeMode="Auto" AttachStyle="Free">
+                    <Content>Convert Raw Reading to mili-
+voltage.</Content>
+                </Comment>
+                <Divide Id="n25" Terminals="x\/y=w30, y=w34, x=w40" TopLeft="1372 378" />
+                <Subtract Id="n26" Terminals="x\-y=w31, y=w35, x=w30" TopLeft="1428 385" />
+                <Divide Id="n27" Terminals="x\/y=w42, y=w36, x=w31" TopLeft="1512 392" />
+                <Wire Id="w30" Joints="N(n25:x\/y) N(n26:x)" />
+                <Wire Id="w31" Joints="N(n26:x\-y) N(n27:x)" />
+                <Literal Id="n31" Terminals="Out=w34" Bounds="1302 476 42 14" Interpretation="Exact" DataType="Single">4.76</Literal>
+                <Literal Id="n32" Terminals="Out=w35" Bounds="1372 476 42 14" Interpretation="Exact" DataType="Single">0.04</Literal>
+                <Literal Id="n33" Terminals="Out=w36" Bounds="1428 476 63 14" Interpretation="Exact" DataType="Single">0.00369</Literal>
+                <Wire Id="w34" Joints="N(n31:Out) h(7) v(-84) N(n25:y)" />
+                <Wire Id="w35" Joints="N(n32:Out) h(7) v(-77) N(n26:y)" />
+                <Wire Id="w36" Joints="N(n33:Out) h(7) v(-70) N(n27:y)" />
+                <Wire Id="w40" Joints="N(n39:x\/y) N(n25:x)" />
+                <Wire Id="w41" Joints="N(n43:x\*y) h(14) v(-91) N(n7:Value)" />
+                <Wire Id="w42" Joints="N(n27:x\/y) h(28) N(n42:x) B(1) v(-70) N(n6:Value)" />
+                <Multiply Id="n42" Terminals="x\*y=w44, y=w46, x=w42" TopLeft="1680 399" />
+                <Multiply Id="n43" Terminals="x\*y=w41, y=w48, x=w44" TopLeft="1729 427" />
+                <Wire Id="w44" Joints="N(n42:x\*y) h(14) v(21) N(n43:x)" />
+                <Literal Id="n45" Terminals="Out=w46" Bounds="1617 413 42 14" Interpretation="Exact" DataType="Single">1000</Literal>
+                <Wire Id="w46" Joints="N(n45:Out) N(n42:y)" />
+                <Literal Id="n47" Terminals="Out=w48" Bounds="1610 441 98 14" Interpretation="Exact" DataType="Single">0.0001450326</Literal>
+                <Wire Id="w48" Joints="N(n47:Out) N(n43:y)" />
+                <Wire Id="w43" Joints="N(n19:Value) N(n12:Port)" />
+                <Wire Id="w6" Joints="N(n5:Out) N(n12:SensorType)" />
+                <Wire Id="w8" Joints="N(n44:Out) N(n12:SensorMode)" />
+                <MethodCall Id="n12" Bounds="777 315 56 56" Target="NXTAnalogSensorSub\.vix">
+                    <Terminal Id="Port" Direction="Input" Wire="w43" DataType="Byte" Hotspot="0 0.5" Bounds="0 0 14 14" />
+                    <Terminal Id="SensorType" Direction="Input" Wire="w6" DataType="Byte" Hotspot="0 0.5" Bounds="0 14 14 14" />
+                    <Terminal Id="SensorMode" Direction="Input" Wire="w8" DataType="Byte" Hotspot="0 0.5" Bounds="0 28 14 14" />
+                    <Terminal Id="raw" Direction="Output" Wire="w17" DataType="UInt16" Hotspot="1 0.5" Bounds="42 0 14 14" />
+                    <Terminal Id="scaled" Direction="Output" DataType="UInt16" Hotspot="1 0.5" Bounds="42 14 14 14" />
+                </MethodCall>
+                <Literal Id="n5" Terminals="Out=w6" Bounds="728 329 28 14" Interpretation="Exact" DataType="Byte">9</Literal>
+                <Literal Id="n44" Terminals="Out=w8" Bounds="721 343 35 14" Interpretation="Exact" DataType="Byte">128</Literal>
+                <Divide Id="n39" Terminals="x\/y=w40, y=w22, x=w21" TopLeft="994 371" />
+            </BlockDiagram>
+        </VirtualInstrument>
+    </Namespace>
+</SourceFile>
