@@ -276,7 +276,7 @@
       <Hardware>
         <NXTPlotColor>#ffff3132</NXTPlotColor>
         <EV3PlotColor>#ff785028</EV3PlotColor>
-        <EV3AutoID>-1</EV3AutoID>
+        <EV3AutoID>0</EV3AutoID>
         <Direction>Input</Direction>
         <DefaultPort>1.1</DefaultPort>
       </Hardware>
