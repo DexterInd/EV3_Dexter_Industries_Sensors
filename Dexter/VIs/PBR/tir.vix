@@ -30,12 +30,12 @@
                         <Wire Id="w13" Joints="N(n26:Out) N(n17:writeData)" />
                         <Wire Id="w15" Joints="N(n32:Out) N(n17:readLength)" />
                         <Wire Id="w24" Joints="N(n23:Out) N(n36:c0t0v)" />
-                        <Wire Id="w40" Joints="N(n36:c0t1v) h(7) N(n157:y) B(1) v(14) v(21) N(n154:f) B(3) N(n155:x)" />
+                        <Wire Id="w40" Joints="N(n36:c0t1v) h(7) v(14) N(n155:x) B(2) v(21) N(n154:f) B(1) N(n157:y)" />
                         <Wire Id="w45" Joints="N(n48:Out) N(n47:c0t0v)" />
                         <Wire Id="w55" Joints="N(n54:Out) N(n53:x)" />
                         <Wire Id="w117" Joints="N(n53:x\*y) h(7) v(-35) N(n58:y)" />
                         <Wire Id="w112" Joints="N(n154:s\?\ t\:f) h(7) v(-21) h(7) v(14) N(n58:x)" />
-                        <Wire Id="w123" Joints="N(n58:x\+y) h(7) v(203) h(-483) v(42) N(n105:y) B(4) v(70) v(70) h(217) v(-49) N(n98:f) B(6) N(n101:x)" />
+                        <Wire Id="w123" Joints="N(n58:x\+y) h(7) v(203) h(-483) v(42) v(70) N(n101:x) B(5) v(70) h(217) v(-49) N(n98:f) B(4) N(n105:y)" />
                         <Wire Id="w114" Joints="N(n104:Out) N(n101:y)" />
                         <Wire Id="w115" Joints="N(n101:x\ \&gt;\ y\?) N(n98:s)" />
                         <Wire Id="w116" Joints="N(n107:Out) N(n105:x)" />
@@ -48,12 +48,12 @@
                         <Wire Id="w150" Joints="N(n5:x\ \&lt;\ y\?) N(n9:s)" />
                         <Wire Id="w23" Joints="N(n9:s\?\ t\:f) h(7) v(-49) N(n53:y)" />
                         <Wire Id="w14" Joints="N(n13:Out) N(n153:x)" />
-                        <Wire Id="w36" Joints="N(n47:c0t1v) h(7) v(-14) N(n153:y) B(1) N(n5:x) B(1) v(21) N(n9:f)" />
+                        <Wire Id="w36" Joints="N(n47:c0t1v) h(7) v(21) N(n9:f) B(1) N(n5:x) B(1) v(-14) N(n153:y)" />
                         <Wire Id="w152" Joints="N(n157:x\+y) h(7) v(14) N(n154:t)" />
                         <Wire Id="w153" Joints="N(n156:Out) N(n155:y)" />
                         <Wire Id="w154" Joints="N(n155:x\ \&lt;\ y\?) N(n154:s)" />
                         <Wire Id="w155" Joints="N(n158:Out) N(n157:x)" />
-                        <Wire Id="w73" Joints="N(n17:readData) h(7) N(n36:array) B(1) v(112) N(n47:array)" />
+                        <Wire Id="w73" Joints="N(n17:readData) h(7) v(112) N(n47:array) B(1) N(n36:array)" />
                         <Wire Id="w70" Joints="N(n69:Out) N(n68:y)" />
                         <Wire Id="w71" Joints="N(n98:s\?\ t\:f) N(n68:x)" />
                         <Wire Id="w74" Joints="N(n68:x\*y) N(n72:x)" />
@@ -112,12 +112,12 @@
                         <Wire Id="w13" Joints="N(n26:Out) N(n17:writeData)" />
                         <Wire Id="w15" Joints="N(n32:Out) N(n17:readLength)" />
                         <Wire Id="w24" Joints="N(n23:Out) N(n36:c0t0v)" />
-                        <Wire Id="w40" Joints="N(n36:c0t1v) h(7) v(22) h(14) v(-8) N(n155:x) B(4) v(-14) N(n157:y) B(3) v(13) N(n154:f)" />
+                        <Wire Id="w40" Joints="N(n36:c0t1v) h(7) v(22) h(14) v(13) N(n154:f) B(3) v(-8) v(-14) N(n157:y) B(6) N(n155:x)" />
                         <Wire Id="w45" Joints="N(n48:Out) N(n47:c0t0v)" />
                         <Wire Id="w55" Joints="N(n54:Out) N(n53:x)" />
                         <Wire Id="w117" Joints="N(n53:x\*y) h(35) v(-35) N(n58:y)" />
                         <Wire Id="w112" Joints="N(n154:s\?\ t\:f) h(16) v(-21) h(68) v(14) N(n58:x)" />
-                        <Wire Id="w123" Joints="N(n58:x\+y) h(8) v(203) h(-414) v(42) v(70) N(n101:x) B(5) v(70) h(217) v(-49) N(n98:f) B(4) N(n105:y)" />
+                        <Wire Id="w123" Joints="N(n58:x\+y) h(8) v(203) h(-414) v(42) N(n105:y) B(4) v(70) v(70) h(217) v(-49) N(n98:f) B(6) N(n101:x)" />
                         <Wire Id="w114" Joints="N(n104:Out) N(n101:y)" />
                         <Wire Id="w115" Joints="N(n101:x\ \&gt;\ y\?) N(n98:s)" />
                         <Wire Id="w116" Joints="N(n107:Out) N(n105:x)" />
@@ -130,12 +130,12 @@
                         <Wire Id="w150" Joints="N(n5:x\ \&lt;\ y\?) N(n9:s)" />
                         <Wire Id="w23" Joints="N(n9:s\?\ t\:f) h(7) v(-49) N(n53:y)" />
                         <Wire Id="w14" Joints="N(n13:Out) N(n153:x)" />
-                        <Wire Id="w36" Joints="N(n47:c0t1v) h(21) v(21) N(n9:f) B(1) N(n5:x) B(1) v(-14) N(n153:y)" />
+                        <Wire Id="w36" Joints="N(n47:c0t1v) h(21) v(-14) N(n153:y) B(1) N(n5:x) B(1) v(21) N(n9:f)" />
                         <Wire Id="w152" Joints="N(n157:x\+y) h(7) v(14) N(n154:t)" />
                         <Wire Id="w153" Joints="N(n156:Out) N(n155:y)" />
                         <Wire Id="w154" Joints="N(n155:x\ \&lt;\ y\?) N(n154:s)" />
                         <Wire Id="w155" Joints="N(n158:Out) N(n157:x)" />
-                        <Wire Id="w73" Joints="N(n17:readData) h(48) v(112) N(n47:array) B(1) N(n36:array)" />
+                        <Wire Id="w73" Joints="N(n17:readData) h(48) N(n36:array) B(1) v(112) N(n47:array)" />
                         <Wire Id="w70" Joints="N(n69:Out) N(n68:y)" />
                         <Wire Id="w71" Joints="N(n98:s\?\ t\:f) N(n68:x)" />
                         <Wire Id="w74" Joints="N(n68:x\*y) N(n72:x)" />
@@ -194,8 +194,16 @@
                     <FlatSequence.Tunnel Id="b73" Terminals="n27=w14, D28=w2" TopLeft="21 0" />
                     <FlatSequence.Tunnel Id="b74" Terminals="n27=w16, D28=w4" TopLeft="0 126" />
                 </FlatSequence>
-                <Wire Id="w14" Joints="N(n31:layer) h(64.178) v(63) h(-386.178) N(b73:n27) B(1) h(376.822) N(b17:n27)" />
-                <Wire Id="w16" Joints="N(n31:portOut) h(24.454) v(28) h(-381.454) v(210) N(b74:n27) B(1) h(402.546) N(b16:n27)" />
+                <Wire Id="w14" Joints="N(n31:layer) h(64.178) h(376.822) N(b17:n27) B(1) v(63) h(-386.178) N(b73:n27)" />
+                <Wire Id="w16" Joints="N(n31:portOut) h(24.454) h(402.546) N(b16:n27) B(1) v(28) h(-381.454) v(210) N(b74:n27)" />
+                <Comment Bounds="560 -105 259 168" SizeMode="User" AttachStyle="Free">
+                    <Content>This project contains the EV3 blocks for Dexter Industries Sensors.
+These files have been made available online through a Creative Commons Attribution-ShareAlike 3.0 license.
+
+Features Adopted from  Mindsensors EV3 blocks http://www.mindsensors.com/
+
+You may use this code as you wish, provided you give credit where it's due.</Content>
+                </Comment>
             </BlockDiagram>
         </VirtualInstrument>
     </Namespace>
