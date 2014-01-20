@@ -130,7 +130,7 @@
                         <Literal Id="n23" Terminals="Out=w24" Bounds="280 84 28 14" Interpretation="Exact" DataType="Byte">4</Literal>
                         <Wire Id="w24" Joints="N(n23:Out) N(n36:c0t0v)" />
                         <Literal Facade="ArrayConstantFacade" Id="n26" Terminals="Out=w13" Bounds="14 140 35 35" Interpretation="Exact" DataType="Byte[]">[30,3]</Literal>
-                        <Wire Id="w40" Joints="N(n36:c0t1v) h(7) v(22) h(14) v(13) N(n154:f) B(3) v(-8) v(-14) N(n157:y) B(6) N(n155:x)" />
+                        <Wire Id="w40" Joints="N(n36:c0t1v) h(7) v(22) h(14) v(-8) N(n155:x) B(4) v(-14) N(n157:y) B(3) v(13) N(n154:f)" />
                         <Comment Bounds="14 231 161 315" SizeMode="User" AttachStyle="Free">
                             <Content>Send 0x3D 0x06 (Read all 6 bytes. If gain is changed then this data set is using previous gain)
 
@@ -143,9 +143,9 @@ Convert three 16-bit 2’s compliment hex values to decimal values and assign to
                         <Literal Id="n54" Terminals="Out=w55" Bounds="455 140 35 14" Interpretation="Exact" DataType="Int32">256</Literal>
                         <Wire Id="w55" Joints="N(n54:Out) N(n53:x)" />
                         <Add Id="n58" Terminals="x\+y=w123, y=w117, x=w112" TopLeft="588 98" />
-                        <Wire Id="w96" Joints="N(n17:readData) h(48) v(-21) h(458.776) h(504) v(21) v(112) N(n124:array) B(5) N(n112:array) B(3) v(21) N(n78:array) B(9) v(112) N(n90:array) B(1) N(n36:array) B(1) v(112) N(n47:array)" />
+                        <Wire Id="w96" Joints="N(n17:readData) h(48) v(112) N(n47:array) B(1) N(n36:array) B(1) v(-21) h(458.776) v(21) v(112) N(n90:array) B(7) N(n78:array) B(6) h(504) v(21) N(n112:array) B(12) v(112) N(n124:array)" />
                         <Wire Id="w64" Joints="N(n79:Out) N(n78:c0t0v)" />
-                        <Wire Id="w68" Joints="N(n78:c0t1v) h(14) v(14) N(n172:x) B(2) v(21) N(n171:f) B(1) N(n174:y)" />
+                        <Wire Id="w68" Joints="N(n78:c0t1v) h(14) N(n174:y) B(1) v(14) v(21) N(n171:f) B(3) N(n172:x)" />
                         <Wire Id="w70" Joints="N(n91:Out) N(n90:c0t0v)" />
                         <Wire Id="w74" Joints="N(n95:Out) N(n94:x)" />
                         <Wire Id="w76" Joints="N(n94:x\*y) h(7) v(-28) N(n97:y)" />
@@ -174,7 +174,7 @@ Convert three 16-bit 2’s compliment hex values to decimal values and assign to
                         <Add Id="n131" Terminals="x\+y=w137, y=w109, x=w110" TopLeft="1540 98" />
                         <Wire Id="w117" Joints="N(n53:x\*y) h(35) v(-35) N(n58:y)" />
                         <Wire Id="w112" Joints="N(n154:s\?\ t\:f) h(16) v(-21) h(68) v(14) N(n58:x)" />
-                        <Wire Id="w123" Joints="N(n58:x\+y) h(8) v(203) h(-414) v(42) N(n105:y) B(4) v(70) v(70) h(217) v(-49) N(n98:f) B(6) N(n101:x)" />
+                        <Wire Id="w123" Joints="N(n58:x\+y) h(8) v(203) h(-414) v(42) v(70) N(n101:x) B(5) v(70) h(217) v(-49) N(n98:f) B(4) N(n105:y)" />
                         <Wire Id="w114" Joints="N(n104:Out) N(n101:y)" />
                         <Wire Id="w115" Joints="N(n101:x\ \&gt;\ y\?) N(n98:s)" />
                         <Wire Id="w116" Joints="N(n107:Out) N(n105:x)" />
@@ -192,7 +192,7 @@ Convert three 16-bit 2’s compliment hex values to decimal values and assign to
                         <DataAccessor DataItem="X" Id="n8" Bounds="532 427 70 14">
                             <Terminal Id="Value" Direction="Input" Wire="w177" Hotspot="0 0.5" Bounds="0 0 70 14" />
                         </DataAccessor>
-                        <Wire Id="w127" Joints="N(n97:x\+y) h(7) v(203) h(-364) v(42) N(n133:y) B(4) v(70) N(n120:x) B(6) v(70) h(217) v(-49) N(n119:f)" />
+                        <Wire Id="w127" Joints="N(n97:x\+y) h(7) v(203) h(-364) v(42) v(70) v(70) h(217) v(-49) N(n119:f) B(5) N(n120:x) B(4) N(n133:y)" />
                         <Wire Id="w129" Joints="N(n132:Out) N(n120:y)" />
                         <Wire Id="w130" Joints="N(n120:x\ \&gt;\ y\?) N(n119:s)" />
                         <Wire Id="w131" Joints="N(n135:Out) N(n133:x)" />
@@ -206,7 +206,7 @@ Convert three 16-bit 2’s compliment hex values to decimal values and assign to
                         <Multiply Id="n134" Terminals="x\*y=w134, y=w133, x=w132" TopLeft="889 378" />
                         <Literal Id="n135" Terminals="Out=w131" Bounds="728 343 49 14" Interpretation="Exact" DataType="Int32">65536</Literal>
                         <Literal Id="n136" Terminals="Out=w133" Bounds="819 392 28 14" Interpretation="Exact" DataType="Int32">-1</Literal>
-                        <Wire Id="w137" Joints="N(n131:x\+y) h(12) v(210) h(-411) v(42) v(70) v(70) h(217) v(-49) N(n137:f) B(5) N(n138:x) B(4) N(n142:y)" />
+                        <Wire Id="w137" Joints="N(n131:x\+y) h(12) v(210) h(-411) v(42) N(n142:y) B(4) v(70) N(n138:x) B(6) v(70) h(217) v(-49) N(n137:f)" />
                         <Wire Id="w140" Joints="N(n141:Out) N(n138:y)" />
                         <Wire Id="w141" Joints="N(n138:x\ \&gt;\ y\?) N(n137:s)" />
                         <Wire Id="w142" Joints="N(n144:Out) N(n142:x)" />
@@ -227,7 +227,7 @@ Convert three 16-bit 2’s compliment hex values to decimal values and assign to
                         <Wire Id="w150" Joints="N(n5:x\ \&lt;\ y\?) N(n9:s)" />
                         <Wire Id="w23" Joints="N(n9:s\?\ t\:f) h(7) v(-49) N(n53:y)" />
                         <Wire Id="w14" Joints="N(n13:Out) N(n153:x)" />
-                        <Wire Id="w36" Joints="N(n47:c0t1v) h(21) v(-14) N(n153:y) B(1) N(n5:x) B(1) v(21) N(n9:f)" />
+                        <Wire Id="w36" Joints="N(n47:c0t1v) h(21) v(21) N(n9:f) B(1) N(n5:x) B(1) v(-14) N(n153:y)" />
                         <IsLess Id="n5" Terminals="x\ \&lt;\ y\?=w150, y=w148, x=w36" TopLeft="434 196" />
                         <Literal Id="n6" Terminals="Out=w148" Bounds="392 210 28 14" Interpretation="Exact" DataType="SByte">0</Literal>
                         <Add Id="n153" Terminals="x\+y=w17, y=w36, x=w14" TopLeft="434 168" />
@@ -241,7 +241,7 @@ Convert three 16-bit 2’s compliment hex values to decimal values and assign to
                         <Literal Id="n156" Terminals="Out=w153" Bounds="385 112 28 14" Interpretation="Exact" DataType="SByte">0</Literal>
                         <Add Id="n157" Terminals="x\+y=w152, y=w40, x=w155" TopLeft="427 70" />
                         <Literal Id="n158" Terminals="Out=w155" Bounds="385 70 35 14" Interpretation="Exact" DataType="Int32">256</Literal>
-                        <Wire Id="w156" Joints="N(n90:c0t1v) h(7) v(14) v(21) N(n161:f) B(2) N(n162:x) B(1) N(n164:y)" />
+                        <Wire Id="w156" Joints="N(n90:c0t1v) h(7) N(n164:y) B(1) v(14) N(n162:x) B(3) v(21) N(n161:f)" />
                         <Wire Id="w157" Joints="N(n164:x\+y) h(7) v(14) N(n161:t)" />
                         <Wire Id="w158" Joints="N(n163:Out) N(n162:y)" />
                         <Wire Id="w159" Joints="N(n162:x\ \&lt;\ y\?) N(n161:s)" />
@@ -260,7 +260,7 @@ Convert three 16-bit 2’s compliment hex values to decimal values and assign to
                         <Literal Id="n173" Terminals="Out=w168" Bounds="826 112 28 14" Interpretation="Exact" DataType="SByte">0</Literal>
                         <Add Id="n174" Terminals="x\+y=w167, y=w68, x=w170" TopLeft="868 70" />
                         <Literal Id="n175" Terminals="Out=w170" Bounds="826 70 35 14" Interpretation="Exact" DataType="Int32">256</Literal>
-                        <Wire Id="w171" Joints="N(n112:c0t1v) h(21) v(-7) N(n179:y) B(1) v(7) v(21) N(n176:f) B(4) N(n177:x)" />
+                        <Wire Id="w171" Joints="N(n112:c0t1v) h(21) v(7) N(n177:x) B(2) v(21) N(n176:f) B(1) v(-7) N(n179:y)" />
                         <Wire Id="w172" Joints="N(n179:x\+y) h(7) v(14) N(n176:t)" />
                         <Wire Id="w173" Joints="N(n178:Out) N(n177:y)" />
                         <Wire Id="w174" Joints="N(n177:x\ \&lt;\ y\?) N(n176:s)" />
@@ -270,7 +270,7 @@ Convert three 16-bit 2’s compliment hex values to decimal values and assign to
                         <Literal Id="n178" Terminals="Out=w173" Bounds="1337 105 28 14" Interpretation="Exact" DataType="SByte">0</Literal>
                         <Add Id="n179" Terminals="x\+y=w172, y=w171, x=w175" TopLeft="1379 63" />
                         <Literal Id="n180" Terminals="Out=w175" Bounds="1337 63 35 14" Interpretation="Exact" DataType="Int32">256</Literal>
-                        <Wire Id="w180" Joints="N(n124:c0t1v) h(21) v(14) N(n186:x) B(2) v(21) N(n185:f) B(1) N(n188:y)" />
+                        <Wire Id="w180" Joints="N(n124:c0t1v) h(21) N(n188:y) B(1) v(14) v(21) N(n185:f) B(3) N(n186:x)" />
                         <Wire Id="w181" Joints="N(n188:x\+y) h(7) v(14) N(n185:t)" />
                         <Wire Id="w182" Joints="N(n187:Out) N(n186:y)" />
                         <Wire Id="w183" Joints="N(n186:x\ \&lt;\ y\?) N(n185:s)" />
@@ -280,11 +280,11 @@ Convert three 16-bit 2’s compliment hex values to decimal values and assign to
                         <Literal Id="n187" Terminals="Out=w182" Bounds="1344 224 28 14" Interpretation="Exact" DataType="SByte">0</Literal>
                         <Add Id="n188" Terminals="x\+y=w181, y=w180, x=w184" TopLeft="1386 182" />
                         <Literal Id="n189" Terminals="Out=w184" Bounds="1344 182 35 14" Interpretation="Exact" DataType="Int32">256</Literal>
-                        <Wire Id="w177" Joints="N(n98:s\?\ t\:f) h(38.83) N(n8:Value) B(1) v(252) N(n181:number)" />
-                        <Wire Id="w178" Joints="N(n137:s\?\ t\:f) h(48.263) N(n122:Value) B(1) v(168) h(-916.263) v(35) N(n170:number)" />
+                        <Wire Id="w177" Joints="N(n98:s\?\ t\:f) h(38.83) v(252) N(n181:number) B(1) N(n8:Value)" />
+                        <Wire Id="w178" Joints="N(n137:s\?\ t\:f) h(48.263) v(168) h(-916.263) v(35) N(n170:number) B(1) N(n122:Value)" />
                         <ToDoublePrecisionFloat Id="n170" Terminals="double\ precision\ float=w185, number=w178" TopLeft="581 637" />
                         <ToDoublePrecisionFloat Id="n181" Terminals="double\ precision\ float=w192, number=w177" TopLeft="581 679" />
-                        <Wire Id="w185" Joints="N(n170:double\ precision\ float) h(19.938) v(133) N(b197:n0) B(1) h(547.062) h(616) N(b210:n190) B(4) N(b204:n184)" />
+                        <Wire Id="w185" Joints="N(n170:double\ precision\ float) h(19.938) h(547.062) N(b204:n184) B(2) h(616) N(b210:n190) B(1) v(133) N(b197:n0)" />
                         <IsEqual Id="n22" Terminals="x\ \=\ y\?=w195, y=w193, x=w192" TopLeft="1078 777" />
                         <IsGreater Id="n182" Terminals="x\ \&gt;\ y\?=w194, y=w190, x=w192" TopLeft="651 784" />
                         <IsLess Id="n183" Terminals="x\ \&lt;\ y\?=w197, y=w196, x=w192" TopLeft="1638 770" />
@@ -353,7 +353,7 @@ Convert three 16-bit 2’s compliment hex values to decimal values and assign to
                                 <Wire Id="w6" Joints="N(n195:Out) h(147) N(b213:D187)" />
                             </CaseStructure.Case>
                             <CaseStructure.Case Id="D188" Bounds="7 7 490 329" Pattern="True">
-                                <Wire Id="w7" Joints="N(b210:D188) v(7) h(3) v(126) h(5.644) v(91) N(n183:x) B(4) N(n199:x)" />
+                                <Wire Id="w7" Joints="N(b210:D188) v(7) h(3) v(126) h(5.644) N(n199:x) B(4) v(91) N(n183:x)" />
                                 <Wire Id="w9" Joints="N(b209:D188) v(42) h(56.342) v(105) N(n199:y)" />
                                 <Divide Id="n199" Terminals="x\/y=w13, y=w9, x=w7" TopLeft="112 133" />
                                 <InverseTangent Id="n200" Terminals="arctan\(x\)=w20, x=w13" TopLeft="196 98" />
@@ -391,7 +391,7 @@ Convert three 16-bit 2’s compliment hex values to decimal values and assign to
                         </CaseStructure>
                         <Literal Id="n191" Terminals="Out=w190" Bounds="616 798 28 14" Interpretation="Exact" DataType="Double">0</Literal>
                         <Wire Id="w190" Joints="N(n191:Out) N(n182:y)" />
-                        <Wire Id="w192" Joints="N(n181:double\ precision\ float) h(7) v(105) N(n182:x) B(2) v(126) N(b198:n0) B(1) h(385) v(0.186) v(97.814) N(n22:x) B(7) h(616) v(90.814) N(n183:x) B(10) h(91) N(b209:n190)" />
+                        <Wire Id="w192" Joints="N(n181:double\ precision\ float) h(7) h(385) v(0.186) h(616) h(91) N(b209:n190) B(4) v(90.814) N(n183:x) B(3) v(97.814) N(n22:x) B(1) v(105) v(126) N(b198:n0) B(11) N(n182:x)" />
                         <Literal Id="n192" Terminals="Out=w193" Bounds="1029 791 28 14" Interpretation="Exact" DataType="Double">0</Literal>
                         <Wire Id="w193" Joints="N(n192:Out) N(n22:y)" />
                         <Wire Id="w194" Joints="N(n182:x\ \&gt;\ y\?) N(b177:n0)" />
@@ -427,8 +427,16 @@ Convert three 16-bit 2’s compliment hex values to decimal values and assign to
                     <FlatSequence.Tunnel Id="b43" Terminals="n27=w26, D23=w22" TopLeft="665 0" />
                     <FlatSequence.Tunnel Id="b44" Terminals="n27=w28, D23=w24" TopLeft="679 0" />
                 </FlatSequence>
-                <Wire Id="w26" Joints="N(n31:portOut) h(7) h(70) h(287) N(b43:n27) B(3) h(238) N(b16:n27) B(2) N(b41:n27) B(1) v(98) h(-196) N(b30:n27)" />
-                <Wire Id="w28" Joints="N(n31:layer) h(7) h(84) N(b42:n27) B(2) h(287) N(b44:n27) B(4) h(238) N(b17:n27) B(1) v(112) h(-182) N(b29:n27)" />
+                <Wire Id="w26" Joints="N(n31:portOut) h(7) v(98) h(-196) N(b30:n27) B(1) h(70) N(b41:n27) B(5) h(287) h(238) N(b16:n27) B(7) N(b43:n27)" />
+                <Wire Id="w28" Joints="N(n31:layer) h(7) v(112) h(-182) N(b29:n27) B(1) h(84) h(287) h(238) N(b17:n27) B(6) N(b44:n27) B(5) N(b42:n27)" />
+                <Comment Bounds="679 -42 259 168" SizeMode="User" AttachStyle="Free">
+                    <Content>This project contains the EV3 blocks for Dexter Industries Sensors.
+These files have been made available online through a Creative Commons Attribution-ShareAlike 3.0 license.
+
+Features Adopted from  Mindsensors EV3 blocks http://www.mindsensors.com/
+
+You may use this code as you wish, provided you give credit where it's due.</Content>
+                </Comment>
             </BlockDiagram>
         </VirtualInstrument>
     </Namespace>

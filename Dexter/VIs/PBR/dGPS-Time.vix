@@ -7,7 +7,7 @@
             <DataItem Name="Port" DataType="Single" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="0" DefaultValue="0" />
             <DataItem Name="Time" DataType="Int32" DefaultTerminalDirection="Input" CallUsage="None" CallDirection="Output" CallIndex="3" DefaultValue="0" />
             <FrontPanel>
-                <fpruntime:FrontPanelCanvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:fpruntime="clr-namespace:NationalInstruments.LabVIEW.FrontPanelRuntime;assembly=NationalInstruments.LabVIEW.FrontPanelRuntime" xmlns:Model0="clr-namespace:NationalInstruments.SourceModel.Designer;assembly=NationalInstruments.SourceModel" x:Name="FrontPanel" Model0:DesignerSurfaceProperties.CanSnapToObjects="True" Model0:DesignerSurfaceProperties.SnapToObjects="True" Model0:DesignerSurfaceProperties.ShowSnaplines="True" Model0:DesignerSurfaceProperties.ShowControlAdorners="True" Width="640" Height="480" />
+                <fpruntime:FrontPanelCanvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:fpruntime="clr-namespace:NationalInstruments.LabVIEW.FrontPanelRuntime;assembly=NationalInstruments.LabVIEW.FrontPanelRuntime" xmlns:Model="clr-namespace:NationalInstruments.SourceModel.Designer;assembly=NationalInstruments.SourceModel" x:Name="FrontPanel" Model:DesignerSurfaceProperties.CanSnapToObjects="True" Model:DesignerSurfaceProperties.SnapToObjects="True" Model:DesignerSurfaceProperties.ShowSnaplines="True" Model:DesignerSurfaceProperties.ShowControlAdorners="True" Width="640" Height="480" />
             </FrontPanel>
             <BlockDiagram Name="__RootDiagram__">
                 <DataAccessor DataItem="Port" Id="n19" Bounds="630 210 70 14">
@@ -53,7 +53,7 @@
                 <Wire Id="w35" Joints="N(n37:Out) N(n36:c0t0v)" />
                 <ArrayIndex Rank="1" VerticalChunkCount="1" Id="n36" Terminals="array=w43, c0t0v=w35, c0t1v=w70" Bounds="1008 560 28 28" />
                 <Literal Id="n37" Terminals="Out=w35" Bounds="966 574 28 14" Interpretation="Exact" DataType="Int32">0</Literal>
-                <Wire Id="w43" Joints="N(n17:readData) h(35) v(105) v(119) v(126) N(n36:array) B(3) N(n32:array) B(2) N(n28:array) B(1) N(n35:array)" />
+                <Wire Id="w43" Joints="N(n17:readData) h(35) N(n35:array) B(1) v(105) N(n28:array) B(3) v(119) N(n32:array) B(5) v(126) N(n36:array)" />
                 <Wire Id="w37" Joints="N(n38:Out) N(n35:c0t0v)" />
                 <ArrayIndex Rank="1" VerticalChunkCount="1" Id="n35" Terminals="array=w43, c0t0v=w37, c0t1v=w55" Bounds="1015 210 28 28" />
                 <Literal Id="n38" Terminals="Out=w37" Bounds="973 224 28 14" Interpretation="Exact" DataType="Int32">3</Literal>
@@ -107,6 +107,14 @@
                 <Wire Id="w70" Joints="N(n36:c0t1v) N(n52:SignedIN)" />
                 <Wire Id="w61" Joints="N(n52:Unsigned) h(182) v(-119) N(n57:y)" />
                 <Wire Id="w67" Joints="N(n55:x\+y) N(n8:Value)" />
+                <Comment Bounds="1687 168 259 168" SizeMode="User" AttachStyle="Free">
+                    <Content>This project contains the EV3 blocks for Dexter Industries Sensors.
+These files have been made available online through a Creative Commons Attribution-ShareAlike 3.0 license.
+
+Features Adopted from  Mindsensors EV3 blocks http://www.mindsensors.com/
+
+You may use this code as you wish, provided you give credit where it's due.</Content>
+                </Comment>
             </BlockDiagram>
         </VirtualInstrument>
     </Namespace>
