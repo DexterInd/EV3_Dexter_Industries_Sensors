@@ -88,8 +88,8 @@
                 <IsGreater Id="n39" Terminals="x\ \&gt;\ y\?=w47, y=w42, x=w61" TopLeft="1218 560" />
                 <Literal Id="n41" Terminals="Out=w42" Bounds="1169 581 35 14" Interpretation="Exact" DataType="Int32">128</Literal>
                 <Wire Id="w42" Joints="N(n41:Out) v(-7) N(n39:y)" />
-                <CaseStructure Id="n0" Bounds="1281 217 504 462" DataType="Boolean" UserSelectorBounds="206.998 0 90.003 14" Selected="d0" Default="d0">
-                    <CaseStructure.Case Id="d0" Bounds="7 7 490 448" Pattern="False">
+                <CaseStructure Id="n0" Bounds="1281 217 651 462" DataType="Boolean" UserSelectorBounds="280.498 0 90.003 14" Selected="d0" Default="d0">
+                    <CaseStructure.Case Id="d0" Bounds="7 7 637 448" Pattern="False">
                         <Comment Bounds="77 42 378 56" SizeMode="User" AttachStyle="Free">
                             <Content>(a*16777216+b*65536+c*256+d)</Content>
                         </Comment>
@@ -116,7 +116,7 @@
                         <Wire Id="w26" Joints="N(n9:x\+y) h(7) v(56) N(n11:x)" />
                         <Wire Id="w27" Joints="N(n11:x\+y) N(b54:d0)" />
                     </CaseStructure.Case>
-                    <CaseStructure.Case Id="d1" Bounds="7 7 490 448" Pattern="True">
+                    <CaseStructure.Case Id="d1" Bounds="7 7 637 448" Pattern="True">
                         <Comment Bounds="63 21 378 56" SizeMode="User" AttachStyle="Free">
                             <Content>((255-a)*16777216+(255-b)*65536+(255-c)*256+d+1)</Content>
                         </Comment>
@@ -162,17 +162,17 @@
                     <CaseStructure.Tunnel Id="b49" Terminals="n0=w57, d0=w16, d1=w11" TopLeft="0 252" />
                     <CaseStructure.Tunnel Id="b51" Terminals="n0=w58, d0=w20, d1=w15" TopLeft="0 175" />
                     <CaseStructure.Tunnel Id="b53" Terminals="n0=w60, d0=w24, d1=w24" TopLeft="0 119" />
-                    <CaseStructure.Tunnel Id="b54" Terminals="n0=w56, d0=w27, d1=w42" TopLeft="490 210" />
+                    <CaseStructure.Tunnel Id="b54" Terminals="n0=w56, d0=w27, d1=w42" TopLeft="637 210" />
                 </CaseStructure>
                 <Wire Id="w47" Joints="N(n39:x\ \&gt;\ y\?) h(7) v(-308) N(b43:n0)" />
-                <Wire Id="w56" Joints="N(b54:n0) h(139) v(-224) N(n8:Value)" />
+                <Wire Id="w56" Joints="N(b54:n0) h(-7) v(-224) N(n8:Value)" />
                 <Wire Id="w61" Joints="N(n48:U32Out) h(70) v(14) N(n39:x) B(1) N(b47:n0)" />
                 <Wire Id="w57" Joints="N(n47:U32Out) h(42) v(35) N(b49:n0)" />
                 <Wire Id="w58" Joints="N(n46:U32Out) h(58) v(77) N(b51:n0)" />
                 <Wire Id="w60" Joints="N(n45:U32Out) h(91) v(126) N(b53:n0)" />
-                <WaitMs Id="n57" Terminals="msToWait=w63" TopLeft="1862 511" />
-                <Literal Id="n58" Terminals="Out=w63" Bounds="1813 511 35 14" Interpretation="Exact" DataType="UInt32">100</Literal>
-                <Wire Id="w63" Joints="N(n58:Out) N(n57:msToWait)" />
+                <Comment Bounds="1071 133 623 49" SizeMode="User" AttachStyle="Free">
+                    <Content>Special thanks to Joe Sleator for helping to make this code work.  Thank you Joe!</Content>
+                </Comment>
             </BlockDiagram>
         </VirtualInstrument>
     </Namespace>

@@ -170,9 +170,9 @@
                     <CaseStructure.Tunnel Id="b53" Terminals="n0=w60, d0=w24, d1=w24" TopLeft="0 119" />
                     <CaseStructure.Tunnel Id="b54" Terminals="n0=w67, d0=w27, d1=w42" TopLeft="490 210" />
                 </CaseStructure>
-                <Wire Id="w63" Joints="N(n58:Out) N(n57:msToWait)" />
-                <WaitMs Id="n57" Terminals="msToWait=w63" TopLeft="1925 567" />
-                <Literal Id="n58" Terminals="Out=w63" Bounds="1876 567 35 14" Interpretation="Exact" DataType="UInt32">100</Literal>
+                <Comment Bounds="1092 168 623 49" SizeMode="User" AttachStyle="Free">
+                    <Content>Special thanks to Joe Sleator for helping to make this code work.  Thank you Joe!</Content>
+                </Comment>
             </BlockDiagram>
         </VirtualInstrument>
     </Namespace>
