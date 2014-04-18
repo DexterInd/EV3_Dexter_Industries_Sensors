@@ -403,5 +403,37 @@
        <Description><![CDATA[<p>Context help for Switch - Sample Sensor - Compare - Sensor Value</p>]]></Description>
       </Block>	  
     </PolyGroup>
+	<PolyGroup Name="EV3_I2C" DisplayName="EV3_I2C" DisplayNamePrefix="EV3_I2C">
+      <Parameter Name="Direction" DisplayName="Direction">
+        <Description><![CDATA[<p>Context help for Direction</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Port" DisplayName="Port" >
+        <Description><![CDATA[<p>Context help for Port</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Addr" DisplayName="Addr">
+        <Description><![CDATA[<p>Context help for Compare Type</p>]]></Description>
+      </Parameter>
+      <Parameter Name="RB" DisplayName="RB">
+        <Description><![CDATA[<p>Context help for Compare Type</p>]]></Description>
+      </Parameter>
+      <Parameter Name="WByte" DisplayName="WriteByte" >
+        <Description><![CDATA[<p>Context help for Amount</p>]]></Description>
+      </Parameter>
+	  <Parameter Name="Pin" DisplayName="Pin" >
+        <Description><![CDATA[<p>Context help for Amount</p>]]></Description>
+      </Parameter>
+	  <Parameter Name="AnalogVal" DisplayName="AnalogVal" >
+        <Description><![CDATA[<p>Context help for Amount</p>]]></Description>
+      </Parameter>
+      <Block Mode="ReadI2C" DisplayName="ReadI2C">
+        <Description><![CDATA[<p>Context help for Measure Sensor Value</p>]]></Description>
+      </Block>
+	  <Block Mode="AnalogRead" DisplayName="AnalogRead">
+        <Description><![CDATA[<p>Context help for Measure Sensor Value</p>]]></Description>
+      </Block>
+      <Block Mode="WriteI2C" DisplayName="WriteI2C">
+        <Description><![CDATA[<p>Context help for Compare Sensor Value</p>]]></Description>
+      </Block>
+    </PolyGroup>
   </PolyGroups>
 </EditorStrings>
