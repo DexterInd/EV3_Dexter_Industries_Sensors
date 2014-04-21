@@ -1,0 +1,407 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EditorStrings>
+  <PolyGroups ModuleName="Dexter">
+    <PolyGroup Name="dPressure" DisplayName="dPressure" DisplayNamePrefix="dPressure">
+      <Parameter Name="Direction" DisplayName="Direction">
+        <Description><![CDATA[<p>Context help for Direction</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Port" DisplayName="Port" >
+        <Description><![CDATA[<p>Context help for Port</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Comparison" DisplayName="Compare Type">
+        <Description><![CDATA[<p>Context help for Compare Type</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Threshold" DisplayName="Threshold Value">
+        <Description><![CDATA[<p>Context help for Threshold Value</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Amount" DisplayName="Amount" >
+        <Description><![CDATA[<p>Context help for Amount</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Raw" DisplayName="Raw Value">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>
+      <Parameter Name="kPa" DisplayName="kPa">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>
+      <Parameter Name="PSI" DisplayName="PSI">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>
+      <!--<Parameter Name="K" DisplayName="Kelvin">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>	  
+      <Parameter Name="Result" DisplayName="Compare Result">
+        <Description><![CDATA[<p>Context help for Compare Result</p>]]></Description>
+      </Parameter> -->
+      <Block Mode="dPressure250" DisplayName="dPressure 250">
+        <Description><![CDATA[<p>Context help for Measure Sensor Value</p>]]></Description>
+      </Block>
+	  <Block Mode="dPressure500" DisplayName="dPressure 500">
+        <Description><![CDATA[<p>Context help for Measure Sensor Value</p>]]></Description>
+      </Block>
+      <Block Mode="SampleCompareValue" DisplayName="Sensor Value">
+        <Description><![CDATA[<p>Context help for Compare Sensor Value</p>]]></Description>
+      </Block>
+      <Block Mode="SampleChangeValue" DisplayName="Sensor Value" >
+        <Description><![CDATA[<p>Context help for Sensor Value Change</p>]]></Description>
+      </Block>
+    <Block Mode="WaitSampleSensorSampleCompareValue" DisplayName="" >
+        <Description><![CDATA[<p>Context help for Wait - Sample Sensor - Compare - Sensor Value</p>]]></Description>
+      </Block>
+    <Block Mode="WaitSampleSensorSampleChangeValue" DisplayName="" >
+        <Description><![CDATA[<p>Context help for Wait - Sample Sensor - Change - Sensor Value</p>]]></Description>
+      </Block>
+    <Block Mode="LoopSampleSensorSampleCompareValue" DisplayName="" >
+        <Description><![CDATA[<p>Context help for Loop - Sample Sensor - Compare - Sensor Value</p>]]></Description>
+      </Block>  	  
+    <Block Mode="SwitchSampleSensorSampleCompareValue" DisplayName="" >
+       <Description><![CDATA[<p>Context help for Switch - Sample Sensor - Compare - Sensor Value</p>]]></Description>
+      </Block>	  
+    </PolyGroup>
+    <PolyGroup Name="dGPS" DisplayName="dGPS" DisplayNamePrefix="dGPS">
+      <Parameter Name="Direction" DisplayName="Direction">
+        <Description><![CDATA[<p>Context help for Direction</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Port" DisplayName="Port" >
+        <Description><![CDATA[<p>Context help for Port</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Time" DisplayName="Time in UTC">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Lat" DisplayName="Latitude">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Lon" DisplayName="Longitude">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Hea" DisplayName="Heading">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>	  
+      <Parameter Name="Vel" DisplayName="Velocity">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>	  
+      <Parameter Name="Sig" DisplayName="Valid Signal">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>
+      <!-- <Parameter Name="DistanceToDestination" DisplayName="Distance to Destination">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>	  	  
+      <Parameter Name="AngleToDestination" DisplayName="Angle to Destination">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>	
+      <Parameter Name="SetDestLon" DisplayName="Angle to Destination">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>	
+      <Parameter Name="SetDestLat" DisplayName="Angle to Destination">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>-->
+      <Block Mode="ReadTime" DisplayName="Read UTC Time">
+        <Description><![CDATA[<p>Context help for Measure Sensor Value</p>]]></Description>
+      </Block>
+      <Block Mode="ReadLat" DisplayName="Read Latitude">
+        <Description><![CDATA[<p>Context help for Measure Sensor Value</p>]]></Description>
+      </Block>	  
+      <Block Mode="ReadLon" DisplayName="Read Longitude">
+        <Description><![CDATA[<p>Context help for Measure Sensor Value</p>]]></Description>
+      </Block>	 
+      <Block Mode="ReadHea" DisplayName="Read Heading">
+        <Description><![CDATA[<p>Context help for Measure Sensor Value</p>]]></Description>
+      </Block>	  
+      <Block Mode="ReadVel" DisplayName="Read Velocity">
+        <Description><![CDATA[<p>Context help for Measure Sensor Value</p>]]></Description>
+      </Block>	  
+      <Block Mode="ReadSig" DisplayName="Read Signal">
+        <Description><![CDATA[<p>Context help for Measure Sensor Value</p>]]></Description>
+      </Block>	
+      <!-- <Block Mode="ReadDistToDest" DisplayName="Read Distance to Destination">
+        <Description><![CDATA[<p>Context help for Measure Sensor Value</p>]]></Description>
+      </Block>
+      <Block Mode="ReadAngToDest" DisplayName="Read Angle to Destination">
+        <Description><![CDATA[<p>Context help for Measure Sensor Value</p>]]></Description>
+      </Block>	
+      <Block Mode="SetDest" DisplayName="Set Destination Coordinates">
+        <Description><![CDATA[<p>Context help for Measure Sensor Value</p>]]></Description>
+      </Block>-->
+      <Block Mode="WaitSampleSensorSampleCompareValue" DisplayName="" >
+        <Description><![CDATA[<p>Context help for Wait - Sample Sensor - Compare - Sensor Value</p>]]></Description>
+      </Block>
+    <Block Mode="WaitSampleSensorSampleChangeValue" DisplayName="" >
+        <Description><![CDATA[<p>Context help for Wait - Sample Sensor - Change - Sensor Value</p>]]></Description>
+      </Block>
+    <Block Mode="LoopSampleSensorSampleCompareValue" DisplayName="" >
+        <Description><![CDATA[<p>Context help for Loop - Sample Sensor - Compare - Sensor Value</p>]]></Description>
+      </Block>  	  
+    <Block Mode="SwitchSampleSensorSampleCompareValue" DisplayName="" >
+       <Description><![CDATA[<p>Context help for Switch - Sample Sensor - Compare - Sensor Value</p>]]></Description>
+      </Block>	  
+    </PolyGroup>
+    <PolyGroup Name="dLight" DisplayName="dLight" DisplayNamePrefix="dLight">
+      <Parameter Name="Direction" DisplayName="Direction">
+        <Description><![CDATA[<p>Context help for Direction</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Port" DisplayName="Port" >
+        <Description><![CDATA[<p>Context help for Port</p>]]></Description>
+      </Parameter>
+      <Parameter Name="LightNum" DisplayName="Light Number">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Power" DisplayName="Light On / Off">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>	  
+      <Parameter Name="R" DisplayName="Red Value">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>
+      <Parameter Name="G" DisplayName="Green Value">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>
+      <Parameter Name="B" DisplayName="Blue Value">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>	  
+      <Parameter Name="Blink" DisplayName="Blink On Off">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>	  
+      <Parameter Name="Freq" DisplayName="Frequency of Blink">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>	  	  
+      <Block Mode="SetLight" DisplayName="Set the Light Value">
+        <Description><![CDATA[<p>Context help for Measure Sensor Value</p>]]></Description>
+      </Block>   	  
+      <Block Mode="WaitSampleSensorSampleCompareValue" DisplayName="" >
+        <Description><![CDATA[<p>Context help for Wait - Sample Sensor - Compare - Sensor Value</p>]]></Description>
+      </Block>
+      <Block Mode="WaitSampleSensorSampleChangeValue" DisplayName="" >
+        <Description><![CDATA[<p>Context help for Wait - Sample Sensor - Change - Sensor Value</p>]]></Description>
+      </Block>
+      <Block Mode="LoopSampleSensorSampleCompareValue" DisplayName="" >
+        <Description><![CDATA[<p>Context help for Loop - Sample Sensor - Compare - Sensor Value</p>]]></Description>
+      </Block>  	  
+      <Block Mode="SwitchSampleSensorSampleCompareValue" DisplayName="" >
+       <Description><![CDATA[<p>Context help for Switch - Sample Sensor - Compare - Sensor Value</p>]]></Description>
+      </Block>	  
+    </PolyGroup>
+    <PolyGroup Name="dIMU" DisplayName="dIMU" DisplayNamePrefix="dIMU">
+      <Parameter Name="Direction" DisplayName="Direction">
+        <Description><![CDATA[<p>Context help for Direction</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Port" DisplayName="Port" >
+        <Description><![CDATA[<p>Context help for Port</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Acclx" DisplayName="Accel x">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Accly" DisplayName="Accel y">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>	  
+      <Parameter Name="Acclz" DisplayName="Accel z">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>
+	  <Parameter Name="Gyrox" DisplayName="Gyro x">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Gyroy" DisplayName="Gyro y">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>	  
+      <Parameter Name="Gyroz" DisplayName="Gyro z">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>
+      <Block Mode="ReadAccl4G" DisplayName="Read 4g">
+        <Description><![CDATA[<p>Context help for Measure Sensor Value</p>]]></Description>
+      </Block>   	  
+      <Block Mode="ReadAccl8G" DisplayName="Read 8g">
+        <Description><![CDATA[<p>Context help for Measure Sensor Value</p>]]></Description>
+      </Block>  
+	  <Block Mode="ReadGyro" DisplayName="Read Gyro">
+        <Description><![CDATA[<p>Context help for Measure Sensor Value</p>]]></Description>
+      </Block>   
+      <Block Mode="WaitSampleSensorSampleCompareValue" DisplayName="" >
+        <Description><![CDATA[<p>Context help for Wait - Sample Sensor - Compare - Sensor Value</p>]]></Description>
+      </Block>
+      <Block Mode="WaitSampleSensorSampleChangeValue" DisplayName="" >
+        <Description><![CDATA[<p>Context help for Wait - Sample Sensor - Change - Sensor Value</p>]]></Description>
+      </Block>
+      <Block Mode="LoopSampleSensorSampleCompareValue" DisplayName="" >
+        <Description><![CDATA[<p>Context help for Loop - Sample Sensor - Compare - Sensor Value</p>]]></Description>
+      </Block>  	  
+      <Block Mode="SwitchSampleSensorSampleCompareValue" DisplayName="" >
+       <Description><![CDATA[<p>Context help for Switch - Sample Sensor - Compare - Sensor Value</p>]]></Description>
+      </Block>	  
+    </PolyGroup>
+	<PolyGroup Name="dCompass" DisplayName="dCompass" DisplayNamePrefix="dCompass">
+      <Parameter Name="Direction" DisplayName="Direction">
+        <Description><![CDATA[<p>Context help for Direction</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Port" DisplayName="Port" >
+        <Description><![CDATA[<p>Context help for Port</p>]]></Description>
+      </Parameter>
+      <Parameter Name="X" DisplayName="X">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Y" DisplayName="Y">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>	  
+      <Parameter Name="Z" DisplayName="Z">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>
+	  <Parameter Name="Heading" DisplayName="Heading">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>
+      <Block Mode="ReadCompass" DisplayName="ReadCompass">
+        <Description><![CDATA[<p>Context help for Measure Sensor Value</p>]]></Description>
+      </Block>   	  
+      <Block Mode="WaitSampleSensorSampleCompareValue" DisplayName="" >
+        <Description><![CDATA[<p>Context help for Wait - Sample Sensor - Compare - Sensor Value</p>]]></Description>
+      </Block>
+      <Block Mode="WaitSampleSensorSampleChangeValue" DisplayName="" >
+        <Description><![CDATA[<p>Context help for Wait - Sample Sensor - Change - Sensor Value</p>]]></Description>
+      </Block>
+      <Block Mode="LoopSampleSensorSampleCompareValue" DisplayName="" >
+        <Description><![CDATA[<p>Context help for Loop - Sample Sensor - Compare - Sensor Value</p>]]></Description>
+      </Block>  	  
+      <Block Mode="SwitchSampleSensorSampleCompareValue" DisplayName="" >
+       <Description><![CDATA[<p>Context help for Switch - Sample Sensor - Compare - Sensor Value</p>]]></Description>
+      </Block>	  
+    </PolyGroup>
+	<PolyGroup Name="dTIR" DisplayName="dTIR" DisplayNamePrefix="dTIR">
+      <Parameter Name="Direction" DisplayName="Direction">
+        <Description><![CDATA[<p>Context help for Direction</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Port" DisplayName="Port" >
+        <Description><![CDATA[<p>Context help for Port</p>]]></Description>
+      </Parameter>
+      <Parameter Name="AmbientTemp" DisplayName="AmbientTemp">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>
+      <Parameter Name="ObjectTemp" DisplayName="ObjectTemp">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>	  
+      <Block Mode="ReadTIR" DisplayName="ReadTIR">
+        <Description><![CDATA[<p>Context help for Measure Sensor Value</p>]]></Description>
+      </Block>   	  
+      <Block Mode="WaitSampleSensorSampleCompareValue" DisplayName="" >
+        <Description><![CDATA[<p>Context help for Wait - Sample Sensor - Compare - Sensor Value</p>]]></Description>
+      </Block>
+      <Block Mode="WaitSampleSensorSampleChangeValue" DisplayName="" >
+        <Description><![CDATA[<p>Context help for Wait - Sample Sensor - Change - Sensor Value</p>]]></Description>
+      </Block>
+      <Block Mode="LoopSampleSensorSampleCompareValue" DisplayName="" >
+        <Description><![CDATA[<p>Context help for Loop - Sample Sensor - Compare - Sensor Value</p>]]></Description>
+      </Block>  	  
+      <Block Mode="SwitchSampleSensorSampleCompareValue" DisplayName="" >
+       <Description><![CDATA[<p>Context help for Switch - Sample Sensor - Compare - Sensor Value</p>]]></Description>
+      </Block>	  
+    </PolyGroup>
+	<PolyGroup Name="dTemp" DisplayName="dTemp" DisplayNamePrefix="dTemp">
+      <Parameter Name="Direction" DisplayName="Direction">
+        <Description><![CDATA[<p>Context help for Direction</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Port" DisplayName="Port" >
+        <Description><![CDATA[<p>Context help for Port</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Temp" DisplayName="Temp">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>
+      <Block Mode="ReadTemp" DisplayName="ReadTemp">
+        <Description><![CDATA[<p>Context help for Measure Sensor Value</p>]]></Description>
+      </Block>   	  
+      <Block Mode="WaitSampleSensorSampleCompareValue" DisplayName="" >
+        <Description><![CDATA[<p>Context help for Wait - Sample Sensor - Compare - Sensor Value</p>]]></Description>
+      </Block>
+      <Block Mode="WaitSampleSensorSampleChangeValue" DisplayName="" >
+        <Description><![CDATA[<p>Context help for Wait - Sample Sensor - Change - Sensor Value</p>]]></Description>
+      </Block>
+      <Block Mode="LoopSampleSensorSampleCompareValue" DisplayName="" >
+        <Description><![CDATA[<p>Context help for Loop - Sample Sensor - Compare - Sensor Value</p>]]></Description>
+      </Block>  	  
+      <Block Mode="SwitchSampleSensorSampleCompareValue" DisplayName="" >
+       <Description><![CDATA[<p>Context help for Switch - Sample Sensor - Compare - Sensor Value</p>]]></Description>
+      </Block>	  
+    </PolyGroup>
+	<PolyGroup Name="dFlex" DisplayName="dFlex" DisplayNamePrefix="dFlex">
+      <Parameter Name="Direction" DisplayName="Direction">
+        <Description><![CDATA[<p>Context help for Direction</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Port" DisplayName="Port" >
+        <Description><![CDATA[<p>Context help for Port</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Raw" DisplayName="Raw">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>
+	  <Parameter Name="Volt" DisplayName="Volt">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>
+      <Block Mode="FlexRead" DisplayName="FlexRead">
+        <Description><![CDATA[<p>Context help for Measure Sensor Value</p>]]></Description>
+      </Block>   	  
+      <Block Mode="WaitSampleSensorSampleCompareValue" DisplayName="" >
+        <Description><![CDATA[<p>Context help for Wait - Sample Sensor - Compare - Sensor Value</p>]]></Description>
+      </Block>
+      <Block Mode="WaitSampleSensorSampleChangeValue" DisplayName="" >
+        <Description><![CDATA[<p>Context help for Wait - Sample Sensor - Change - Sensor Value</p>]]></Description>
+      </Block>
+      <Block Mode="LoopSampleSensorSampleCompareValue" DisplayName="" >
+        <Description><![CDATA[<p>Context help for Loop - Sample Sensor - Compare - Sensor Value</p>]]></Description>
+      </Block>  	  
+      <Block Mode="SwitchSampleSensorSampleCompareValue" DisplayName="" >
+       <Description><![CDATA[<p>Context help for Switch - Sample Sensor - Compare - Sensor Value</p>]]></Description>
+      </Block>	  
+    </PolyGroup>
+	<PolyGroup Name="dSwitch" DisplayName="dSwitch">
+      <Description><![CDATA[<p>Context help for PolyGroup <b>dSwitch</b></p>]]></Description>
+      <Parameter Name="MotorPort" DisplayName="MotorPort">
+        <Description><![CDATA[<p>Context help for Parameter <b>Port</b></p>]]></Description>
+      </Parameter>
+	  <Parameter Name="On" DisplayName="On">
+        <Description><![CDATA[<p>Context help for Parameter <b>I2CAddr</b></p>]]></Description>
+      </Parameter>
+      <Block Mode="useSwitch" DisplayName="useSwitch">
+        <Description><![CDATA[<p>Context help for Block <b>Move</b></p>]]></Description>
+      </Block>
+    </PolyGroup>
+	<PolyGroup Name="dSound" DisplayName="dSound" DisplayNamePrefix="dSound">
+      <Parameter Name="Direction" DisplayName="Direction">
+        <Description><![CDATA[<p>Context help for Direction</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Port" DisplayName="Port" >
+        <Description><![CDATA[<p>Context help for Port</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Comparison" DisplayName="Compare Type">
+        <Description><![CDATA[<p>Context help for Compare Type</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Threshold" DisplayName="Threshold Value">
+        <Description><![CDATA[<p>Context help for Threshold Value</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Amount" DisplayName="Amount" >
+        <Description><![CDATA[<p>Context help for Amount</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Pitch" DisplayName="Pitch">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>
+      <Parameter Name="Power" DisplayName="Power">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>
+	  <Parameter Name="Mode" DisplayName="Mode">
+        <Description><![CDATA[<p>Raw Value Output</p>]]></Description>
+      </Parameter>
+      <Block Mode="SoundPower" DisplayName="SoundPower">
+        <Description><![CDATA[<p>Context help for Measure Sensor Value</p>]]></Description>
+      </Block>
+      <Block Mode="SoundPitch" DisplayName="SoundPitch">
+        <Description><![CDATA[<p>Context help for Compare Sensor Value</p>]]></Description>
+      </Block>
+      <Block Mode="SampleChangeValue" DisplayName="Sensor Value" >
+        <Description><![CDATA[<p>Context help for Sensor Value Change</p>]]></Description>
+      </Block>
+    <Block Mode="WaitSampleSensorSampleCompareValue" DisplayName="" >
+        <Description><![CDATA[<p>Context help for Wait - Sample Sensor - Compare - Sensor Value</p>]]></Description>
+      </Block>
+    <Block Mode="WaitSampleSensorSampleChangeValue" DisplayName="" >
+        <Description><![CDATA[<p>Context help for Wait - Sample Sensor - Change - Sensor Value</p>]]></Description>
+      </Block>
+    <Block Mode="LoopSampleSensorSampleCompareValue" DisplayName="" >
+        <Description><![CDATA[<p>Context help for Loop - Sample Sensor - Compare - Sensor Value</p>]]></Description>
+      </Block>  	  
+    <Block Mode="SwitchSampleSensorSampleCompareValue" DisplayName="" >
+       <Description><![CDATA[<p>Context help for Switch - Sample Sensor - Compare - Sensor Value</p>]]></Description>
+      </Block>	  
+    </PolyGroup>
+  </PolyGroups>
+</EditorStrings>

@@ -1,0 +1,243 @@
+﻿Merge branch 'refs/heads/Adding-Language-Support'
+
+Conflicts:
+	README.md
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# All conflicts fixed but you are still merging.
+#   (use "git commit" to conclude merge)
+#
+# Changes to be committed:
+#
+#	modified:   Dexter.ev3b
+#	new file:   Dexter/strings/da/blocks.xml
+#	new file:   Dexter/strings/de/blocks.xml
+#	new file:   Dexter/strings/en-GB/blocks.xml
+#	new file:   Dexter/strings/es/blocks.xml
+#	new file:   Dexter/strings/fr/blocks.xml
+#	new file:   Dexter/strings/it/blocks.xml
+#	new file:   Dexter/strings/ja/blocks.xml
+#	new file:   Dexter/strings/ko/blocks.xml
+#	new file:   Dexter/strings/nb-NO/blocks.xml
+#	new file:   Dexter/strings/nl/blocks.xml
+#	new file:   Dexter/strings/pt/blocks.xml
+#	new file:   Dexter/strings/ru/blocks.xml
+#	new file:   Dexter/strings/sv/blocks.xml
+#	new file:   Dexter/strings/zh-Hans/blocks.xml
+#	renamed:    Old/DexterMon_01_20_2014_165035_18.zip -> Dexter_lang_test.ev3b
+#	deleted:    Old/Dexter-EV3_DGPS_BACKUP_WITH_COORDINATES.zip
+#	deleted:    Old/Dexter.rar
+#	deleted:    Old/DexterFri_09_27_2013_140931_77.zip
+#	deleted:    Old/DexterFri_09_27_2013_160913_92.zip
+#	deleted:    Old/DexterFri_11_08_2013_155119_09.zip
+#	deleted:    Old/DexterFri_11_08_2013_163254_12.zip
+#	deleted:    Old/DexterFri_11_08_2013_174543_19.zip
+#	deleted:    Old/DexterFri_12_13_2013_113555_68.zip
+#	deleted:    Old/DexterFri_12_13_2013_113755_77.zip
+#	deleted:    Old/DexterFri_12_13_2013_124855_03.zip
+#	deleted:    Old/DexterFri_12_13_2013_125424_11.zip
+#	deleted:    Old/DexterFri_12_13_2013__04437_10.zip
+#	deleted:    Old/DexterFri_12_13_2013__11045_54.zip
+#	deleted:    Old/DexterMon_01_20_2014_112139_65.zip
+#	deleted:    Old/DexterMon_01_20_2014_114906_16.zip
+#	deleted:    Old/DexterMon_01_20_2014_122624_40.zip
+#	deleted:    Old/DexterMon_11_11_2013_161814_57.zip
+#	deleted:    Old/DexterMon_11_11_2013_164428_10.zip
+#	deleted:    Old/DexterMon_11_11_2013_171413_62.zip
+#	deleted:    Old/DexterMon_11_18_2013_134909_19.zip
+#	deleted:    Old/DexterMon_11_18_2013_135606_79.zip
+#	deleted:    Old/DexterMon_11_18_2013_141006_64.zip
+#	deleted:    Old/DexterMon_11_18_2013_141530_87.zip
+#	deleted:    Old/DexterMon_11_18_2013_142250_83.zip
+#	deleted:    Old/DexterMon_11_18_2013_174253_41.zip
+#	deleted:    Old/DexterMon_12_16_2013_173512_80.zip
+#	deleted:    Old/DexterMon_12_16_2013_175355_76.zip
+#	deleted:    Old/DexterMon_12_16_2013_175542_13.zip
+#	deleted:    Old/DexterMon_12_16_2013_180244_92.zip
+#	deleted:    Old/DexterMon_12_16_2013_183216_01.zip
+#	deleted:    Old/DexterMon_12_16_2013_183809_15.zip
+#	deleted:    Old/DexterMon_12_16_2013_184127_88.zip
+#	deleted:    Old/DexterMon_12_16_2013_192535_92.zip
+#	deleted:    Old/DexterMon_12_16_2013_194622_19.zip
+#	deleted:    Old/DexterMon_12_16_2013_194927_60.zip
+#	deleted:    Old/DexterSat_11_09_2013_101849_01.zip
+#	deleted:    Old/DexterSat_11_09_2013_111328_57.zip
+#	deleted:    Old/DexterSat_12_14_2013__10028_56.zip
+#	deleted:    Old/DexterThu_01_16_2014_110736_79.zip
+#	deleted:    Old/DexterThu_01_16_2014_152739_36.zip
+#	deleted:    Old/DexterThu_01_16_2014_170348_74.zip
+#	deleted:    Old/DexterThu_01_16_2014_175848_51.zip
+#	deleted:    Old/DexterThu_01_16_2014_180834_74.zip
+#	deleted:    Old/DexterThu_09_26_2013_143911_26.zip
+#	deleted:    Old/DexterThu_09_26_2013_145045_72.zip
+#	deleted:    Old/DexterThu_09_26_2013_145426_94.zip
+#	deleted:    Old/DexterThu_09_26_2013_145920_09.zip
+#	deleted:    Old/DexterThu_09_26_2013_170943_32.zip
+#	deleted:    Old/DexterThu_09_26_2013_175222_09.zip
+#	deleted:    Old/DexterThu_09_26_2013_175823_27.zip
+#	deleted:    Old/DexterThu_09_26_2013_180239_37.zip
+#	deleted:    Old/DexterThu_09_26_2013_181106_34.zip
+#	deleted:    Old/DexterThu_09_26_2013_182300_97.zip
+#	deleted:    Old/DexterThu_09_26_2013_182729_93.zip
+#	deleted:    Old/DexterThu_09_26_2013_183002_16.zip
+#	deleted:    Old/DexterThu_09_26_2013_185533_96.zip
+#	deleted:    Old/DexterThu_11_07_2013_161426_99.zip
+#	deleted:    Old/DexterThu_11_07_2013_170523_06.zip
+#	deleted:    Old/DexterThu_12_12_2013__93600_05.zip
+#	deleted:    Old/DexterThu_12_12_2013__93941_33.zip
+#	deleted:    Old/DexterThu_12_19_2013_161423_42.zip
+#	deleted:    Old/DexterThu_12_19_2013_174257_95.zip
+#	deleted:    Old/DexterThu_12_19_2013_184057_01.zip
+#	deleted:    Old/DexterThu_12_26_2013_131503_18.zip
+#	deleted:    Old/DexterThu_12_26_2013_141536_59.zip
+#	deleted:    Old/DexterTue_09_24_2013_163108_48.zip
+#	deleted:    Old/DexterTue_09_24_2013_163138_95.zip
+#	deleted:    Old/DexterTue_09_24_2013_164012_76.zip
+#	deleted:    Old/DexterTue_09_24_2013_164608_94.zip
+#	deleted:    Old/DexterTue_09_24_2013_165132_35.zip
+#	deleted:    Old/DexterTue_09_24_2013_170824_03.zip
+#	deleted:    Old/DexterTue_09_24_2013_174825_54.zip
+#	deleted:    Old/DexterTue_10_01_2013_141114_30.zip
+#	deleted:    Old/DexterTue_10_01_2013_141700_74.zip
+#	deleted:    Old/DexterTue_10_01_2013_143138_18.zip
+#	deleted:    Old/DexterTue_10_01_2013_144344_22.zip
+#	deleted:    Old/DexterTue_10_01_2013_150407_66.zip
+#	deleted:    Old/DexterTue_10_01_2013_150709_77.zip
+#	deleted:    Old/DexterTue_10_01_2013_153715_99.zip
+#	deleted:    Old/DexterTue_10_01_2013_154442_78.zip
+#	deleted:    Old/DexterTue_10_01_2013_155026_04.zip
+#	deleted:    Old/DexterTue_10_01_2013_155308_53.zip
+#	deleted:    Old/DexterTue_10_01_2013_160825_59.zip
+#	deleted:    Old/DexterTue_10_01_2013_161810_49.zip
+#	deleted:    Old/DexterTue_10_01_2013_162852_11.zip
+#	deleted:    Old/DexterTue_10_01_2013_163625_08.zip
+#	deleted:    Old/DexterTue_10_01_2013_164534_76.zip
+#	deleted:    Old/DexterTue_11_19_2013_125832_44.zip
+#	deleted:    Old/DexterTue_11_19_2013_130328_89.zip
+#	deleted:    Old/DexterTue_11_19_2013_132357_35.zip
+#	deleted:    Old/DexterTue_11_19_2013_132812_24.zip
+#	deleted:    Old/DexterTue_11_19_2013_133014_55.zip
+#	deleted:    Old/DexterTue_11_19_2013_150048_31.zip
+#	deleted:    Old/DexterTue_11_19_2013_165258_40.zip
+#	deleted:    Old/DexterTue_11_19_2013_171705_56.zip
+#	deleted:    Old/DexterTue_11_19_2013_172028_31.zip
+#	deleted:    Old/DexterTue_11_19_2013__92812_56.zip
+#	deleted:    Old/DexterWed_01_15_2014_172556_77.zip
+#	deleted:    Old/DexterWed_01_15_2014_174110_50.zip
+#	deleted:    Old/DexterWed_09_25_2013_102602_94.zip
+#	deleted:    Old/DexterWed_09_25_2013_105649_06.zip
+#	deleted:    Old/DexterWed_09_25_2013_110322_88.zip
+#	deleted:    Old/DexterWed_09_25_2013_110414_37.zip
+#	deleted:    Old/DexterWed_09_25_2013_114758_22.zip
+#	deleted:    Old/DexterWed_09_25_2013_115128_60.zip
+#	deleted:    Old/DexterWed_09_25_2013_115328_23.zip
+#	deleted:    Old/DexterWed_09_25_2013_115925_90.zip
+#	deleted:    Old/DexterWed_09_25_2013_120142_84.zip
+#	deleted:    Old/DexterWed_09_25_2013_120350_30.zip
+#	deleted:    Old/DexterWed_09_25_2013_132619_24.zip
+#	deleted:    Old/DexterWed_09_25_2013_134832_70.zip
+#	deleted:    Old/DexterWed_09_25_2013_154628_15.zip
+#	deleted:    Old/DexterWed_09_25_2013_162731_27.zip
+#	deleted:    Old/DexterWed_09_25_2013_163857_61.zip
+#	deleted:    Old/DexterWed_09_25_2013_164404_03.zip
+#	deleted:    Old/DexterWed_09_25_2013_165014_04.zip
+#	deleted:    Old/DexterWed_09_25_2013_165626_98.zip
+#	deleted:    Old/DexterWed_09_25_2013_165935_21.zip
+#	deleted:    Old/DexterWed_09_25_2013_171615_47.zip
+#	deleted:    Old/DexterWed_09_25_2013_180613_96.zip
+#	deleted:    Old/DexterWed_09_25_2013_181412_44.zip
+#	deleted:    Old/DexterWed_09_25_2013_182446_98.zip
+#	deleted:    Old/DexterWed_09_25_2013_183621_06.zip
+#	deleted:    Old/DexterWed_09_25_2013_184224_86.zip
+#	deleted:    Old/DexterWed_09_25_2013_184742_87.zip
+#	deleted:    Old/DexterWed_09_25_2013_185308_43.zip
+#	deleted:    Old/DexterWed_09_25_2013_185707_88.zip
+#	deleted:    Old/DexterWed_09_25_2013__94825_39.zip
+#	deleted:    Old/DexterWed_10_02_2013_133536_80.zip
+#	deleted:    Old/DexterWed_10_02_2013_134923_94.zip
+#	deleted:    Old/DexterWed_10_02_2013_135617_32.zip
+#	deleted:    Old/DexterWed_10_02_2013_135900_65.zip
+#	deleted:    Old/DexterWed_11_20_2013_104602_88.zip
+#	deleted:    Old/DexterWed_11_20_2013_115958_82.zip
+#	deleted:    Old/DexterWed_11_20_2013_135551_98.zip
+#	deleted:    Old/DexterWed_11_20_2013_151807_41.zip
+#	deleted:    Old/DexterWed_11_20_2013_153353_73.zip
+#	deleted:    Old/DexterWed_11_20_2013_155614_87.zip
+#	deleted:    Old/DexterWed_11_20_2013__91736_12.zip
+#	deleted:    Old/DexterWed_12_11_2013_110708_27.zip
+#	deleted:    Old/DexterWed_12_11_2013_151305_38.zip
+#	deleted:    Old/DexterWed_12_11_2013_152241_56.zip
+#	deleted:    Old/DexterWed_12_11_2013_152521_98.zip
+#	deleted:    Old/Z-Rename_Dexter ziptoDextreev3b- Copy.bat
+#	deleted:    Old/dGPS/VIs/NXT/SampleSensorChange.vix
+#	deleted:    Old/dGPS/VIs/NXT/SampleSensorCompare.vix
+#	deleted:    Old/dGPS/VIs/NXT/SampleSensorNXTCore.vix
+#	deleted:    Old/dGPS/VIs/NXT/SampleSensorValue.vix
+#	deleted:    Old/dGPS/VIs/PBR/SampleSensorChange.vix
+#	deleted:    Old/dGPS/VIs/PBR/SampleSensorCompare.vix
+#	deleted:    Old/dGPS/VIs/PBR/SampleSensorEV3Core.vix
+#	deleted:    Old/dGPS/VIs/PBR/SampleSensorValue.vix
+#	deleted:    Old/dGPS/VIs/PBR/TestEV3Core - Copy.vix
+#	deleted:    Old/dGPS/VIs/PBR/TestEV3Core.vix
+#	deleted:    Old/dGPS/VIs/PBR/dLight.vix
+#	deleted:    Old/dGPS/VIs/PBR/dLightEV3Core.vix
+#	deleted:    Old/dGPS/blocks.xml
+#	deleted:    Old/dGPS/help/en-US/SampleSensor.html
+#	deleted:    Old/dGPS/help/en-US/SampleSensor.png
+#	deleted:    Old/dGPS/images/PolyGroup_dLight_Category.png
+#	deleted:    Old/dGPS/images/PolyGroup_dLight_Category_MouseOver.png
+#	deleted:    Old/dGPS/images/PolyGroup_dLight_Diagram.png
+#	deleted:    Old/dGPS/images/PolyGroup_dLight_Mode_SampleChangeValue_Diagram.png
+#	deleted:    Old/dGPS/images/PolyGroup_dLight_Mode_SampleChangeValue_Diagram_MouseOver.png
+#	deleted:    Old/dGPS/images/PolyGroup_dLight_Mode_SampleCompareValue_Diagram.png
+#	deleted:    Old/dGPS/images/PolyGroup_dLight_Mode_SampleCompareValue_Diagram_MouseOver.png
+#	deleted:    Old/dGPS/images/PolyGroup_dLight_Mode_SampleReadValue_Diagram.png
+#	deleted:    Old/dGPS/images/PolyGroup_dLight_Mode_SampleReadValue_Diagram_MouseOver.png
+#	deleted:    Old/dGPS/images/PolyGroup_dLight_Mode_SampleReadValue_Hardware.png
+#	deleted:    Old/dGPS/images/PolyGroup_dLight_Mode_SampleReadValue_Hardware_MouseOver.png
+#	deleted:    Old/dGPS/images/PolyGroup_dLight_Palette.png
+#	deleted:    Old/dGPS/images/PolyGroup_dLight_Palette_MouseOver.png
+#	deleted:    Old/dGPS/strings/en-US/blocks.xml
+#	deleted:    Old/dLight/VIs/NXT/SampleSensorChange.vix
+#	deleted:    Old/dLight/VIs/NXT/SampleSensorCompare.vix
+#	deleted:    Old/dLight/VIs/NXT/SampleSensorNXTCore.vix
+#	deleted:    Old/dLight/VIs/NXT/SampleSensorValue.vix
+#	deleted:    Old/dLight/VIs/PBR/SampleSensorChange.vix
+#	deleted:    Old/dLight/VIs/PBR/SampleSensorCompare.vix
+#	deleted:    Old/dLight/VIs/PBR/SampleSensorEV3Core.vix
+#	deleted:    Old/dLight/VIs/PBR/SampleSensorValue.vix
+#	deleted:    Old/dLight/VIs/PBR/TestEV3Core - Copy.vix
+#	deleted:    Old/dLight/VIs/PBR/TestEV3Core.vix
+#	deleted:    Old/dLight/VIs/PBR/dGPS.vix
+#	deleted:    Old/dLight/VIs/PBR/dLight.vix
+#	deleted:    Old/dLight/VIs/PBR/dLightEV3Core.vix
+#	deleted:    Old/dLight/blocks.xml
+#	deleted:    Old/dLight/help/en-US/SampleSensor.html
+#	deleted:    Old/dLight/help/en-US/SampleSensor.png
+#	deleted:    Old/dLight/images/PolyGroup_dLight_Category.png
+#	deleted:    Old/dLight/images/PolyGroup_dLight_Category_MouseOver.png
+#	deleted:    Old/dLight/images/PolyGroup_dLight_Diagram.png
+#	deleted:    Old/dLight/images/PolyGroup_dLight_Mode_SampleChangeValue_Diagram.png
+#	deleted:    Old/dLight/images/PolyGroup_dLight_Mode_SampleChangeValue_Diagram_MouseOver.png
+#	deleted:    Old/dLight/images/PolyGroup_dLight_Mode_SampleCompareValue_Diagram.png
+#	deleted:    Old/dLight/images/PolyGroup_dLight_Mode_SampleCompareValue_Diagram_MouseOver.png
+#	deleted:    Old/dLight/images/PolyGroup_dLight_Mode_SampleReadValue_Diagram.png
+#	deleted:    Old/dLight/images/PolyGroup_dLight_Mode_SampleReadValue_Diagram_MouseOver.png
+#	deleted:    Old/dLight/images/PolyGroup_dLight_Mode_SampleReadValue_Hardware.png
+#	deleted:    Old/dLight/images/PolyGroup_dLight_Mode_SampleReadValue_Hardware_MouseOver.png
+#	deleted:    Old/dLight/images/PolyGroup_dLight_Palette.png
+#	deleted:    Old/dLight/images/PolyGroup_dLight_Palette_MouseOver.png
+#	deleted:    Old/dLight/strings/en-US/blocks.xml
+#	deleted:    Old/dLightWed_09_25_2013__94859_36.zip
+#	modified:   README.md
+#
+
+Adding language support

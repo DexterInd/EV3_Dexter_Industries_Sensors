@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <EditorDefinitions>
-  <PolyGroups ModuleName="Dexter" ModuleVersion="1.7">
+  <PolyGroups ModuleName="Dexter" ModuleVersion="1.8">
     <PolyGroup Name="dPressure" BlockFamily="Sensor">
       <Parameter Name="Direction" Direction="Input" DataType="UInt32" DefaultValue="2" Configuration="builtin://Identification_WaitForChange.xml" Identification="builtin://Identification_WaitForChange.xml" />
       <Parameter Name="Port" CompilerDirectives="OneInputPort" Direction="Input" DefaultValue="1.3" />

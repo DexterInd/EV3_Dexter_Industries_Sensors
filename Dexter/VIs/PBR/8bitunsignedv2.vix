@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SourceFile Version="1.0.2.10" xmlns="http://www.ni.com/SourceModel.xsd">
+    <Namespace Name="Project">
+        <VirtualInstrument IsTopLevel="false" IsReentrant="false" Version="1.0.2.0" xmlns="http://www.ni.com/VirtualInstrument.xsd">
+            <DataItem Name="SequenceIn" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="2" />
+            <DataItem Name="SequenceOut" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" DefaultTerminalDirection="Input" CallUsage="None" CallDirection="Output" CallIndex="2" />
+            <DataItem Name="ByteIn" DataType="SByte" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="1" DefaultValue="0" />
+            <DataItem Name="U32Out" DataType="Int32" DefaultTerminalDirection="Input" CallUsage="None" CallDirection="Output" CallIndex="0" DefaultValue="0" />
+            <FrontPanel>
+                <fpruntime:FrontPanelCanvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:fpruntime="clr-namespace:NationalInstruments.LabVIEW.FrontPanelRuntime;assembly=NationalInstruments.LabVIEW.FrontPanelRuntime" xmlns:Model0="clr-namespace:NationalInstruments.SourceModel.Designer;assembly=NationalInstruments.SourceModel" x:Name="FrontPanel" Model0:DesignerSurfaceProperties.CanSnapToObjects="True" Model0:DesignerSurfaceProperties.SnapToObjects="True" Model0:DesignerSurfaceProperties.ShowSnaplines="True" Model0:DesignerSurfaceProperties.ShowControlAdorners="True" Width="640" Height="480" />
+            </FrontPanel>
+            <BlockDiagram Name="__RootDiagram__">
+                <DataAccessor DataItem="ByteIn" Id="n19" Bounds="728 217 70 14">
+                    <Terminal Id="Value" Direction="Output" Wire="w22" Hotspot="1 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <Comment Bounds="742 56 273 42" SizeMode="User" AttachStyle="Free">
+                    <Content>Takes in I8, convert it to U32.</Content>
+                </Comment>
+                <Wire Id="w16" Joints="N(n15:Out) N(n27:y)" />
+                <Wire Id="w18" Joints="N(n27:x\ \&lt;\ y\?) N(b9:n0)" />
+                <Wire Id="w20" Joints="N(n21:\32bit\ integer) N(b16:n0)" />
+                <Wire Id="w22" Joints="N(n19:Value) h(21) v(-28) N(n27:x) B(1) N(n21:number)" />
+                <DataAccessor DataItem="U32Out" Id="n20" Bounds="1281 231 70 14">
+                    <Terminal Id="Value" Direction="Input" Wire="w19" Hotspot="0 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <CaseStructure Id="n0" Bounds="917 161 175 154" DataType="Boolean" UserSelectorBounds="42.498 0 90.003 14" Selected="d1" Default="d0">
+                    <CaseStructure.Case Id="d0" Bounds="7 7 161 140" Pattern="False">
+                        <Wire Id="w4" Joints="N(b16:d0) h(140) v(14) N(b17:d0)" />
+                    </CaseStructure.Case>
+                    <CaseStructure.Case Id="d1" Bounds="7 7 161 140" Pattern="True">
+                        <And Id="n11" Terminals="x\ \.and\.\ y\?=w14, y=w6, x=w4" TopLeft="56 49" />
+                        <Wire Id="w4" Joints="N(b16:d1) N(n11:x)" />
+                        <Literal Id="n18" Terminals="Out=w6" Bounds="14 63 35 14" Interpretation="Exact" DataType="SByte">127</Literal>
+                        <Wire Id="w6" Joints="N(n18:Out) N(n11:y)" />
+                        <Add Id="n20" Terminals="x\+y=w12, y=w11, x=w14" TopLeft="119 56" />
+                        <Literal Id="n10" Terminals="Out=w11" Bounds="84 70 35 14" Interpretation="Exact" DataType="Int32">128</Literal>
+                        <Wire Id="w11" Joints="N(n10:Out) N(n20:y)" />
+                        <Wire Id="w12" Joints="N(n20:x\+y) N(b17:d1)" />
+                        <Wire Id="w14" Joints="N(n11:x\ \.and\.\ y\?) N(n20:x)" />
+                    </CaseStructure.Case>
+                    <CaseStructure.Selector Id="b9" Terminals="n0=w18, d0, d1" TopLeft="0 35" />
+                    <CaseStructure.Tunnel Id="b16" Terminals="n0=w20, d0=w4, d1=w4" TopLeft="0 56" />
+                    <CaseStructure.Tunnel Id="b17" Terminals="n0=w17, d0=w4, d1=w12" TopLeft="161 70" />
+                </CaseStructure>
+                <IsLess Id="n27" Terminals="x\ \&lt;\ y\?=w18, y=w16, x=w22" TopLeft="861 189" />
+                <Literal Id="n15" Terminals="Out=w16" Bounds="826 203 28 14" Interpretation="Exact" DataType="SByte">0</Literal>
+                <ToLongInteger Id="n21" Terminals="\32bit\ integer=w20, number=w22" TopLeft="840 217" />
+                <ToUnsignedLongInteger Id="n76" Terminals="unsigned\ 32bit\ integer=w19, number=w17" TopLeft="1176 231" />
+                <Wire Id="w17" Joints="N(b17:n0) N(n76:number)" />
+                <Wire Id="w19" Joints="N(n76:unsigned\ 32bit\ integer) N(n20:Value)" />
+            </BlockDiagram>
+            <Icon>
+                <Model:IconPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Model="clr-namespace:NationalInstruments.LabVIEW.VI.Design;assembly=NationalInstruments.LabVIEW.VI.SourceModel" xmlns:fpruntime="clr-namespace:NationalInstruments.LabVIEW.FrontPanelRuntime;assembly=NationalInstruments.LabVIEW.FrontPanelRuntime" xmlns:ation="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Height="98" Width="56">
+                    <fpruntime:AnimationProperties.Animations>
+                        <fpruntime:AnimationsContainer />
+                    </fpruntime:AnimationProperties.Animations>
+                    <fpruntime:EventProperties.Events>
+                        <fpruntime:EventContainer />
+                    </fpruntime:EventProperties.Events>
+                    <Model:IconPanel.Background>
+                        <ation:LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
+                            <ation:LinearGradientBrush.Transform>
+                                <ation:MatrixTransform />
+                            </ation:LinearGradientBrush.Transform>
+                            <ation:LinearGradientBrush.RelativeTransform>
+                                <ation:MatrixTransform />
+                            </ation:LinearGradientBrush.RelativeTransform>
+                            <ation:GradientStop Color="#FFF6F5C6" />
+                            <ation:GradientStop Color="#FFFFFFFE" Offset="0.25" />
+                            <ation:GradientStop Color="#FFF6F5C6" Offset="1" />
+                        </ation:LinearGradientBrush>
+                    </Model:IconPanel.Background>
+                    <ation:Rectangle x:Name="Template" Width="NaN" Height="NaN" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0.199971824884415, 1.7999977689592, 2.24732266360661E-05, -0.400003872474826" ation:Grid.Row="0" ation:Grid.Column="0" ation:Grid.RowSpan="1" ation:Grid.ColumnSpan="1" Fill="#00FFFFFF" Stroke="#FF000000" StrokeThickness="1" RadiusX="0" RadiusY="0">
+                        <fpruntime:AnimationProperties.Animations>
+                            <fpruntime:AnimationsContainer />
+                        </fpruntime:AnimationProperties.Animations>
+                        <fpruntime:EventProperties.Events>
+                            <fpruntime:EventContainer />
+                        </fpruntime:EventProperties.Events>
+                    </ation:Rectangle>
+                    <ation:Rectangle x:Name="Template2" Width="NaN" Height="14" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0" ation:Grid.Row="0" ation:Grid.Column="0" ation:Grid.RowSpan="1" ation:Grid.ColumnSpan="1" Stroke="#FF000000" StrokeThickness="1" RadiusX="1.2499999999999987" RadiusY="0.99999904632568326">
+                        <fpruntime:AnimationProperties.Animations>
+                            <fpruntime:AnimationsContainer />
+                        </fpruntime:AnimationProperties.Animations>
+                        <fpruntime:EventProperties.Events>
+                            <fpruntime:EventContainer />
+                        </fpruntime:EventProperties.Events>
+                        <ation:Rectangle.Fill>
+                            <ation:LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
+                                <ation:LinearGradientBrush.Transform>
+                                    <ation:MatrixTransform />
+                                </ation:LinearGradientBrush.Transform>
+                                <ation:LinearGradientBrush.RelativeTransform>
+                                    <ation:MatrixTransform />
+                                </ation:LinearGradientBrush.RelativeTransform>
+                                <ation:GradientStop Color="#FFFFFFFF" />
+                                <ation:GradientStop Color="#FFD5EAEA" Offset="1" />
+                            </ation:LinearGradientBrush>
+                        </ation:Rectangle.Fill>
+                    </ation:Rectangle>
+                    <ation:TextBlock x:Name="Template3" Width="NaN" Height="NaN" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, -0.100000001490116, 0, 0" ation:Grid.Row="0" ation:Grid.Column="0" ation:Grid.RowSpan="1" ation:Grid.ColumnSpan="1" Text="8bitunsigned" FontFamily="Portable User Interface" FontSize="10" FontWeight="Normal" Foreground="#FF000000">
+                        <fpruntime:AnimationProperties.Animations>
+                            <fpruntime:AnimationsContainer />
+                        </fpruntime:AnimationProperties.Animations>
+                        <fpruntime:EventProperties.Events>
+                            <fpruntime:EventContainer />
+                        </fpruntime:EventProperties.Events>
+                        <fpruntime:BuddyReferenceProperties.BuddyProperties>
+                            <fpruntime:BuddyProperties />
+                        </fpruntime:BuddyReferenceProperties.BuddyProperties>
+                    </ation:TextBlock>
+                </Model:IconPanel>
+            </Icon>
+        </VirtualInstrument>
+    </Namespace>
+</SourceFile>
