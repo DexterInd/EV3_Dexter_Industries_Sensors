@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SourceFile Version="1.0.2.10" xmlns="http://www.ni.com/SourceModel.xsd">
+    <Namespace Name="Project">
+        <VirtualInstrument IsTopLevel="false" IsReentrant="false" Version="1.0.2.0" xmlns="http://www.ni.com/VirtualInstrument.xsd">
+            <DataItem Name="SequenceIn" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="6" />
+            <DataItem Name="SequenceOut" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" DefaultTerminalDirection="Input" CallUsage="None" CallDirection="Output" CallIndex="6" />
+            <DataItem Name="InterruptsToListenFor_16B03592_CD76_4D58_8DC3_E3C3091E327A2" DataType="Int32" DefaultTerminalDirection="Output" />
+            <DataItem Name="MotorPort" DataType="Single" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="0" DefaultValue="0" />
+            <DataItem Name="InterruptsToListenFor_16B03592_CD76_4D58_8DC3_E3C3091E327A" DataType="Int32" DefaultTerminalDirection="Output" />
+            <DataItem Name="On" DataType="Boolean" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="1" DefaultValue="False" />
+            <FrontPanel>
+                <fpruntime:FrontPanelCanvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:fpruntime="clr-namespace:NationalInstruments.LabVIEW.FrontPanelRuntime;assembly=NationalInstruments.LabVIEW.FrontPanelRuntime" xmlns:Model0="clr-namespace:NationalInstruments.SourceModel.Designer;assembly=NationalInstruments.SourceModel" x:Name="FrontPanel" Model0:DesignerSurfaceProperties.CanSnapToObjects="True" Model0:DesignerSurfaceProperties.SnapToObjects="True" Model0:DesignerSurfaceProperties.ShowSnaplines="True" Model0:DesignerSurfaceProperties.ShowControlAdorners="True" Width="640" Height="480" />
+            </FrontPanel>
+            <BlockDiagram Name="__RootDiagram__">
+                <CaseStructure Id="n0" Bounds="945 301 644 315" DataType="Boolean" UserSelectorBounds="276.998 0 90.003 14" Selected="d0">
+                    <CaseStructure.Case Id="d0" Bounds="7 7 630 301" Pattern="True">
+                        <Wire Id="w27" Joints="N(n24:Out) N(n22:Degrees)" />
+                        <Wire Id="w11" Joints="N(b16:d0) h(70) v(-35) N(n22:MotorPort)" />
+                        <Wire Id="w12" Joints="N(n8:Out) N(n22:speed)" />
+                        <Wire Id="w18" Joints="N(n22:layer) N(n17:layer)" />
+                        <Wire Id="w19" Joints="N(n22:bitfield) N(n17:bitfield)" />
+                        <Wire Id="w21" Joints="N(n20:Value) h(28) v(-56) N(n17:InterruptsToListenFor_16B03592_CD76_4D58_8DC3_E3C3091E327A)" />
+                        <Wire Id="w16" Joints="N(n15:Out) N(n22:Brake\ At\ End)" />
+                        <Literal Id="n24" Terminals="Out=w27" Bounds="147 98 35 14" Interpretation="Exact" DataType="Single">360</Literal>
+                        <MethodCall Id="n22" Bounds="259 70 56 70" Target="MotorStartDistance\.vix">
+                            <Terminal Id="MotorPort" Direction="Input" Wire="w11" DataType="Single" Hotspot="0 0.5" Bounds="0 0 14 14" />
+                            <Terminal Id="speed" Direction="Input" Wire="w12" DataType="SByte" Hotspot="0 0.5" Bounds="0 14 14 14" />
+                            <Terminal Id="Degrees" Direction="Input" Wire="w27" DataType="Single" Hotspot="0 0.5" Bounds="0 28 14 14" />
+                            <Terminal Id="Brake\ At\ End" Direction="Input" Wire="w16" DataType="Boolean" Hotspot="0 0.5" Bounds="0 56 14 14" />
+                            <Terminal Id="layer" Direction="Output" Wire="w18" DataType="SByte" Hotspot="1 0.5" Bounds="42 0 14 14" />
+                            <Terminal Id="bitfield" Direction="Output" Wire="w19" DataType="SByte" Hotspot="1 0.5" Bounds="42 14 14 14" />
+                        </MethodCall>
+                        <MethodCall Id="n17" Bounds="490 70 56 56" Target="MotorReadyWait\.vix">
+                            <Terminal Id="layer" Direction="Input" Wire="w18" DataType="SByte" Hotspot="0 0.5" Bounds="0 0 14 14" />
+                            <Terminal Id="bitfield" Direction="Input" Wire="w19" DataType="SByte" Hotspot="0 0.5" Bounds="0 14 14 14" />
+                            <Terminal Id="InterruptsToListenFor_16B03592_CD76_4D58_8DC3_E3C3091E327A" Direction="Input" Wire="w21" DataType="Int32" Hotspot="0 0.5" Bounds="0 42 14 14" />
+                        </MethodCall>
+                        <DataAccessor DataItem="InterruptsToListenFor_16B03592_CD76_4D58_8DC3_E3C3091E327A2" Id="n20" Bounds="35 168 420 14">
+                            <Terminal Id="Value" Direction="Output" Wire="w21" Hotspot="1 0.5" Bounds="0 0 420 14" />
+                        </DataAccessor>
+                        <Literal Id="n8" Terminals="Out=w12" Bounds="147 84 35 14" Interpretation="Exact" DataType="Int16">100</Literal>
+                        <Literal Facade="BooleanConstantFacade" Id="n15" Terminals="Out=w16" Bounds="147 126 14 14" Interpretation="Exact" DataType="Boolean">False</Literal>
+                    </CaseStructure.Case>
+                    <CaseStructure.Case Id="d1" Bounds="7 7 630 301" Pattern="False">
+                        <Literal Id="n24" Terminals="Out=w27" Bounds="154 133 35 14" Interpretation="Exact" DataType="Single">360</Literal>
+                        <Wire Id="w27" Joints="N(n24:Out) N(n22:Degrees)" />
+                        <MethodCall Id="n22" Bounds="266 105 56 70" Target="MotorStartDistance\.vix">
+                            <Terminal Id="MotorPort" Direction="Input" Wire="w11" DataType="Single" Hotspot="0 0.5" Bounds="0 0 14 14" />
+                            <Terminal Id="speed" Direction="Input" Wire="w12" DataType="SByte" Hotspot="0 0.5" Bounds="0 14 14 14" />
+                            <Terminal Id="Degrees" Direction="Input" Wire="w27" DataType="Single" Hotspot="0 0.5" Bounds="0 28 14 14" />
+                            <Terminal Id="Brake\ At\ End" Direction="Input" Wire="w16" DataType="Boolean" Hotspot="0 0.5" Bounds="0 56 14 14" />
+                            <Terminal Id="layer" Direction="Output" Wire="w18" DataType="SByte" Hotspot="1 0.5" Bounds="42 0 14 14" />
+                            <Terminal Id="bitfield" Direction="Output" Wire="w19" DataType="SByte" Hotspot="1 0.5" Bounds="42 14 14 14" />
+                        </MethodCall>
+                        <Wire Id="w11" Joints="N(b16:d1) N(n22:MotorPort)" />
+                        <Wire Id="w12" Joints="N(n8:Out) N(n22:speed)" />
+                        <MethodCall Id="n17" Bounds="497 105 56 56" Target="MotorReadyWait\.vix">
+                            <Terminal Id="layer" Direction="Input" Wire="w18" DataType="SByte" Hotspot="0 0.5" Bounds="0 0 14 14" />
+                            <Terminal Id="bitfield" Direction="Input" Wire="w19" DataType="SByte" Hotspot="0 0.5" Bounds="0 14 14 14" />
+                            <Terminal Id="InterruptsToListenFor_16B03592_CD76_4D58_8DC3_E3C3091E327A" Direction="Input" Wire="w21" DataType="Int32" Hotspot="0 0.5" Bounds="0 42 14 14" />
+                        </MethodCall>
+                        <Wire Id="w18" Joints="N(n22:layer) N(n17:layer)" />
+                        <Wire Id="w19" Joints="N(n22:bitfield) N(n17:bitfield)" />
+                        <DataAccessor DataItem="InterruptsToListenFor_16B03592_CD76_4D58_8DC3_E3C3091E327A" Id="n20" Bounds="49 203 413 14">
+                            <Terminal Id="Value" Direction="Output" Wire="w21" Hotspot="1 0.5" Bounds="0 0 413 14" />
+                        </DataAccessor>
+                        <Wire Id="w21" Joints="N(n20:Value) h(28) v(-56) N(n17:InterruptsToListenFor_16B03592_CD76_4D58_8DC3_E3C3091E327A)" />
+                        <Literal Id="n8" Terminals="Out=w12" Bounds="161 119 28 14" Interpretation="Exact" DataType="Int16">-1</Literal>
+                        <Literal Facade="BooleanConstantFacade" Id="n15" Terminals="Out=w16" Bounds="154 161 14 14" Interpretation="Exact" DataType="Boolean">False</Literal>
+                        <Wire Id="w16" Joints="N(n15:Out) N(n22:Brake\ At\ End)" />
+                    </CaseStructure.Case>
+                    <CaseStructure.Selector Id="b33" Terminals="n0=w12, d0, d1" TopLeft="0 42" />
+                    <CaseStructure.Tunnel Id="b16" Terminals="n0=w10, d0=w11, d1=w11" TopLeft="0 112" />
+                </CaseStructure>
+                <DataAccessor DataItem="On" Id="n9" Bounds="756 343 70 14">
+                    <Terminal Id="Value" Direction="Output" Wire="w12" Hotspot="1 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <DataAccessor DataItem="MotorPort" Id="n12" Bounds="749 413 84 14">
+                    <Terminal Id="Value" Direction="Output" Wire="w10" Hotspot="1 0.5" Bounds="0 0 84 14" />
+                </DataAccessor>
+                <Wire Id="w10" Joints="N(n12:Value) N(b16:n0)" />
+                <Wire Id="w12" Joints="N(n9:Value) N(b33:n0)" />
+            </BlockDiagram>
+        </VirtualInstrument>
+    </Namespace>
+</SourceFile>
