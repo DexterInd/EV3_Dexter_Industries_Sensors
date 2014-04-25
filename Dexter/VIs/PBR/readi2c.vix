@@ -68,10 +68,9 @@
                     <FlatSequence.Tunnel Id="b24" Terminals="n33=w15, D25=w23" TopLeft="0 105" />
                     <FlatSequence.Tunnel Id="b25" Terminals="n33=w20, D25=w27" TopLeft="0 231" />
                 </FlatSequence>
-                <Comment Bounds="1029 917 405 151" SizeMode="Auto" AttachStyle="Free">
-                    <Content>mindsensors.com
-Copyright (c) 2013 by mindsensors.com
-Email: info (&lt;at&gt;) mindsensors (&lt;dot&gt;) com
+                <Comment Bounds="1029 917 405 182" SizeMode="User" AttachStyle="Free">
+                    <Content>Dexter Industries
+dexterindustries.com
 
 This program is free software. You can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

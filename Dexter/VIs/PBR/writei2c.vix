@@ -72,10 +72,12 @@
                 <DataAccessor DataItem="WByte" Id="n21" Bounds="1162 518 70 14">
                     <Terminal Id="Value" Direction="Output" Wire="w16" Hotspot="1 0.5" Bounds="0 0 70 14" />
                 </DataAccessor>
-                <Comment Bounds="1232 714 405 151" SizeMode="Auto" AttachStyle="Free">
-                    <Content>mindsensors.com
-Copyright (c) 2013 by mindsensors.com
-Email: info (&lt;at&gt;) mindsensors (&lt;dot&gt;) com
+                <Wire Id="w16" Joints="N(n21:Value) N(b26:n33)" />
+                <Wire Id="w14" Joints="N(n29:layer) N(b23:n33)" />
+                <Wire Id="w15" Joints="N(n29:portOut) N(b24:n33)" />
+                <Comment Bounds="1232 714 405 182" SizeMode="User" AttachStyle="Free">
+                    <Content>Dexter Industries
+dexterindustries.com
 
 This program is free software. You can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -84,9 +86,6 @@ Read the license at: http://www.gnu.org/licenses/gpl.txt
 
 </Content>
                 </Comment>
-                <Wire Id="w16" Joints="N(n21:Value) N(b26:n33)" />
-                <Wire Id="w14" Joints="N(n29:layer) N(b23:n33)" />
-                <Wire Id="w15" Joints="N(n29:portOut) N(b24:n33)" />
             </BlockDiagram>
         </VirtualInstrument>
     </Namespace>

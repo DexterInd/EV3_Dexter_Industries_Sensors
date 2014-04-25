@@ -413,25 +413,113 @@
       <Parameter Name="Addr" DisplayName="Addr">
         <Description><![CDATA[<p>Context help for Compare Type</p>]]></Description>
       </Parameter>
-      <Parameter Name="RB" DisplayName="RB">
+      <Parameter Name="isplayName="RB">
+        <Description><![CDATA[<p>Context help for Compare Type</p>]]></Description>
+      </Parameter>
+	  <Parameter Name="RByte1" DisplayName="RByte1">
+        <Description><![CDATA[<p>Context help for Compare Type</p>]]></Description>
+      </Parameter>
+	  <Parameter Name="RByte2" DisplayName="RByte2">
+        <Description><![CDATA[<p>Context help for Compare Type</p>]]></Description>
+      </Parameter>
+	  <Parameter Name="RByte3" DisplayName="RByte3">
+        <Description><![CDATA[<p>Context help for Compare Type</p>]]></Description>
+      </Parameter>
+	  <Parameter Name="RByte4" DisplayName="RByte4">
+        <Description><![CDATA[<p>Context help for Compare Type</p>]]></Description>
+      </Parameter>
+	  <Parameter Name="RByte5" DisplayName="RByte5">
+        <Description><![CDATA[<p>Context help for Compare Type</p>]]></Description>
+      </Parameter>
+	  <Parameter Name="RByte6" DisplayName="RByte6">
+        <Description><![CDATA[<p>Context help for Compare Type</p>]]></Description>
+      </Parameter>
+	  <Parameter Name="RByte7" DisplayName="RByte7">
+        <Description><![CDATA[<p>Context help for Compare Type</p>]]></Description>
+      </Parameter>
+	  <Parameter Name="RByte8" DisplayName="RByte8">
+        <Description><![CDATA[<p>Context help for Compare Type</p>]]></Description>
+      </Parameter>
+	  <Parameter Name="RByte1_String" DisplayName="RByte1">
+        <Description><![CDATA[<p>Context help for Compare Type</p>]]></Description>
+      </Parameter>
+	  <Parameter Name="RByte2_String" DisplayName="RByte2">
+        <Description><![CDATA[<p>Context help for Compare Type</p>]]></Description>
+      </Parameter>
+	  <Parameter Name="RByte3_String" DisplayName="RByte3">
+        <Description><![CDATA[<p>Context help for Compare Type</p>]]></Description>
+      </Parameter>
+	  <Parameter Name="RByte4_String" DisplayName="RByte4">
+        <Description><![CDATA[<p>Context help for Compare Type</p>]]></Description>
+      </Parameter>
+	  <Parameter Name="RByte5_String" DisplayName="RByte5">
+        <Description><![CDATA[<p>Context help for Compare Type</p>]]></Description>
+      </Parameter>
+	  <Parameter Name="RByte6_String" DisplayName="RByte6">
+        <Description><![CDATA[<p>Context help for Compare Type</p>]]></Description>
+      </Parameter>
+	  <Parameter Name="RByte7_String" DisplayName="RByte7">
+        <Description><![CDATA[<p>Context help for Compare Type</p>]]></Description>
+      </Parameter>
+	  <Parameter Name="RByte8_String" DisplayName="RByte8">
         <Description><![CDATA[<p>Context help for Compare Type</p>]]></Description>
       </Parameter>
       <Parameter Name="WByte" DisplayName="WriteByte" >
         <Description><![CDATA[<p>Context help for Amount</p>]]></Description>
       </Parameter>
+	  <Parameter Name="WByte1" DisplayName="WriteByte" >
+        <Description><![CDATA[<p>Context help for Amount</p>]]></Description>
+      </Parameter>
+	  <Parameter Name="WByte2" DisplayName="WriteByte" >
+        <Description><![CDATA[<p>Context help for Amount</p>]]></Description>
+      </Parameter>
+	  <Parameter Name="WByte3" DisplayName="WriteByte" >
+        <Description><![CDATA[<p>Context help for Amount</p>]]></Description>
+      </Parameter>
+	  <Parameter Name="WByte4" DisplayName="WriteByte" >
+        <Description><![CDATA[<p>Context help for Amount</p>]]></Description>
+      </Parameter>
+	  <Parameter Name="WByte5" DisplayName="WriteByte" >
+        <Description><![CDATA[<p>Context help for Amount</p>]]></Description>
+      </Parameter>
+	  <Parameter Name="WByte6" DisplayName="WriteByte" >
+        <Description><![CDATA[<p>Context help for Amount</p>]]></Description>
+      </Parameter>
+	  <Parameter Name="WByte7" DisplayName="WriteByte" >
+        <Description><![CDATA[<p>Context help for Amount</p>]]></Description>
+      </Parameter>
+	  <Parameter Name="WByte8" DisplayName="WriteByte" >
+        <Description><![CDATA[<p>Context help for Amount</p>]]></Description>
+      </Parameter>
+	  
 	  <Parameter Name="Pin" DisplayName="Pin" >
         <Description><![CDATA[<p>Context help for Amount</p>]]></Description>
       </Parameter>
 	  <Parameter Name="AnalogVal" DisplayName="AnalogVal" >
         <Description><![CDATA[<p>Context help for Amount</p>]]></Description>
       </Parameter>
-      <Block Mode="ReadI2C" DisplayName="ReadI2C">
+	  <Parameter Name="State" DisplayName="State" >
+        <Description><![CDATA[<p>Context help for Amount</p>]]></Description>
+      </Parameter>
+      <Block Mode="ReadI2C_1B" DisplayName="Read 1 byte">
+        <Description><![CDATA[<p>Context help for Measure Sensor Value</p>]]></Description>
+      </Block>
+	  <Block Mode="ReadI2C_8B" DisplayName="Read 8 bytes">
+        <Description><![CDATA[<p>Context help for Measure Sensor Value</p>]]></Description>
+      </Block>
+	  <Block Mode="ReadI2C_8B_ASCII" DisplayName="Read 8 bytes ASCII">
         <Description><![CDATA[<p>Context help for Measure Sensor Value</p>]]></Description>
       </Block>
 	  <Block Mode="AnalogRead" DisplayName="AnalogRead">
         <Description><![CDATA[<p>Context help for Measure Sensor Value</p>]]></Description>
       </Block>
-      <Block Mode="WriteI2C" DisplayName="WriteI2C">
+      <Block Mode="WriteI2C_1B" DisplayName="Write 1 byte">
+        <Description><![CDATA[<p>Context help for Compare Sensor Value</p>]]></Description>
+      </Block>
+	  <Block Mode="DigitalWrite" DisplayName="DigitalWrite">
+        <Description><![CDATA[<p>Context help for Compare Sensor Value</p>]]></Description>
+      </Block>
+	  <Block Mode="WriteI2C_8B" DisplayName="Write 8 bytes">
         <Description><![CDATA[<p>Context help for Compare Sensor Value</p>]]></Description>
       </Block>
     </PolyGroup>
