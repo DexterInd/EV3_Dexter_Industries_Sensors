@@ -415,12 +415,40 @@
 	<PolyGroup Name="EV3_I2C" BlockFamily="Sensor">
       <Parameter Name="Direction" Direction="Input" DataType="UInt32" DefaultValue="2" Configuration="builtin://Identification_WaitForChange.xml" Identification="builtin://Identification_WaitForChange.xml" />
       <Parameter Name="Port" CompilerDirectives="OneInputPort" Direction="Input" DefaultValue="1.3" />
-	 <Parameter Name="RB" Identification="Comp-z.png" DataType="Single" Direction="Output"/>
-      <Parameter Name="WByte" Identification="Power.png" DataType="UInt32" Direction="Input" DefaultValue="0" />
-	  <Parameter Name="Addr" Identification="mode.png" DataType="UInt32" Direction="Input" DefaultValue="8" />
-	  <Parameter Name="Pin" Identification="mode.png" DataType="UInt32" Direction="Input" DefaultValue="8" />
-	  <Parameter Name="AnalogVal" Identification="Comp-z.png" DataType="Single" Direction="Output"/>
-      <Hardware>
+	 <Parameter Name="RB" Identification="byte.png" DataType="Single" Direction="Output"/>
+	  <Parameter Name="Addr" Identification="addr.png" DataType="UInt32" Direction="Input" DefaultValue="8" />
+	  <Parameter Name="Pin" Identification="pin.png" DataType="UInt32" Direction="Input" DefaultValue="8" />
+	  <Parameter Name="AnalogVal" Identification="analogVal.png" DataType="Single" Direction="Output"/>
+	  <Parameter Name="State" Identification="state.png" DataType="UInt32" Direction="Input" DefaultValue="1" />
+	  <Parameter Name="RByte1" Identification="byte1.png" DataType="UInt32" Direction="Output"/>
+	  <Parameter Name="RByte2" Identification="byte2.png" DataType="UInt32" Direction="Output"/>
+	  <Parameter Name="RByte3" Identification="byte3.png" DataType="UInt32" Direction="Output"/>
+	  <Parameter Name="RByte4" Identification="byte4.png" DataType="UInt32" Direction="Output"/>
+	  <Parameter Name="RByte5" Identification="byte5.png" DataType="UInt32" Direction="Output"/>
+	  <Parameter Name="RByte6" Identification="byte6.png" DataType="UInt32" Direction="Output"/>
+	  <Parameter Name="RByte7" Identification="byte7.png" DataType="UInt32" Direction="Output"/>
+	  <Parameter Name="RByte8" Identification="byte8.png" DataType="UInt32" Direction="Output"/>
+
+	  <Parameter Name="RByte1_String" Identification="char1.png" DataType="String" Direction="Output"/>
+	  <Parameter Name="RByte2_String" Identification="char2.png" DataType="String" Direction="Output"/>
+	  <Parameter Name="RByte3_String" Identification="char3.png" DataType="String" Direction="Output"/>
+	  <Parameter Name="RByte4_String" Identification="char4.png" DataType="String" Direction="Output"/>
+	  <Parameter Name="RByte5_String" Identification="char5.png" DataType="String" Direction="Output"/>
+	  <Parameter Name="RByte6_String" Identification="char6.png" DataType="String" Direction="Output"/>
+	  <Parameter Name="RByte7_String" Identification="char7.png" DataType="String" Direction="Output"/>
+	  <Parameter Name="RByte8_String" Identification="char8.png" DataType="String" Direction="Output"/>
+	  
+	  <Parameter Name="WByte" Identification="byte.png" DataType="UInt32" Direction="Input" DefaultValue="0" />
+	  <Parameter Name="WByte1" Identification="byte1.png" DataType="UInt32" Direction="Input" DefaultValue="0" />
+	  <Parameter Name="WByte2" Identification="byte2.png" DataType="UInt32" Direction="Input" DefaultValue="0" />
+	  <Parameter Name="WByte3" Identification="byte3.png" DataType="UInt32" Direction="Input" DefaultValue="0" />
+	  <Parameter Name="WByte4" Identification="byte4.png" DataType="UInt32" Direction="Input" DefaultValue="0" />
+	  <Parameter Name="WByte5" Identification="byte5.png" DataType="UInt32" Direction="Input" DefaultValue="0" />
+	  <Parameter Name="WByte6" Identification="byte6.png" DataType="UInt32" Direction="Input" DefaultValue="0" />
+	  <Parameter Name="WByte7" Identification="byte7.png" DataType="UInt32" Direction="Input" DefaultValue="0" />
+	  <Parameter Name="WByte8" Identification="byte8.png" DataType="UInt32" Direction="Input" DefaultValue="0" />
+	  
+	<Hardware>
         <NXTPlotColor>#ffff3132</NXTPlotColor>
         <EV3PlotColor>#ff785028</EV3PlotColor>
         <EV3AutoID>-1</EV3AutoID>
@@ -428,24 +456,72 @@
         <DefaultPort>1.1</DefaultPort>
       </Hardware>
       <Block>
-        <Mode>ReadI2C</Mode>
+        <Mode>ReadI2C_1B</Mode>
         <Reference Type="VILib" Name="readi2c.vix" />
         <ParameterReference Name="Port" />
 		<ParameterReference Name="Addr" />
 		<ParameterReference Name="RB" />
 	    <PaletteInfo Weight="0.5" />
-        <BlockInterface>ReadI2C</BlockInterface>
+        <BlockInterface>ReadI2C_1B</BlockInterface>
         <Flags></Flags>
         <Hardware></Hardware>
         <HardwareModeInfo Name="COL-REFLECT" ID="0" Range="0,100" Unit="%" />
       </Block>
 	  <Block>
-        <Mode>WriteI2C</Mode>
+        <Mode>WriteI2C_1B</Mode>
         <Reference Type="VILib" Name="writei2c.vix" />
         <ParameterReference Name="Port" />
         <ParameterReference Name="Addr" />
 		<ParameterReference Name="WByte" />
-	    <BlockInterface>WriteI2C</BlockInterface>
+	    <BlockInterface>WriteI2C_1B</BlockInterface>
+        <Flags></Flags>
+      </Block>
+	  <Block>
+        <Mode>WriteI2C_8B</Mode>
+        <Reference Type="VILib" Name="writei2c_8b.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Addr" />
+		<ParameterReference Name="WByte1" />
+		<ParameterReference Name="WByte2" />
+		<ParameterReference Name="WByte3" />
+		<ParameterReference Name="WByte4" />
+		<ParameterReference Name="WByte5" />
+		<ParameterReference Name="WByte6" />
+		<ParameterReference Name="WByte7" />
+		<ParameterReference Name="WByte8" />
+	    <BlockInterface>WriteI2C_8B</BlockInterface>
+        <Flags></Flags>
+      </Block>
+	  <Block>
+        <Mode>ReadI2C_8B</Mode>
+        <Reference Type="VILib" Name="readi2c_8b.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Addr" />
+		<ParameterReference Name="RByte1" />
+		<ParameterReference Name="RByte2" />
+		<ParameterReference Name="RByte3" />
+		<ParameterReference Name="RByte4" />
+		<ParameterReference Name="RByte5" />
+		<ParameterReference Name="RByte6" />
+		<ParameterReference Name="RByte7" />
+		<ParameterReference Name="RByte8" />
+	    <BlockInterface>ReadI2C_8B</BlockInterface>
+        <Flags></Flags>
+      </Block>
+	  <Block>
+        <Mode>ReadI2C_8B_ASCII</Mode>
+        <Reference Type="VILib" Name="readi2c_8b_ascii.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Addr" />
+		<ParameterReference Name="RByte1_String" />
+		<ParameterReference Name="RByte2_String" />
+		<ParameterReference Name="RByte3_String" />
+		<ParameterReference Name="RByte4_String" />
+		<ParameterReference Name="RByte5_String" />
+		<ParameterReference Name="RByte6_String" />
+		<ParameterReference Name="RByte7_String" />
+		<ParameterReference Name="RByte8_String" />
+	    <BlockInterface>ReadI2C_8B_ASCII</BlockInterface>
         <Flags></Flags>
       </Block>
 	<Block>
@@ -455,7 +531,17 @@
         <ParameterReference Name="Addr" />
 		<ParameterReference Name="Pin" />
 		<ParameterReference Name="AnalogVal" />
-	    <BlockInterface>WriteI2C</BlockInterface>
+	    <BlockInterface>AnalogRead</BlockInterface>
+        <Flags></Flags>
+      </Block>
+	  <Block>
+        <Mode>DigitalWrite</Mode>
+        <Reference Type="VILib" Name="digitalWrite.vix" />
+        <ParameterReference Name="Port" />
+        <ParameterReference Name="Addr" />
+		<ParameterReference Name="Pin" />
+		<ParameterReference Name="State" />
+	    <BlockInterface>DigitalWrite</BlockInterface>
         <Flags></Flags>
       </Block>
 		</PolyGroup>
