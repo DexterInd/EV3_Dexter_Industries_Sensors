@@ -28,7 +28,7 @@ String EV3UARTMode::get_data_type_string() {
 }
 
 /**
- * Create the sensor with the specified RX and TX pins#
+ * Create the sensor with the specified RX and TX pins
  * Speed starts at 2400 baud
 **/
 EV3UARTSensor::EV3UARTSensor(uint8_t rx_pin, uint8_t tx_pin) {
@@ -43,7 +43,7 @@ EV3UARTSensor::EV3UARTSensor(uint8_t rx_pin, uint8_t tx_pin) {
  * Get the mode object for a specific mode
 **/
 EV3UARTMode* EV3UARTSensor::get_mode(int mode) {
-  return modeArray[mode];
+  return mode_array[mode];
 }
 
 /**
@@ -71,7 +71,7 @@ void EV3UARTSensor::reset() {
 }
 
 /**
- * This does most of the work. Must be called very frequently. The metadata is processed and the mode object created.
+ * This does most of the work. Must be called very frequently. The metadata is processed and the mode objects created.
  * When this is complete, the bit rate is increased and the data is processed.
 **/
 void EV3UARTSensor::check_for_data() {
@@ -90,36 +90,63 @@ void EV3UARTSensor::check_for_data() {
 	  Serial.print("Data received ");
       Serial.println(cmd, HEX);
 #endif	 
-      // If in data mode, process the data command and set the currentvallue(s)
+      // If in data mode, process the data command and set the current value(s)
       if ((cmd & CMD_MASK) == CMD_DATA) {
         byte lll = (cmd & CMD_LLL_MASK) >> CMD_LLL_SHIFT;
         byte l = this->exp2(lll); // Number of extra bytes
         byte mode = (cmd & 7); // The current mode
         byte checksum = 0xff ^ cmd;
         byte bb[l];
+#ifdef DEBUG
+		Serial.print("Data message: mode: ");
+		Serial.print(mode);
+		Serial.print(" length: ");
+		Serial.println(l);
+#endif
         for(int i=0;i<l;i++) {
           bb[i] = this->read_byte();
           checksum ^= bb[i];
         }
-        if (checksum == this->read_byte()) {
-		  this->consecutive_errors = 0;
-		  recent_messages++;
-		  // Extract the data from the message using type information from INFO messages
-		  switch(modeArray[mode]->data_type) {
-		    case 0: this->value = (float) bb[0]; break;
-            case 1: this->value = (float) get_int(bb,0); break;
-            case 2: this->value = (float) get_long(bb,0); break;
-            case 3: this->value = get_float(bb,0); break;
-		  }
+		byte sum = this->read_byte();
+        // The Color sensor calculates checksums incorrectly in RGB mode
+        if ((this->type == TYPE_COLOR && mode == 4) || checksum == sum) {
 #ifdef DEBUG
         Serial.print("Valid data message : ");
         Serial.print("Data is ");
-        Serial.println(this->value);
+#endif
+		  this->consecutive_errors = 0;
+		  recent_messages++;
+		  // Extract the data from the message using type information from INFO messages
+		  for(int i=0;i<num_samples;i++) {	  
+		    switch(mode_array[mode]->data_type) {
+		      case 0: this->value[i] = (float) bb[i]; break;
+              case 1: this->value[i] = (float) get_int(bb,i*2); break;
+              case 2: this->value[i] = (float) get_long(bb,i*4); break;
+              case 3: this->value[i] = get_float(bb,i*4); break;	
+			}
+#ifdef DEBUG
+              Serial.print(this->value[i]);
+              Serial.print(" ");
+#endif
+		  }
+#ifdef DEBUG
+          Serial.println();
 #endif
         } else {
 #ifdef DEBUG
-          Serial.println("Data checksum error");
-#endif		  
+          Serial.println("Data checksum error");	
+		  Serial.print("  Message: ");
+		  Serial.print(cmd,HEX);
+		  Serial.print(" ");
+		  for(int  i=0;i<l;i++) {
+		    Serial.print(bb[i],HEX);
+			Serial.print(" ");
+	      }
+		  Serial.print("  Calculated: ");
+		  Serial.print(checksum, HEX);
+		  Serial.print("  Received: ");
+		  Serial.println(sum, HEX);
+#endif	
 		  this->data_errors++;
 		  // If more than 6 errors occur in a row, reset the connection
 		  if (this->consecutive_errors++ > 6) reset();
@@ -179,10 +206,10 @@ void EV3UARTSensor::check_for_data() {
         checksum ^= views;
         if (checksum == this->read_byte()) {
 		  this->views = views;
-		  this->modes = modes;
+		  this->modes = modes + 1;
 		  // Create a mode object for each of the modes
 		  for(int i =0;i<=modes && i < MAX_MODES;i++) {
-		    this->modeArray[i] = new EV3UARTMode();;
+		    this->mode_array[i] = new EV3UARTMode();;
 		  }
 #ifdef DEBUG
           Serial.print("Valid modes message: ");
@@ -198,7 +225,7 @@ void EV3UARTSensor::check_for_data() {
         }
 	  } else if (cmd == CMD_SPEED) {
 	    // The speed command comes after the MODES command
-		// Extract the rirate to use in data mode
+		// Extract the bit rate to use in data mode
         byte checksum = 0xff ^ cmd;
         byte bb[4];
         for(int i=0;i<4;i++) {
@@ -206,8 +233,7 @@ void EV3UARTSensor::check_for_data() {
           checksum ^= b;
           bb[i] = b;
         }
-        byte sum = this->read_byte();
-        if (sum == checksum) {
+        if (checksum == this->read_byte()) {
 	      this->speed  = this->get_long(bb, 0);
 #ifdef DEBUG		  
           Serial.print("Valid speed message: ");
@@ -244,7 +270,7 @@ void EV3UARTSensor::check_for_data() {
             case 0:
 			    // The mode name
 			    modeName = this->get_string(bb,l);
-				this->modeArray[mode]->name = modeName;
+				this->mode_array[mode]->name = modeName;
 #ifdef DEBUG
               Serial.print("Name: ");
               Serial.println(modeName);
@@ -254,8 +280,8 @@ void EV3UARTSensor::check_for_data() {
 			  // The range of raw values
 			  low = this->get_float(bb,0);
 			  high = this->get_float(bb,4);
-			  modeArray[mode]->raw_low = low;
-			  modeArray[mode]->raw_high = high;
+			  mode_array[mode]->raw_low = low;
+			  mode_array[mode]->raw_high = high;
 #ifdef DEBUG			
               Serial.print("Raw: ");
               Serial.print(low);
@@ -267,8 +293,8 @@ void EV3UARTSensor::check_for_data() {
 			  // The range of percentage values
 			  low = this->get_float(bb,0);
 			  high = this->get_float(bb,4);
-			  modeArray[mode]->pct_low = low;
-			  modeArray[mode]->pct_high = high;
+			  mode_array[mode]->pct_low = low;
+			  mode_array[mode]->pct_high = high;
 #ifdef DEBUG			
               Serial.print("Pct: ");
               Serial.print(low);
@@ -280,8 +306,8 @@ void EV3UARTSensor::check_for_data() {
 			  // The range of SI values
 			  low = this->get_float(bb,0);
 			  high = this->get_float(bb,4);
-			  modeArray[mode]->si_low = low;
-			  modeArray[mode]->si_high = high;
+			  mode_array[mode]->si_low = low;
+			  mode_array[mode]->si_high = high;
 #ifdef DEBUG			
               Serial.print("Si: ");
               Serial.print(low);
@@ -292,7 +318,7 @@ void EV3UARTSensor::check_for_data() {
             case 4:
 			  // The unit symbol
 			  symbol = this->get_string(bb,l);
-			  modeArray[mode]->symbol = symbol;
+			  mode_array[mode]->symbol = symbol;
 #ifdef DEBUG			
               Serial.print("Symbol: ");
               Serial.println(symbol);
@@ -301,10 +327,10 @@ void EV3UARTSensor::check_for_data() {
             case 0x80:
 			  // The data format including number of data items,
 			  // the data time and the number of signicant digits
-			  modeArray[mode]->sets = bb[0];
-			  modeArray[mode]->data_type = bb[1];
-			  modeArray[mode]->figures = bb[2];
-			  modeArray[mode]->decimals = bb[3];
+			  mode_array[mode]->sets = bb[0];
+			  mode_array[mode]->data_type = bb[1];
+			  mode_array[mode]->figures = bb[2];
+			  mode_array[mode]->decimals = bb[3];
 #ifdef DEBUG			
               Serial.print("Format: ");
               Serial.print(" Sets: ");
@@ -426,7 +452,9 @@ String EV3UARTSensor::get_data_type(int val) {
 void EV3UARTSensor::set_mode(int mode) {
   this->send_select(mode);
   this->mode = mode;
+  this->num_samples = mode_array[mode]->sets;
 }
+
 
 /**
  * Send mode select command to the sensor
@@ -475,6 +503,13 @@ int EV3UARTSensor::get_number_of_modes() {
 }
 
 /**
+ * Get the sensor type
+**/
+int EV3UARTSensor::get_type() {
+  return this->type;
+}
+
+/**
  * Get the status of the connection
 **/
 int EV3UARTSensor::get_status() {
@@ -485,6 +520,6 @@ int EV3UARTSensor::get_status() {
  * Fetch a sample in the current mode
 **/
 void EV3UARTSensor::fetch_sample(float* sample, int offset) {
-  sample[offset] = this->value;
+  for(int i=0;i<num_samples;i++) sample[offset+i] = this->value[i];
 }
 
