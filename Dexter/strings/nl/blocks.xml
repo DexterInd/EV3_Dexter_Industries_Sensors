@@ -413,7 +413,7 @@
       <Parameter Name="Addr" DisplayName="Addr">
         <Description><![CDATA[<p>Context help for Compare Type</p>]]></Description>
       </Parameter>
-      <Parameter Name="isplayName="RB">
+      <Parameter Name="RB" DisplayName="RB">
         <Description><![CDATA[<p>Context help for Compare Type</p>]]></Description>
       </Parameter>
 	  <Parameter Name="RByte1" DisplayName="RByte1">

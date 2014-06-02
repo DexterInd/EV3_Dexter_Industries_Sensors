@@ -413,7 +413,7 @@
       <Parameter Name="Addr" DisplayName="Addr">
         <Description><![CDATA[<p>Context help for Compare Type</p>]]></Description>
       </Parameter>
-      <Parameter Name="isplayName="RB">
+      <Parameter Name="RB" DisplayName="RB">
         <Description><![CDATA[<p>Context help for Compare Type</p>]]></Description>
       </Parameter>
 	  <Parameter Name="RByte1" DisplayName="RByte1">
@@ -522,7 +522,6 @@
 	  <Block Mode="WriteI2C_8B" DisplayName="Write 8 bytes">
         <Description><![CDATA[<p>Context help for Compare Sensor Value</p>]]></Description>
       </Block>
-    </PolyGroup>
     </PolyGroup>
   </PolyGroups>
 </EditorStrings>
