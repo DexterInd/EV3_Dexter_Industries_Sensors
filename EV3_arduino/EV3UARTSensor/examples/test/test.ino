@@ -15,7 +15,7 @@ void loop() {
   sensor.check_for_data();
 
   if (sensor.get_status() == DATA_MODE && (millis() - lastMessage) > 1000 ) {
-    for(int i=0;i<=sensor.get_number_of_modes();i++) {
+    for(int i=0;i<sensor.get_number_of_modes();i++) {
       EV3UARTMode* mode = sensor.get_mode(i);
       Serial.print(i);
       Serial.print(" ");
@@ -35,7 +35,7 @@ void loop() {
       int cmd = Serial.read();
       if (cmd >= '0' && cmd <= '9') {
          int mode = cmd - '0';
-         if (mode >=0 && mode <= sensor.get_number_of_modes()) {
+         if (mode >=0 && mode < sensor.get_number_of_modes()) {
            Serial.print("Setting mode to ");
            Serial.println(mode);
            sensor.set_mode(mode);
@@ -44,11 +44,19 @@ void loop() {
     }
     Serial.print("Current mode is ");
     Serial.println(sensor.get_current_mode());
+    Serial.print("Sample size is ");
+    Serial.println(sensor.sample_size());
+    Serial.print("Sensor type is ");
+    Serial.println(sensor.get_type());
  
     float sample[sensor.sample_size()];
     sensor.fetch_sample(sample, 0);
     Serial.print("Sample is ");
-    Serial.println(sample[0]);
+	for(int i=0;i<sensor.sample_size();i++) {
+	  Serial.print(sample[i]);
+	  Serial.print(" ");
+	}
+	Serial.println();
     lastMessage = millis();
   }
 }
