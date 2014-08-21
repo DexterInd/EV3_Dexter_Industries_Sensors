@@ -128,7 +128,7 @@ void EV3UARTEmulation::send_data8(byte mode, byte b) {
 }
 
 void EV3UARTEmulation::send_data16(byte mode, short s) {
-  byte bb[1];
+  byte bb[2];
   bb[0] = s & 0xff;
   bb[1] = s >> 8;
   send_cmd(CMD_DATA | (1 << CMD_LLL_SHIFT) | mode, bb, 2);
