@@ -20,6 +20,9 @@ EV3UARTEmulation::EV3UARTEmulation(byte rx_pin, byte tx_pin, byte type, unsigned
   current_mode = 0;
 }
 
+/**
+ * Define the next mode
+**/
 void EV3UARTEmulation::create_mode(String name, boolean view, 
 		                           byte data_type, byte sample_size, 
 						           byte figures, byte decimals) {
@@ -35,10 +38,16 @@ void EV3UARTEmulation::create_mode(String name, boolean view,
   if (view) views++;
 }	
 
+/**
+ * Get the status of the connection
+**/
 byte EV3UARTEmulation::get_status() {
   return status;
 }
 
+/**
+ * Reset the connection
+**/
 void EV3UARTEmulation::reset () {
   for(;;) {
 #ifdef DEBUG
@@ -90,6 +99,9 @@ void EV3UARTEmulation::reset () {
 	}
 }
 
+/**
+ * Process incoming messages
+**/
 void EV3UARTEmulation::heart_beat() {
   if (millis() - last_nack > HEARTBEAT_PERIOD) reset();
   if (uart->available()) {
@@ -105,10 +117,17 @@ void EV3UARTEmulation::heart_beat() {
 		Serial.println(b, HEX);
 #endif	
          if (b == CMD_SELECT) {
+#ifdef DEBUG
+        Serial.println("Received SELECT ");
+#endif
 		   byte checksum = 0xff ^ b;
 		   byte mode = read_byte();
 		   checksum ^= mode;
 		   if (checksum == read_byte()) {
+#ifdef DEBUG
+        Serial.print("Mode is ");
+		Serial.println(mode);
+#endif
 		     if (mode < modes) current_mode = mode;
 		   }
 		 }
@@ -116,50 +135,72 @@ void EV3UARTEmulation::heart_beat() {
   }
 }
 
+/**
+ * Get the mode object for a specific mode.
+**/
 EV3UARTMode* EV3UARTEmulation::get_mode(byte mode) {
   return mode_array[mode];
 }	
 
-void EV3UARTEmulation::send_data8(byte mode, byte b) {
+/**
+ * Send a single byte t the EV3, as data.
+**/
+void EV3UARTEmulation::send_data8(byte b) {
   byte bb[1];
   bb[0] = b;
   
-  send_cmd(CMD_DATA | mode, bb, 1);
+  send_cmd(CMD_DATA | current_mode, bb, 1);
 }
 
-void EV3UARTEmulation::send_data16(byte mode, short s) {
+/**
+ * Send a single short to the EV3
+**/
+void EV3UARTEmulation::send_data16(short s) {
   byte bb[2];
   bb[0] = s & 0xff;
   bb[1] = s >> 8;
-  send_cmd(CMD_DATA | (1 << CMD_LLL_SHIFT) | mode, bb, 2);
+  send_cmd(CMD_DATA | (1 << CMD_LLL_SHIFT) | current_mode, bb, 2);
 }	
 
-void EV3UARTEmulation::send_data16(byte mode, short* s, int len) {
+/**
+ * Send an array of shorts to the EV3 as data.
+ * len must be a power of 2
+**/
+void EV3UARTEmulation::send_data16(short* s, int len) {
   byte bb[len*2];
   for(int i=0;i<len;i++) {
-    bb[2*i] = s[i] & 0x255;
+    bb[2*i] = s[i] & 0xff;
     bb[2*i+1] = s[i] >> 8;   
   }
-  send_cmd(CMD_DATA | (log2(len*2) << CMD_LLL_SHIFT) | mode, bb, len*2);
+  send_cmd(CMD_DATA | (log2(len*2) << CMD_LLL_SHIFT) | current_mode, bb, len*2);
 }
 
-void EV3UARTEmulation::send_data32(byte mode, long l) {
+/**
+ * Send a long to the EV3 as data
+**/
+void EV3UARTEmulation::send_data32(long l) {
   byte bb[4];
   for(int i=0;i<4;i++) {
     bb[i] = (l >> (i * 8)) && 0xff;
   }
-  send_cmd(CMD_DATA | (2 << CMD_LLL_SHIFT) | mode, bb, 4);
+  send_cmd(CMD_DATA | (2 << CMD_LLL_SHIFT) | current_mode, bb, 4);
 }
 
-void EV3UARTEmulation::send_dataf(byte mode, float f) {
+/**
+ * Send a float to the EV3 as data
+**/
+void EV3UARTEmulation::send_dataf(float f) {
   union Data {
     unsigned long l;
     float f;
   } data;
   data.f = f;
-  send_data32(mode, data.l);
+  send_data32(data.l);
 }			
 
+/**
+ * Send a command to the  EV3
+**/
 void EV3UARTEmulation::send_cmd(byte cmd, byte* data, byte len) {
   byte checksum = 0xff ^ cmd;
 #ifdef DEBUG
@@ -182,12 +223,15 @@ void EV3UARTEmulation::send_cmd(byte cmd, byte* data, byte len) {
 #endif
 }
 
+/**
+ * Write a single byte to the EV3
+**/
 void EV3UARTEmulation::send_byte(byte b) {
   uart->write(b);
 }
 
 /**
- * Utility method to read a long from a byte array
+ * Utility method to copy a long into a byte array
 **/
 void EV3UARTEmulation::get_long(unsigned long l, byte* bb) {
   for(int i=0;i<4;i++) {
@@ -210,6 +254,9 @@ int EV3UARTEmulation::log2(int val) {
   }
 }
 
+/**
+ * Utility method to return the next power of 2 (up to 32)
+**/
 int EV3UARTEmulation::next_power2(int val) {
   if (val == 1 || val == 2) return val;
   else if (val <= 4) return 4;
@@ -227,6 +274,9 @@ byte EV3UARTEmulation::read_byte() {
   return uart->read();
 }
 
+/**
+ * Get the current mode
+**/
 byte EV3UARTEmulation::get_current_mode() {
   return current_mode;
 }

@@ -64,11 +64,11 @@ class EV3UARTEmulation {
 		void reset();
 		void heart_beat();
 		EV3UARTMode* get_mode(byte mode);
-		void send_data8(byte mode, byte b);
-		void send_data16(byte mode, short s);
-		void send_data16(byte mode, short *s, int len);
-		void send_data32(byte mode, long l);
-		void send_dataf(byte mode, float f);
+		void send_data8(byte b);
+		void send_data16(short s);
+		void send_data16(short *s, int len);
+		void send_data32(long l);
+		void send_dataf(float f);
 		byte get_current_mode();
 	private:
 	    SoftwareSerial* uart;
