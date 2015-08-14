@@ -32,7 +32,7 @@ Sensors that will not be supported because of technical issues with EV3.
 * [NXTChuck](http://www.dexterindustries.com/NXTChuck.html)
 
 ## Participate!
-Send us [feedback](http://www.dexterindustries.com/contact.html) or hack away at this repo!  It's all open-source software, and we'd be honored if you joined in!
+Send us [feedback](http://www.dexterindustries.com/contact.html) or hack away at this repo!  It's all open-source software, and we'd be honoured if you joined in!
 
 ## More Links
 
