@@ -6,7 +6,7 @@
 // Copyright (C) 2014 Lawrie Griffiths
 
 #include <Arduino.h>
-#include <SoftwareSerial.h>
+#include <Serial.h>
 
 #define   BYTE_ACK                      0x04
 #define   BYTE_NACK                     0x02
@@ -56,7 +56,7 @@ class EV3UARTMode {
 
 class EV3UARTEmulation {
 	public:
-	    EV3UARTEmulation(byte rx_pin, byte tx_pin, byte type, unsigned long speed);
+	    EV3UARTEmulation(HardwareSerial *serial, byte type, unsigned long speed);
 		void create_mode(String name, boolean view, 
 		                 byte data_type, byte sample_size, 
 						 byte figures, byte decimals);
@@ -71,7 +71,7 @@ class EV3UARTEmulation {
 		void send_dataf(float f);
 		byte get_current_mode();
 	private:
-	    SoftwareSerial* uart;
+	    HardwareSerial *uart;
 		byte modes;
 		byte views;
 		byte type;

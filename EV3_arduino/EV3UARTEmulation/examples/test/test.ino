@@ -16,7 +16,7 @@ byte data = 0;
 void loop() {
   sensor.heart_beat();
   if (millis() - last_reading > 100) {
-    sensor.send_data8(0, data++);
+    sensor.send_data8(data++);
     if (data > 99) data = 0;
 	last_reading = millis();
   }

@@ -1,4 +1,4 @@
-#include "EV3UARTEmulation.h"
+#include "EV3UARTEmulationHard.h"
 #include <Serial.h>
 
 /**
@@ -10,8 +10,8 @@ EV3UARTMode::EV3UARTMode() {
 /**
  * Create the sensor emulation with the specified RX and TX pins
 **/
-EV3UARTEmulation::EV3UARTEmulation(byte rx_pin, byte tx_pin, byte type, unsigned long speed) {
-  uart = new SoftwareSerial(rx_pin, tx_pin);
+EV3UARTEmulation::EV3UARTEmulation(HardwareSerial *serial, byte type, unsigned long speed) {
+  uart = serial;
   this->type = type;
   this->speed = speed;
   status = 0;
