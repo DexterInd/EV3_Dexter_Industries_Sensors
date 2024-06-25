@@ -4,15 +4,14 @@
         <VirtualInstrument IsTopLevel="false" IsReentrant="false" Version="1.0.2.0" xmlns="http://www.ni.com/VirtualInstrument.xsd">
             <DataItem Name="SequenceIn" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="6" />
             <DataItem Name="SequenceOut" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" DefaultTerminalDirection="Input" CallUsage="None" CallDirection="Output" CallIndex="6" />
-            <DataItem Name="Port" DataType="Single" DefaultTerminalDirection="Output" CallUsage="Optional" CallDirection="Input" CallIndex="0" />
-            <DataItem Name="Addr" DataType="UInt32" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="1" DefaultValue="0" />
-            <DataItem Name="WByte" DataType="UInt32" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="2" DefaultValue="0" />
+            <DataItem Name="Port" DataType="Single" DefaultTerminalDirection="Output" CallUsage="Optional" CallDirection="Input" CallIndex="1" />
+            <DataItem Name="AddrByte" DataType="Byte" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="0" DefaultValue="0" />
+            <DataItem Name="WByte" DataType="Byte" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="2" DefaultValue="0" />
             <DataItem Name="Numeric" DataType="Byte[]" DefaultTerminalDirection="Output" AdaptToDiagramType="true" />
             <FrontPanel>
-                <fpruntime:FrontPanelCanvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:fpruntime="clr-namespace:NationalInstruments.LabVIEW.FrontPanelRuntime;assembly=NationalInstruments.LabVIEW.FrontPanelRuntime" xmlns:Model0="clr-namespace:NationalInstruments.SourceModel.Designer;assembly=NationalInstruments.SourceModel" x:Name="FrontPanel" Model0:DesignerSurfaceProperties.CanSnapToObjects="True" Model0:DesignerSurfaceProperties.SnapToObjects="True" Model0:DesignerSurfaceProperties.ShowSnaplines="True" Model0:DesignerSurfaceProperties.ShowControlAdorners="True" Width="640" Height="480" />
+                <fpruntime:FrontPanelCanvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:fpruntime="clr-namespace:NationalInstruments.LabVIEW.FrontPanelRuntime;assembly=NationalInstruments.LabVIEW.FrontPanelRuntime" xmlns:Model="clr-namespace:NationalInstruments.SourceModel.Designer;assembly=NationalInstruments.SourceModel" x:Name="FrontPanel" Model:DesignerSurfaceProperties.CanSnapToObjects="True" Model:DesignerSurfaceProperties.SnapToObjects="True" Model:DesignerSurfaceProperties.ShowSnaplines="True" Model:DesignerSurfaceProperties.ShowControlAdorners="True" Width="640" Height="480" />
             </FrontPanel>
             <BlockDiagram Name="__RootDiagram__">
-                <Wire Id="w20" Joints="N(n30:Value) N(b25:n33)" />
                 <Wire Id="w22" Joints="N(n27:Numeric) N(n29:port)" />
                 <DataAccessor DataItem="Port" Id="n27" Bounds="1141 315 70 14">
                     <Terminal Id="Numeric" Direction="Output" Wire="w22" Hotspot="1 0.5" Bounds="0 0 70 14" />
@@ -22,14 +21,11 @@
                     <Terminal Id="layer" Direction="Output" Wire="w14" DataType="SByte" Hotspot="1 0.5" Bounds="14 0 14 14" />
                     <Terminal Id="portOut" Direction="Output" Wire="w15" DataType="SByte" Hotspot="1 0.5" Bounds="14 14 14 14" />
                 </MethodCall>
-                <DataAccessor DataItem="Addr" Id="n30" Bounds="1162 455 70 14">
-                    <Terminal Id="Value" Direction="Output" Wire="w20" Hotspot="1 0.5" Bounds="0 0 70 14" />
-                </DataAccessor>
                 <FlatSequence Id="n33" Bounds="1358 224 567 462">
                     <FlatSequence.Frame Id="D25" Bounds="7 7 553 448">
                         <Wire Id="w21" Joints="N(b23:D25) N(n17:layer)" />
                         <Wire Id="w23" Joints="N(b24:D25) N(n17:port)" />
-                        <Wire Id="w27" Joints="N(b25:D25) h(158) v(-42) N(n56:c0t1v)" />
+                        <Wire Id="w27" Joints="N(b28:D25) h(158) v(-42) N(n56:c0t1v)" />
                         <Wire Id="w26" Joints="N(n22:Out) N(n56:inArray)" />
                         <Wire Id="w25" Joints="N(n24:Out) N(n56:c0t0v)" />
                         <ReplaceArraySubset Rank="1" VerticalChunkCount="1" Id="n56" Terminals="inArray=w26, outArray=w57, c0t0v=w25, c0t1v=w27" Bounds="175 154 28 42" />
@@ -66,8 +62,8 @@
                     </FlatSequence.Frame>
                     <FlatSequence.Tunnel Id="b23" Terminals="n33=w14, D25=w21" TopLeft="0 91" />
                     <FlatSequence.Tunnel Id="b24" Terminals="n33=w15, D25=w23" TopLeft="0 105" />
-                    <FlatSequence.Tunnel Id="b25" Terminals="n33=w20, D25=w27" TopLeft="0 231" />
                     <FlatSequence.Tunnel Id="b26" Terminals="n33=w16, D25=w63" TopLeft="0 294" />
+                    <FlatSequence.Tunnel Id="b28" Terminals="n33=w17, D25=w27" TopLeft="0 231" />
                 </FlatSequence>
                 <DataAccessor DataItem="WByte" Id="n21" Bounds="1162 518 70 14">
                     <Terminal Id="Value" Direction="Output" Wire="w16" Hotspot="1 0.5" Bounds="0 0 70 14" />
@@ -86,6 +82,10 @@ Read the license at: http://www.gnu.org/licenses/gpl.txt
 
 </Content>
                 </Comment>
+                <DataAccessor DataItem="AddrByte" Id="n14" Bounds="1218 455 84 14">
+                    <Terminal Id="Value" Direction="Output" Wire="w17" Hotspot="1 0.5" Bounds="0 0 84 14" />
+                </DataAccessor>
+                <Wire Id="w17" Joints="N(n14:Value) N(b28:n33)" />
             </BlockDiagram>
         </VirtualInstrument>
     </Namespace>

@@ -4,22 +4,21 @@
         <VirtualInstrument IsTopLevel="false" IsReentrant="false" Version="1.0.2.0" xmlns="http://www.ni.com/VirtualInstrument.xsd">
             <DataItem Name="SequenceIn" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="6" />
             <DataItem Name="SequenceOut" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" DefaultTerminalDirection="Input" CallUsage="None" CallDirection="Output" CallIndex="6" />
-            <DataItem Name="Port" DataType="Single" DefaultTerminalDirection="Output" CallUsage="Optional" CallDirection="Input" CallIndex="0" />
-            <DataItem Name="Addr" DataType="UInt32" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="1" DefaultValue="0" />
-            <DataItem Name="WByte1" DataType="UInt32" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="2" DefaultValue="0" />
+            <DataItem Name="Port" DataType="Single" DefaultTerminalDirection="Output" CallUsage="Optional" CallDirection="Input" CallIndex="1" />
+            <DataItem Name="AddrByte" DataType="Byte" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="0" DefaultValue="0" />
+            <DataItem Name="WByte1" DataType="Byte" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="3" DefaultValue="0" />
+            <DataItem Name="WByte2" DataType="Byte" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="4" DefaultValue="0" />
+            <DataItem Name="WByte3" DataType="Byte" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="5" DefaultValue="0" />
+            <DataItem Name="WByte4" DataType="Byte" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="7" DefaultValue="0" />
+            <DataItem Name="WByte5" DataType="Byte" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="8" DefaultValue="0" />
+            <DataItem Name="WByte6" DataType="Byte" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="9" DefaultValue="0" />
+            <DataItem Name="WByte7" DataType="Byte" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="10" DefaultValue="0" />
+            <DataItem Name="WByte8" DataType="Byte" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="2" DefaultValue="0" />
             <DataItem Name="Numeric" DataType="Byte[]" DefaultTerminalDirection="Output" AdaptToDiagramType="true" />
-            <DataItem Name="WByte2" DataType="UInt32" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="3" DefaultValue="0" />
-            <DataItem Name="WByte3" DataType="UInt32" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="4" DefaultValue="0" />
-            <DataItem Name="WByte4" DataType="UInt32" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="5" DefaultValue="0" />
-            <DataItem Name="WByte5" DataType="UInt32" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="7" DefaultValue="0" />
-            <DataItem Name="WByte6" DataType="UInt32" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="8" DefaultValue="0" />
-            <DataItem Name="WByte7" DataType="UInt32" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="9" DefaultValue="0" />
-            <DataItem Name="WByte8" DataType="UInt32" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="10" DefaultValue="0" />
             <FrontPanel>
-                <fpruntime:FrontPanelCanvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:fpruntime="clr-namespace:NationalInstruments.LabVIEW.FrontPanelRuntime;assembly=NationalInstruments.LabVIEW.FrontPanelRuntime" xmlns:Model0="clr-namespace:NationalInstruments.SourceModel.Designer;assembly=NationalInstruments.SourceModel" x:Name="FrontPanel" Model0:DesignerSurfaceProperties.CanSnapToObjects="True" Model0:DesignerSurfaceProperties.SnapToObjects="True" Model0:DesignerSurfaceProperties.ShowSnaplines="True" Model0:DesignerSurfaceProperties.ShowControlAdorners="True" Width="640" Height="480" />
+                <fpruntime:FrontPanelCanvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:fpruntime="clr-namespace:NationalInstruments.LabVIEW.FrontPanelRuntime;assembly=NationalInstruments.LabVIEW.FrontPanelRuntime" xmlns:Model="clr-namespace:NationalInstruments.SourceModel.Designer;assembly=NationalInstruments.SourceModel" x:Name="FrontPanel" Model:DesignerSurfaceProperties.CanSnapToObjects="True" Model:DesignerSurfaceProperties.SnapToObjects="True" Model:DesignerSurfaceProperties.ShowSnaplines="True" Model:DesignerSurfaceProperties.ShowControlAdorners="True" Width="640" Height="480" />
             </FrontPanel>
             <BlockDiagram Name="__RootDiagram__">
-                <Wire Id="w20" Joints="N(n30:Value) N(b25:n33)" />
                 <Wire Id="w22" Joints="N(n27:Numeric) N(n29:port)" />
                 <DataAccessor DataItem="Port" Id="n27" Bounds="1141 315 70 14">
                     <Terminal Id="Numeric" Direction="Output" Wire="w22" Hotspot="1 0.5" Bounds="0 0 70 14" />
@@ -29,9 +28,6 @@
                     <Terminal Id="layer" Direction="Output" Wire="w14" DataType="SByte" Hotspot="1 0.5" Bounds="14 0 14 14" />
                     <Terminal Id="portOut" Direction="Output" Wire="w15" DataType="SByte" Hotspot="1 0.5" Bounds="14 14 14 14" />
                 </MethodCall>
-                <DataAccessor DataItem="Addr" Id="n30" Bounds="1162 455 70 14">
-                    <Terminal Id="Value" Direction="Output" Wire="w20" Hotspot="1 0.5" Bounds="0 0 70 14" />
-                </DataAccessor>
                 <FlatSequence Id="n33" Bounds="1358 224 1260 462">
                     <FlatSequence.Frame Id="D25" Bounds="7 7 1246 448">
                         <Wire Id="w21" Joints="N(b23:D25) N(n17:layer)" />
@@ -108,9 +104,9 @@
                     </FlatSequence.Frame>
                     <FlatSequence.Tunnel Id="b23" Terminals="n33=w14, D25=w21" TopLeft="0 91" />
                     <FlatSequence.Tunnel Id="b24" Terminals="n33=w15, D25=w23" TopLeft="0 105" />
-                    <FlatSequence.Tunnel Id="b25" Terminals="n33=w20, D25=w27" TopLeft="0 231" />
-                    <FlatSequence.Tunnel Id="b26" Terminals="n33=w16, D25=w63" TopLeft="0 294" />
-                    <FlatSequence.Tunnel Id="b68" Terminals="n33=w23, D25=w30" TopLeft="0 308" />
+                    <FlatSequence.Tunnel Id="b25" Terminals="n33=w37, D25=w27" TopLeft="0 231" />
+                    <FlatSequence.Tunnel Id="b26" Terminals="n33=w23, D25=w63" TopLeft="0 294" />
+                    <FlatSequence.Tunnel Id="b68" Terminals="n33=w24, D25=w30" TopLeft="0 308" />
                     <FlatSequence.Tunnel Id="b69" Terminals="n33=w26, D25=w34" TopLeft="0 322" />
                     <FlatSequence.Tunnel Id="b70" Terminals="n33=w28, D25=w40" TopLeft="0 336" />
                     <FlatSequence.Tunnel Id="b71" Terminals="n33=w30, D25=w44" TopLeft="0 350" />
@@ -118,40 +114,8 @@
                     <FlatSequence.Tunnel Id="b73" Terminals="n33=w34, D25=w54" TopLeft="0 378" />
                     <FlatSequence.Tunnel Id="b74" Terminals="n33=w36, D25=w60" TopLeft="0 392" />
                 </FlatSequence>
-                <DataAccessor DataItem="WByte1" Id="n21" Bounds="1162 518 70 14">
-                    <Terminal Id="Value" Direction="Output" Wire="w16" Hotspot="1 0.5" Bounds="0 0 70 14" />
-                </DataAccessor>
-                <Wire Id="w16" Joints="N(n21:Value) N(b26:n33)" />
                 <Wire Id="w14" Joints="N(n29:layer) N(b23:n33)" />
                 <Wire Id="w15" Joints="N(n29:portOut) N(b24:n33)" />
-                <DataAccessor DataItem="WByte2" Id="n16" Bounds="1162 532 70 14">
-                    <Terminal Id="Value" Direction="Output" Wire="w23" Hotspot="1 0.5" Bounds="0 0 70 14" />
-                </DataAccessor>
-                <DataAccessor DataItem="WByte3" Id="n17" Bounds="1162 546 70 14">
-                    <Terminal Id="Value" Direction="Output" Wire="w26" Hotspot="1 0.5" Bounds="0 0 70 14" />
-                </DataAccessor>
-                <DataAccessor DataItem="WByte4" Id="n18" Bounds="1162 560 70 14">
-                    <Terminal Id="Value" Direction="Output" Wire="w28" Hotspot="1 0.5" Bounds="0 0 70 14" />
-                </DataAccessor>
-                <DataAccessor DataItem="WByte5" Id="n19" Bounds="1162 574 70 14">
-                    <Terminal Id="Value" Direction="Output" Wire="w30" Hotspot="1 0.5" Bounds="0 0 70 14" />
-                </DataAccessor>
-                <DataAccessor DataItem="WByte6" Id="n20" Bounds="1162 588 70 14">
-                    <Terminal Id="Value" Direction="Output" Wire="w32" Hotspot="1 0.5" Bounds="0 0 70 14" />
-                </DataAccessor>
-                <DataAccessor DataItem="WByte7" Id="n22" Bounds="1162 602 70 14">
-                    <Terminal Id="Value" Direction="Output" Wire="w34" Hotspot="1 0.5" Bounds="0 0 70 14" />
-                </DataAccessor>
-                <DataAccessor DataItem="WByte8" Id="n23" Bounds="1162 616 70 14">
-                    <Terminal Id="Value" Direction="Output" Wire="w36" Hotspot="1 0.5" Bounds="0 0 70 14" />
-                </DataAccessor>
-                <Wire Id="w23" Joints="N(n16:Value) N(b68:n33)" />
-                <Wire Id="w26" Joints="N(n17:Value) N(b69:n33)" />
-                <Wire Id="w28" Joints="N(n18:Value) N(b70:n33)" />
-                <Wire Id="w30" Joints="N(n19:Value) N(b71:n33)" />
-                <Wire Id="w32" Joints="N(n20:Value) N(b72:n33)" />
-                <Wire Id="w34" Joints="N(n22:Value) N(b73:n33)" />
-                <Wire Id="w36" Joints="N(n23:Value) N(b74:n33)" />
                 <Comment Bounds="1218 714 405 112" SizeMode="User" AttachStyle="Free">
                     <Content>Dexter Industries
 dexterindustries.com
@@ -163,16 +127,52 @@ Read the license at: http://www.gnu.org/licenses/gpl.txt
 
 </Content>
                 </Comment>
+                <DataAccessor DataItem="WByte1" Id="n21" Bounds="1211 518 70 14">
+                    <Terminal Id="Value" Direction="Output" Wire="w23" Hotspot="1 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <Wire Id="w23" Joints="N(n21:Value) N(b26:n33)" />
+                <DataAccessor DataItem="WByte2" Id="n23" Bounds="1211 532 70 14">
+                    <Terminal Id="Value" Direction="Output" Wire="w24" Hotspot="1 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <Wire Id="w24" Joints="N(n23:Value) N(b68:n33)" />
+                <DataAccessor DataItem="WByte3" Id="n25" Bounds="1211 546 70 14">
+                    <Terminal Id="Value" Direction="Output" Wire="w26" Hotspot="1 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <Wire Id="w26" Joints="N(n25:Value) N(b69:n33)" />
+                <DataAccessor DataItem="WByte4" Id="n28" Bounds="1211 560 70 14">
+                    <Terminal Id="Value" Direction="Output" Wire="w28" Hotspot="1 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <Wire Id="w28" Joints="N(n28:Value) N(b70:n33)" />
+                <DataAccessor DataItem="WByte5" Id="n31" Bounds="1211 574 70 14">
+                    <Terminal Id="Value" Direction="Output" Wire="w30" Hotspot="1 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <Wire Id="w30" Joints="N(n31:Value) N(b71:n33)" />
+                <DataAccessor DataItem="WByte6" Id="n32" Bounds="1211 588 70 14">
+                    <Terminal Id="Value" Direction="Output" Wire="w32" Hotspot="1 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <Wire Id="w32" Joints="N(n32:Value) N(b72:n33)" />
+                <DataAccessor DataItem="WByte7" Id="n34" Bounds="1211 602 70 14">
+                    <Terminal Id="Value" Direction="Output" Wire="w34" Hotspot="1 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <Wire Id="w34" Joints="N(n34:Value) N(b73:n33)" />
+                <DataAccessor DataItem="WByte8" Id="n35" Bounds="1211 616 70 14">
+                    <Terminal Id="Value" Direction="Output" Wire="w36" Hotspot="1 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <Wire Id="w36" Joints="N(n35:Value) N(b74:n33)" />
+                <DataAccessor DataItem="AddrByte" Id="n36" Bounds="1225 455 84 14">
+                    <Terminal Id="Value" Direction="Output" Wire="w37" Hotspot="1 0.5" Bounds="0 0 84 14" />
+                </DataAccessor>
+                <Wire Id="w37" Joints="N(n36:Value) N(b25:n33)" />
             </BlockDiagram>
             <Icon>
-                <Model:IconPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Model="clr-namespace:NationalInstruments.LabVIEW.VI.Design;assembly=NationalInstruments.LabVIEW.VI.SourceModel" xmlns:fpruntime="clr-namespace:NationalInstruments.LabVIEW.FrontPanelRuntime;assembly=NationalInstruments.LabVIEW.FrontPanelRuntime" xmlns:ation="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Height="154" Width="56">
+                <Model0:IconPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Model0="clr-namespace:NationalInstruments.LabVIEW.VI.Design;assembly=NationalInstruments.LabVIEW.VI.SourceModel" xmlns:fpruntime="clr-namespace:NationalInstruments.LabVIEW.FrontPanelRuntime;assembly=NationalInstruments.LabVIEW.FrontPanelRuntime" xmlns:ation="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Height="154" Width="56">
                     <fpruntime:AnimationProperties.Animations>
                         <fpruntime:AnimationsContainer />
                     </fpruntime:AnimationProperties.Animations>
                     <fpruntime:EventProperties.Events>
                         <fpruntime:EventContainer />
                     </fpruntime:EventProperties.Events>
-                    <Model:IconPanel.Background>
+                    <Model0:IconPanel.Background>
                         <ation:LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
                             <ation:LinearGradientBrush.Transform>
                                 <ation:MatrixTransform />
@@ -184,7 +184,7 @@ Read the license at: http://www.gnu.org/licenses/gpl.txt
                             <ation:GradientStop Color="#FFFFFFFE" Offset="0.25" />
                             <ation:GradientStop Color="#FFF6F5C6" Offset="1" />
                         </ation:LinearGradientBrush>
-                    </Model:IconPanel.Background>
+                    </Model0:IconPanel.Background>
                     <ation:Rectangle x:Name="Template" Width="NaN" Height="NaN" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0, 13, 0, 0" ation:Grid.Row="0" ation:Grid.Column="0" ation:Grid.RowSpan="1" ation:Grid.ColumnSpan="1" Fill="#00FFFFFF" Stroke="#FF000000" StrokeThickness="1" RadiusX="0" RadiusY="0">
                         <fpruntime:AnimationProperties.Animations>
                             <fpruntime:AnimationsContainer />
@@ -221,7 +221,7 @@ Read the license at: http://www.gnu.org/licenses/gpl.txt
                             <fpruntime:EventContainer />
                         </fpruntime:EventProperties.Events>
                     </ation:TextBlock>
-                </Model:IconPanel>
+                </Model0:IconPanel>
             </Icon>
         </VirtualInstrument>
     </Namespace>

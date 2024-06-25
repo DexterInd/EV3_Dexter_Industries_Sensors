@@ -360,6 +360,7 @@
       <Parameter Name="Port" CompilerDirectives="OneInputPort" Direction="Input" DefaultValue="1.3" />
 	 <Parameter Name="RB" Identification="byte.png" DataType="Single" Direction="Output"/>
 	  <Parameter Name="Addr" Identification="addr.png" DataType="UInt32" Direction="Input" DefaultValue="8" />
+	  <Parameter Name="AddrByte" Identification="addr.png" DataType="Byte" Direction="Input" DefaultValue="8" />
 	  <Parameter Name="Pin" Identification="pin.png" DataType="UInt32" Direction="Input" DefaultValue="8" />
 	  <Parameter Name="AnalogVal" Identification="analogVal.png" DataType="Single" Direction="Output"/>
 	  <Parameter Name="State" Identification="state.png" DataType="UInt32" Direction="Input" DefaultValue="1" />
@@ -381,15 +382,15 @@
 	  <Parameter Name="RByte7_String" Identification="char7.png" DataType="String" Direction="Output"/>
 	  <Parameter Name="RByte8_String" Identification="char8.png" DataType="String" Direction="Output"/>
 	  
-	  <Parameter Name="WByte" Identification="byte.png" DataType="UInt32" Direction="Input" DefaultValue="0" />
-	  <Parameter Name="WByte1" Identification="byte1.png" DataType="UInt32" Direction="Input" DefaultValue="0" />
-	  <Parameter Name="WByte2" Identification="byte2.png" DataType="UInt32" Direction="Input" DefaultValue="0" />
-	  <Parameter Name="WByte3" Identification="byte3.png" DataType="UInt32" Direction="Input" DefaultValue="0" />
-	  <Parameter Name="WByte4" Identification="byte4.png" DataType="UInt32" Direction="Input" DefaultValue="0" />
-	  <Parameter Name="WByte5" Identification="byte5.png" DataType="UInt32" Direction="Input" DefaultValue="0" />
-	  <Parameter Name="WByte6" Identification="byte6.png" DataType="UInt32" Direction="Input" DefaultValue="0" />
-	  <Parameter Name="WByte7" Identification="byte7.png" DataType="UInt32" Direction="Input" DefaultValue="0" />
-	  <Parameter Name="WByte8" Identification="byte8.png" DataType="UInt32" Direction="Input" DefaultValue="0" />
+	  <Parameter Name="WByte" Identification="byte.png" DataType="Byte" Direction="Input" DefaultValue="0" />
+	  <Parameter Name="WByte1" Identification="byte1.png" DataType="Byte" Direction="Input" DefaultValue="0" />
+	  <Parameter Name="WByte2" Identification="byte2.png" DataType="Byte" Direction="Input" DefaultValue="0" />
+	  <Parameter Name="WByte3" Identification="byte3.png" DataType="Byte" Direction="Input" DefaultValue="0" />
+	  <Parameter Name="WByte4" Identification="byte4.png" DataType="Byte" Direction="Input" DefaultValue="0" />
+	  <Parameter Name="WByte5" Identification="byte5.png" DataType="Byte" Direction="Input" DefaultValue="0" />
+	  <Parameter Name="WByte6" Identification="byte6.png" DataType="Byte" Direction="Input" DefaultValue="0" />
+	  <Parameter Name="WByte7" Identification="byte7.png" DataType="Byte" Direction="Input" DefaultValue="0" />
+	  <Parameter Name="WByte8" Identification="byte8.png" DataType="Byte" Direction="Input" DefaultValue="0" />
 	  
 	<Hardware>
         <NXTPlotColor>#ffff3132</NXTPlotColor>
@@ -414,7 +415,7 @@
         <Mode>WriteI2C_1B</Mode>
         <Reference Type="VILib" Name="writei2c.vix" />
         <ParameterReference Name="Port" />
-        <ParameterReference Name="Addr" />
+        <ParameterReference Name="AddrByte" />
 		<ParameterReference Name="WByte" />
 	    <BlockInterface>WriteI2C_1B</BlockInterface>
         <Flags></Flags>
@@ -423,7 +424,7 @@
         <Mode>WriteI2C_8B</Mode>
         <Reference Type="VILib" Name="writei2c_8b.vix" />
         <ParameterReference Name="Port" />
-        <ParameterReference Name="Addr" />
+        <ParameterReference Name="AddrByte" />
 		<ParameterReference Name="WByte1" />
 		<ParameterReference Name="WByte2" />
 		<ParameterReference Name="WByte3" />
